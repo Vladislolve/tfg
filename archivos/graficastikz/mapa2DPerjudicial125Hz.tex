@@ -1,0 +1,354 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}
+
+\begin{groupplot}[
+      group style = {
+        group size = 2 by 2,
+        vertical sep = 2.5cm,
+        horizontal sep = 1cm,
+      },
+      view = {0}{90},
+      width=0.45\textwidth,
+      colormap name=jet,
+      xtick distance=2,
+      ytick distance=2,
+      ]
+      
+  % GRAFICA 1
+  \nextgroupplot[
+  	view={0}{90},
+  	title={\textbf{125 Hz}},
+	xlabel style={font=\color{white!15!black}},
+	xlabel={Lx (m)},
+	ylabel style={font=\color{white!15!black}},
+	ylabel={Ly (m)},
+	point meta min=53,
+	point meta max=66,
+	axis equal image=true,
+	colorbar horizontal,
+	colorbar style = {
+		xlabel={Nivel de presión acústica (dB)},
+		xlabel style={font=\tiny,at={(rel axis cs: 0.5,-1.1)}},
+		tick label style={font=\tiny}, 
+		xtick distance=3,
+		at={(rel axis cs: 0.5,-0.25)},
+		anchor=south,
+		height=2mm,
+		axis line style={draw=none}
+		},
+	]
+
+	\addplot3 [
+    	surf,
+    	shader=interp,
+    	mesh/cols=39,mesh/ordering=y varies,
+	]
+    	table {archivos/graficastikz/EPSVaciaCentro125Hz.dat};
+    	
+    \coordinate []  (A) at (2.5,6.5) ;
+    \coordinate []  (B) at (4.5,6.5) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    \coordinate []  (A) at (5.5,4) ;
+    \coordinate []  (B) at (7.5,4) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    \coordinate []  (A) at (10,1) ;
+    \coordinate []  (B) at (8,1) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    
+%    % Imprime la fuente
+%    \addplot[only marks,mark=*,black,mark size=3pt]
+%    	coordinates {
+%    	(0.6,6.5)
+%    	};	
+%    	
+%    % Imprime los receptores
+%\addplot[only marks,mark=triangle*,white, mark size=2pt, mark options={fill=blue}]
+%    	coordinates {
+%    	(11.05,6.25)
+%		(10.20,6.25)
+%		(9.08,6.25)
+%		(7.96,6.25)
+%		(6.84,6.25)
+%		(5.72,6.25)
+%		(4.60,6.25)
+%		(3.48,6.25)
+%		(2.36,6.25)
+%		(1.24,6.25)
+%		(11.05,3.55)
+%		(10.20,3.55)
+%		(9.08,3.55)
+%		(7.96,3.55)
+%		(6.84,3.55)
+%		(5.72,3.55)
+%		(4.60,3.55)
+%		(3.48,3.55)
+%		(2.36,3.55)
+%		(1.24,3.55)
+%		(11.05,0.80)
+%		(10.20,0.80)
+%		(9.08,0.80)
+%		(7.96,0.80)
+%		(6.84,0.80)
+%		(5.72,0.80)
+%		(4.60,0.80)
+%		(3.48,0.80)
+%		(2.36,0.80)
+%		(1.24,0.80)
+%		};	
+		
+	% GRAFICA 2
+  \nextgroupplot[
+  	view={0}{90},
+  	title={\textbf{500 Hz}},
+	xlabel style={font=\color{white!15!black}},
+	xlabel={Lx (m)},
+	ylabel style={font=\color{white!15!black}},
+	ylabel={Ly (m)},
+	point meta min=68,
+	point meta max=72,
+	axis equal image=true,
+	yticklabel pos=right,
+	colorbar horizontal,
+	colorbar style = {
+		xlabel={Nivel de presión acústica (dB)},
+		xlabel style={font=\tiny,at={(rel axis cs: 0.5,-1.1)}},
+		tick label style={font=\tiny}, 
+		xtick distance=1,
+		at={(rel axis cs: 1.685,-0.25)},
+		anchor=south,
+		height=2mm,
+		axis line style={draw=none}
+		},
+	]
+	
+	\addplot3 [
+    	surf,
+    	shader=interp,
+    	mesh/cols=39,mesh/ordering=y varies,
+	]
+    	table {archivos/graficastikz/EPSVaciaCentro500Hz.dat};
+    	
+    \coordinate []  (A) at (4.8,4) ;
+    \coordinate []  (B) at (6.8,4) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+     \coordinate []  (A) at (8.8,4) ;
+    \coordinate []  (B) at (6.8,4) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+     \coordinate []  (A) at (8.8,4) ;
+    \coordinate []  (B) at (10.8,4) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    
+%    % Imprime la fuente
+%\addplot[only marks,mark=*,white,mark size=3pt,mark options={fill=black}]
+%    	coordinates {
+%    	(5.95,3.55)
+%    	};	
+%    	
+%    % Imprime los receptores
+%\addplot[only marks,mark=triangle*,white, mark size=2pt, mark options={fill=blue}]
+%    	coordinates {
+%    	(11.05,6.25)
+%		(10.20,6.25)
+%		(9.08,6.25)
+%		(7.96,6.25)
+%		(6.84,6.25)
+%		(5.72,6.25)
+%		(4.60,6.25)
+%		(3.48,6.25)
+%		(2.36,6.25)
+%		(1.24,6.25)
+%		(11.05,3.55)
+%		(10.20,3.55)
+%		(9.08,3.55)
+%		(7.96,3.55)
+%		(6.84,3.55)
+%		(5.72,3.55)
+%		(4.60,3.55)
+%		(3.48,3.55)
+%		(2.36,3.55)
+%		(1.24,3.55)
+%		(11.05,0.80)
+%		(10.20,0.80)
+%		(9.08,0.80)
+%		(7.96,0.80)
+%		(6.84,0.80)
+%		(5.72,0.80)
+%		(4.60,0.80)
+%		(3.48,0.80)
+%		(2.36,0.80)
+%		(1.24,0.80)
+%		};	
+
+
+% GRAFICA 3
+  \nextgroupplot[
+  	view={0}{90},
+  	title={\textbf{2000 Hz}},
+	xlabel style={font=\color{white!15!black}},
+	xlabel={Lx (m)},
+	ylabel style={font=\color{white!15!black}},
+	ylabel={Ly (m)},
+	axis equal image=true,
+	point meta min=70,
+	point meta max=74,
+	colorbar horizontal,
+	colorbar style = {
+		xlabel={Nivel de presión acústica (dB)},
+		xlabel style={font=\tiny,at={(rel axis cs: 0.5,-1.1)}},
+		tick label style={font=\tiny}, 
+		xtick distance=1,
+		at={(rel axis cs: 0.5,-2)},
+		anchor=south,
+		height=2mm,
+		axis line style={draw=none}
+		},
+	]
+	
+	\addplot3 [
+    	surf,
+    	shader=interp,
+    	mesh/cols=39,mesh/ordering=y varies,
+	]
+    	table {archivos/graficastikz/EPSVaciaCentro2000Hz.dat};
+    	
+    \coordinate []  (A) at (8,1.5) ;
+    \coordinate []  (B) at (10,1.5) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    \coordinate []  (A) at (8,1.5) ;
+    \coordinate []  (B) at (6,1.5) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    \coordinate []  (A) at (4,1.5) ;
+    \coordinate []  (B) at (6,1.5) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    	
+%    % Imprime la fuente
+%\addplot[only marks,mark=*,white,mark size=3pt,mark options={fill=black}]
+%    	coordinates {
+%    	(5.95,3.55)
+%    	};	
+%    	
+%    % Imprime los receptores
+%\addplot[only marks,mark=triangle*,white, mark size=2pt, mark options={fill=blue}]
+%    	coordinates {
+%    	(11.05,6.25)
+%		(10.20,6.25)
+%		(9.08,6.25)
+%		(7.96,6.25)
+%		(6.84,6.25)
+%		(5.72,6.25)
+%		(4.60,6.25)
+%		(3.48,6.25)
+%		(2.36,6.25)
+%		(1.24,6.25)
+%		(11.05,3.55)
+%		(10.20,3.55)
+%		(9.08,3.55)
+%		(7.96,3.55)
+%		(6.84,3.55)
+%		(5.72,3.55)
+%		(4.60,3.55)
+%		(3.48,3.55)
+%		(2.36,3.55)
+%		(1.24,3.55)
+%		(11.05,0.80)
+%		(10.20,0.80)
+%		(9.08,0.80)
+%		(7.96,0.80)
+%		(6.84,0.80)
+%		(5.72,0.80)
+%		(4.60,0.80)
+%		(3.48,0.80)
+%		(2.36,0.80)
+%		(1.24,0.80)
+%		};	
+
+
+% GRAFICA 4
+  \nextgroupplot[
+  	view={0}{90},
+  	title={\textbf{4000 Hz}},
+	xlabel style={font=\color{white!15!black}},
+	xlabel={Lx (m)},
+	ylabel style={font=\color{white!15!black}},
+	ylabel={Ly (m)},
+	axis equal image=true,
+	yticklabel pos=right,
+	point meta min=68,
+	point meta max=72,
+	colorbar horizontal,
+	colorbar style = {
+		xlabel={Nivel de presión acústica (dB)},
+		xlabel style={font=\tiny,at={(rel axis cs: 0.5,-1.1)}},
+		tick label style={font=\tiny}, 
+		xtick distance=1,
+		at={(rel axis cs: 1.685,-2)},
+		anchor=south,
+		height=2mm,
+		axis line style={draw=none}
+		},
+	]
+	
+	\addplot3 [
+    	surf,
+    	shader=interp,
+    	mesh/cols=39,mesh/ordering=y varies,
+	]
+    	table {archivos/graficastikz/EPSVaciaCentro4000Hz.dat};
+    	
+    \coordinate []  (A) at (8,2) ;
+    \coordinate []  (B) at (10,2) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    \coordinate []  (A) at (8,2) ;
+    \coordinate []  (B) at (6,2) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    \coordinate []  (A) at (4,1) ;
+    \coordinate []  (B) at (6,1) ;	
+    \draw [thick] (A) node[circle,fill,scale=0.3]{}  -- node [above] {2 m} (B) node[circle,fill,scale=0.3]{} ;
+    	
+%    % Imprime la fuente
+%\addplot[only marks,mark=*,white,mark size=3pt,mark options={fill=black}]
+%    	coordinates {
+%    	(5.95,3.55)
+%    	};	
+%    	
+%    % Imprime los receptores
+%\addplot[only marks,mark=triangle*,white, mark size=2pt, mark options={fill=blue}]
+%    	coordinates {
+%    	(11.05,6.25)
+%		(10.20,6.25)
+%		(9.08,6.25)
+%		(7.96,6.25)
+%		(6.84,6.25)
+%		(5.72,6.25)
+%		(4.60,6.25)
+%		(3.48,6.25)
+%		(2.36,6.25)
+%		(1.24,6.25)
+%		(11.05,3.55)
+%		(10.20,3.55)
+%		(9.08,3.55)
+%		(7.96,3.55)
+%		(6.84,3.55)
+%		(5.72,3.55)
+%		(4.60,3.55)
+%		(3.48,3.55)
+%		(2.36,3.55)
+%		(1.24,3.55)
+%		(11.05,0.80)
+%		(10.20,0.80)
+%		(9.08,0.80)
+%		(7.96,0.80)
+%		(6.84,0.80)
+%		(5.72,0.80)
+%		(4.60,0.80)
+%		(3.48,0.80)
+%		(2.36,0.80)
+%		(1.24,0.80)
+%		};	
+\end{groupplot}
+\end{tikzpicture}%

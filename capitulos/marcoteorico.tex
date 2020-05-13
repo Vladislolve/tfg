@@ -1,0 +1,1043 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plantilla TFG/TFM
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\chapter{Marco Teórico}
+\label{marcoteorico}
+
+Históricamente se ha tomado en consideración el campo directo como aquel sonido que es recibido directamente desde la fuente y, todo aquel que haya sufrido alguna reflexión, se considera campo reverberante. En el sentido estricto, este concepto teórico sería correcto, pero se ha demostrado experimentalmente que la fisiología del oído humano percibe como un único sonido aquellos sonidos que tengan una diferencia temporal menor a 50ms, ubicándolo en el lugar de origen del primer sonido. Este concepto se denomina \textit{efecto de precedencia} definido por \cite{Wallach1949} y desarrollado completamente por \cite{Haas1949}, estudio por el cual el \textit{efecto de precedencia} también se denomina \textit{efecto Hass}.
+
+Teniendo en consideración el efecto Hass los campos acústicos se pueden dividir en lo que se denomina \textit{campo útil} y \textit{campo perjudicial}, el primero incluye el campo directo y las primeras reflexiones hasta el rango temporal deseado (para palabra 50 milisegundos) y el segundo campo es todo aquel sonido recibido después del rango temporal (interfiere con la inteligibilidad del habla que se encuentra en el campo útil).
+
+Si utilizamos este concepto para redefinir los campos acústicos, podemos tener una teoría más ajustada al fisiología del oído humano, lo que se denomina \textit{teoría revisada}, término acuñado por \cite{Barron1988} y ampliado en \cite{Barron2015}. Esta \textit{teoría revisada} está concebida para recintos para música, por ello utilizan el rango temporal de 80 ms, para el objeto de este trabajo, recintos para palabra, el rango temporal utilizado es de 50 ms.
+
+Esta \textit{teoría revisada} permite calcular el \textit{campo útil} y \textit{campo perjudicial} para predecir las pendientes de los campos respecto a la distancia emisor-receptor, aunque produce un margen de error demasiado grande para dar por válidos los cálculos, es por ello que \cite{Sato2008} decidieron incluir factores de corrección en los cálculos para obtener un menor error. A la introducción de factores de corrección y otros ajustes se le va a denominar \textit{teoría revisada corregida} de aquí en adelante.
+
+En los apartados siguientes se definen conceptos utilizados en este trabajo y los conceptos necesarios para finalmente comprender la \textit{teoría revisada corregida}.
+
+\section{Parámetros básicos}
+
+En este apartado se van a definir los conceptos básicos del sonido y la acústica, el concepto de \textit{nivel}, \textit{presión acústica}, etc.
+
+\subsection{Directividad}
+
+La directividad es la relación entre la presión acústica emitida en una dirección dada y la presión acústica máxima que puede emitir la fuente. Se designa con la letra $D$ y es adimensional. Se utiliza para realizar los diagramas de directividad.
+
+\begin{flalign}
+	D(\theta)=\frac{ p_{ef}^2(\theta) }{ p_{max}^2}
+\end{flalign}
+
+Habitualmente se expresa en escala logarítmica, permitiendo así visualizar más fácilmente la información, donde $0\;dB$ es el valor de la máxima presión y según se reduce esta presión el valor de decibelios será negativo. Así con una simple resta se puede conocer el nivel de presión emitido en un ángulo concreto.
+
+\begin{flalign}
+	D_{dB} = 10\log_{10} D
+\end{flalign}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{archivos/diagramadirectividad.pdf}
+    \caption{Diagrama de directividad de un altavoz de dos vías. Se representa la directividad emitiendo dos frecuencias diferentes.}
+    \label{fig:directividad}
+\end{figure}
+
+\subsection{Factor e índice de directividad}
+\label{directividad}
+En ocasiones es útil tener un único valor, \textit{factor de directividad} o $Q$, que represente la directividad que tiene una fuente, sobretodo en cálculos donde se tenga en cuenta la directividad de la fuente pero no sea relevante el nivel en cada ángulo de emisión.
+Este valor es la relación entre la intensidad acústica (\ref{intensidadacustica}) emitida en la dirección de máxima emisión y la que emitiría una fuente isótropa (omnidireccional) a igual potencia acústica.
+
+\begin{flalign*}
+	Q_0 = \frac{I(\theta_0,\Psi_0)}{I_{ISO}}
+\end{flalign*}
+
+La mayoría de ocasiones, la directividad no es homogénea como sí lo es en la figura \ref{fig:directividad} y para calcular un único valor hay que integrar los valores de intensidad en los diferentes ángulos de emisión:
+
+\begin{flalign*}
+	Q = \frac{4\pi I(\theta_0,\Psi_0)}{\bigintss_{\;0}^{2\pi} \bigintss_{\; 0}^{\pi} \sin (\theta) I(\theta,\Psi) \mathrm{d}\Psi \mathrm{d}\theta}
+\end{flalign*}
+
+Que teniendo en cuenta la simetría de revolución y desarrollando, el cálculo del factor de directividad se obtiene mediante:
+
+\begin{flalign}
+	Q = \frac{2}{\sum\limits_{i=1}^n \frac{I(\theta_i)}{I(\theta_0)}\sin (\theta_i) \Delta\theta_i}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	I(\theta_0) & \rightarrow & Es la intensidad en la dirección de máxima emisión.\\
+	n & \rightarrow & Es el número de ángulos donde se tiene el valor de la intensidad.\\
+	\Delta\theta & \rightarrow & Es la distancia en grados entre el ángulo $i$ y el ángulo $i+1$.
+\end{condiciones}
+
+En este trabajo se utilizará una fuente omnidireccional, por lo que tiene un factor de directividad $Q=1$, pero se debe tener en cuenta que esta directividad puede verse modificada por la posición de la fuente respecto al suelo, paredes o techo, tal como se muestra a continuación:
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+    	\centering
+        \includegraphics[width=0.5\linewidth]{archivos/Q1.png}
+        \caption{$Q=1$.}
+    \end{subfigure}
+    ~ % Añadir el espacio deseado, si se deja la linea en blanco la siguiente subfigura ira en una nueva linea
+    \begin{subfigure}[b]{0.3\textwidth}
+    	\centering
+        \includegraphics[width=0.8\linewidth]{archivos/Q2.png}
+        \caption{$Q=2$.}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.3\textwidth}
+    	\centering
+        \includegraphics[width=0.8\linewidth]{archivos/Q4.png}
+        \caption{$Q=4$.}
+    \end{subfigure}
+    ~ % Añadir el espacio deseado, si se deja la linea en blanco la siguiente subfigura ira en una nueva linea
+    \begin{subfigure}[b]{0.3\textwidth}
+    	\centering
+        \includegraphics[width=0.6\linewidth]{archivos/Q8.png}
+        \caption{$Q=8$.}
+    \end{subfigure}
+    \caption{Modificación del factor de directividad producido por uno o varios planos.}\label{sistemass1}
+\end{figure}
+
+El índice de directividad determina cuántos decibelios aumenta la intensidad en el eje de máxima radiación respecto a una fuente omnidireccional, se calcula:
+
+\begin{flalign}
+	DI = 10\log_{10} Q
+\end{flalign}
+\subsection{Potencia acústica}
+
+La potencia acústica, representada por la letra $W$, describe la energía por unidad de tiempo que emite una fuente acústica. Es un valor intrínseco de cada fuente, es decir, no depende de las condiciones físicas del medio o la distancia, se mantiene constante.
+Las unidades de este parámetro son los vatios ($W$) o los julios por segundo ($J/s$).
+
+\subsection{Intensidad acústica}
+\label{intensidadacustica}
+
+La intensidad acústica se define como la potencia acústica por unidad de superficie, se representa con la letra $I$ y sus unidades son los $W/m^2$.
+
+\begin{flalign}
+	I = \frac{W}{S}
+\end{flalign}
+
+\subsection{Presión acústica}
+Es la variación de presión local sobre la presión absoluta o atmosférica producida por las ondas acústicas, se representa con la letra $p$ y sus unidades son los pascales. La suma neta resultante es igual a la presión absoluta.
+
+Utilizando un símil sencillo como es un muelle se pueden comprender estas variaciones locales de presión:
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{archivos/presion.pdf}
+    \caption{Compresión y enrarecimiento de un muelle como ejemplo de la variación de presión producida por ondas acústicas.}
+\end{figure}
+
+\subsection{Divergencia esférica}
+
+Éste es un concepto físico necesario para comprender cómo evoluciona la intensidad acústica (\ref{intensidadacustica}) emitida por una fuente omnidireccional. La divergencia esférica describe cómo se distribuye la energía acústica emitida omnidireccionalmente en el espacio.
+
+Una fuente acústica omnidireccional emite uniformemente intensidad en todas las direcciones, es decir, se propaga esféricamente. Según transcurre el tiempo la intensidad recorre más distancia y la esfera aumenta de tamaño distribuyendo la intensidad en una superficie aún mayor, esto se puede calcular como:
+
+\begin{flalign}
+	I = \frac{W}{S}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	W & \rightarrow & Es la potencia acústica de la fuente en vatios.\\
+	I & \rightarrow & Es la intensidad recibida a una distancia $r$ en metros.\\
+	S & = & $4\pi r^2$, es la superficie de una esfera de radio $r$.
+\end{condiciones}
+
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{archivos/divergenciaesferica.pdf}
+    \caption{Representación gráfica de la divergencia esférica respecto a la distancia. Autor de la figura original: \textit{Borb}, de Wikipedia.}
+\end{figure}
+
+Si se tiene el valor de la intensidad a una distancia $r_1$ y se desea conocer el valor de intensidad a una distancia $r_2$ de la primera se puede utilizar lo que se denomina \textit{ley de la inversa del cuadrado de la distancia} que no es más que una derivación de la ecuación de la divergencia esférica.
+
+\begin{flalign}
+	I_2 = \frac{r_1^2}{r_2^2}I_1
+\end{flalign}
+
+Si la fuente tiene factor de directividad distinto a 1 (omnidireccional) se puede calcular la intensidad incluyendo el factor:
+
+\begin{flalign}
+	I = \frac{WQ}{S}
+\end{flalign}
+\begin{condiciones}[Donde:]
+		Q & \rightarrow & Es el factor de directividad de la fuente.
+\end{condiciones}
+
+\subsection{Divergencia cilíndrica}
+
+El concepto es el mismo que el de la divergencia esférica pero en este caso la intensidad en lugar de propagarse sobre la superficie de una esfera lo hace sobre la superficie lateral de un cilindro. Este tipo de divergencia se obtiene con fuentes lineales aunque mediante guías de ondas o alineando varias fuentes es posible modificar un frente de ondas de esférico a cilíndrico.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{archivos/divergenciacilindrica.pdf}
+    \caption{Representación gráfica de la divergencia cilíndrica respecto a la distancia.}
+\end{figure}
+\FloatBarrier
+
+El cálculo es el mismo que con la divergencia esférica pero teniendo en cuenta que ahora el área es el de un cilindro:
+
+\begin{flalign}
+	I = \frac{W}{S}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	S & = & $2\pi rh$, es la superficie de un cilindro de radio $r$ y altura $h$.
+\end{condiciones}
+
+
+\subsection{Densidad del aire}
+
+Una densidad es la relación entre la mása y el volumen, se representa con la letra $\rho$ y sus unidades son los $Kg/m^3$. Para el caso del aire se puede calcular de forma simplificada como:
+
+\begin{flalign}
+	\rho = \frac{p}{R_{específica}T}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	p & \rightarrow & Es la presión atmosférica en pascales, 101.325 kPa.\\
+	R_{específica} & \rightarrow & Es la constante específica del aire en $J\cdot(kg\cdot K)^{-1}$, para el aire seco $R_{específica}=287.058$.\\
+	T & \rightarrow & Es la temperatura en kelvin. $T = 273.15 +\; ^{\circ}C$.
+\end{condiciones}
+
+\subsection{Velocidad del sonido en el aire}
+La velocidad del sonido se representa con la letra $c$ y sus unidades son los $m/s$. Esta velocidad depende de la temperatura, la presión y la humedad, pero simplificando se puede calcular como:
+
+\begin{flalign}
+	c = \sqrt{\frac{\gamma RT}{M}}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	\gamma & \rightarrow & Es el coeficiente de dilatación adiabática del aire, para el aire seco $\gamma=1.4$.\\
+	R & \rightarrow & Es la constante universal de los gases, $8.314\; J/(mol\cdot K)$.\\
+	T & \rightarrow & Es la temperatura en kelvin. $T = 273.15 +\; ^{\circ}C$.\\
+	M & \rightarrow & Es la mása molar del aire, $0.029\; kg/mol$.
+\end{condiciones}
+
+\subsection{Impedancia acústica específica del aire}
+
+La impedancia acústica específica del aire es la oposición al flujo de energía acústica del aire, se representa con la letra $Z$ y sus unidades son $Pa\cdot s/m$ o $rayl$\footnote{La unidad $rayl$ se llama así en honor al físico John William Strutt, también conocido como Lord Rayleigh o John Rayleigh.}.
+
+Esta impedancia se calcula mediante la densidad del aire $\rho$ y la velocidad del sonido $c$. 
+\begin{flalign}
+	Z = \rho c
+\end{flalign}
+
+
+\subsection{Escala logarítmica}
+
+Los valores de presión, potencia o intensidad acústica sufren grandes variaciones por lo que para trabajar con ellos fácilmente se recurre a la escala logarítmica, a continuación se muestra la conversión de lineal a escala logarítmica de la presión, potencia e intensidad acústica, todos ellos son adimensionales y sus unidades son los decibelios o $dB$.
+
+\begin{flalign}
+	L_p =& 10\log_{10}\left(\frac{p_{ef}^2}{p_0^2}\right)=20\log_{10}\left(\frac{p_{ef}}{p_0}\right)\label{eq:nivelpresion} \\
+	L_W =& 10\log_{10}\left(\frac{W}{W_0}\right)\\
+	L_I =& 10\log_{10}\left(\frac{I}{I_0}\right)
+\end{flalign}
+\begin{condiciones}[Donde:]
+	p_0 & \rightarrow & Es la presión de referencia, $2\cdot10^{-5}\;Pa$.\\
+	W_0 & \rightarrow & Es la potencia de referencia, $1\;pW$ o $10^{-12}\;W$.\\
+	I_0 & \rightarrow & Es la intensidad de referencia, $10^{-12}\;W/m^2$.
+\end{condiciones}
+
+El nivel de presión acústica $L_p$ también se suele nombrar como SPL (\textit{sound pressure level}) y el nivel de potencia como SWL.
+
+De igual modo, si se tienen estos valores en escala logarítmica y se quiere trabajar con ellos en escala lineal, la conversión es la siguiente\footnote{Es una simple resolución matemática pero debido a múltiples errores encontrados en la literatura se ha decidido desarrollarlo.}:
+
+\begin{flalign}
+	p =& 10^{\frac{L_p}{20}}p_0\\
+	W =& 10^{\frac{L_W}{10}}W_0 \\
+	I =& 10^{\frac{L_I}{10}}I_0
+\end{flalign}
+
+\subsection{Relación entre presión y potencia o intensidad acústica}
+
+Teniendo en cuenta ciertos parámetros se puede relacionar fácilmente el concepto de potencia, intensidad y presión acústica.
+
+Si se conoce la presión acústica a una distancia $r$ de la fuente, la potencia acústica resultante será:
+
+\begin{flalign}
+	W = \frac{p_{ef}^24\pi r^2}{Z}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	p_{ef} & \rightarrow & Es la presión acústica eficaz, es la que mide cualquier sonómetro.
+\end{condiciones}
+
+Siguiendo el caso en el que se conoce la presión acústica, se puede calcular la intensidad acústica con:
+
+\begin{flalign}\label{eq:intensidadimpedancia}
+	I = \frac{p_{ef}^2}{Z}
+\end{flalign}
+
+Para los casos en los que se esté trabajando en escala logarítmica los cálculos para la potencia son:
+
+\begin{flalign}
+	L_W =& L_p + 10\log_{10}\left(\frac{4\pi r^2}{Q}\right)\\
+	L_W \approx & L_p + 20\log_{10}r + 11\; ;\quad \mathrm{sí }\quad Q =1
+\end{flalign}
+
+\subsection{Bandas de frecuencia}
+
+Las bandas de frecuencia son las fracciones en las que se divide el espectro audible (mínimo entre 20 Hz y 20000 Hz) de un sonido, se caracterizan por tener una frecuencia límite inferior $f_i$, otra superior $f_s$ y una central $f_c$. El punto de referencia para el cálculo del resto de frecuencias es la frecuencia central de 1000 Hz.
+
+Las bandas de frecuencia en el espectro audible más habituales son la denominadas bandas de octava, entre una frecuencia central y la siguiente la relación es el doble y la relación entre sus límites y central es:
+$$f_c = \sqrt{2}f_i$$
+$$f_s = 2f_i$$
+Otras bandas de frecuencia habituales son los tercios de octava donde las relaciones entre frecuencias centrales cumplen $2^{1/3}$, por lo que se puede observar que tres tercios dan como resultado una octava. Sus relaciones son las siguientes:
+$$f_c=\sqrt[6]{2}f_i$$
+$$ f_s = \sqrt[3]{2}f_i$$
+
+\begin{table}[ht]
+\centering
+{\scalefont{0.9}
+\begin{tabular}{@{}cccccccccc@{}}
+\toprule
+\multicolumn{10}{c}{Bandas de octava (Hz)}                      \\ \midrule
+31.5 & 63 & 125 & 250 & 500 & 1000 & 2000 & 4000 & 8000 & 16000 \\ \bottomrule
+\end{tabular}
+}
+\caption{Frecuencias centrales para las bandas de octava más utilizadas (ISO 266:1997).}
+\end{table}
+
+Se han desarrollado unas líneas de código Matlab para crear fácilmente cualquier fracción de bandas de frecuencia (octava: $n=1$, tercios de octava $n=3$, sextos de octava $n=6$, etc):
+
+\begin{lstlisting}[style=Matlab-color,numbers=none, caption={Función Matlab para obtener cualquier fracción $n$ de bandas de frecuencia del espectro audible.},label=octavas]
+FrecCentral = 10^3 * (2 .^ ((-6*n:4*n+n/3)/n)); % Vector de frecuencias centrales 1/n octavas
+FrecDist = 2^(1/(2*n)); % Distancia entre central y corte superior o inferior
+FrecSup = FrecCentral .* FrecDist; % Frecuencias límite superior
+FrecInf = FrecCentral ./ FrecDist; % Frecuencias límite inferior
+\end{lstlisting}
+
+
+\subsection{Ponderación A}
+
+El oído humano no percibe todas las frecuencias por igual tal como demostraron \cite{Fletcher1933}, por ello es necesario ponderar el nivel de presión de cada banda de frecuencia (octavas, tercios de octava, ...) para representar correctamente cómo lo percibirá el oído humano. La ponderación A corresponde a la inversa de la  curva de 40 fons de las curvas Fletcher-Munson.
+
+Existen múltiples tablas en la literatura que definen el valor de corrección para cada banda de frecuencia, pero es preferible utilizar la función (obtenida mediante regresión y establecida en IEC 61672-1:2013) con la que se obtienen estos valores para cualquier frecuencia $f$:
+
+\begin{flalign}
+	A (f)= 20\log_{10}\left( \frac{12194^2f^4}{(f^2+20.6^2)\sqrt{(f^2+107.7^2)(f^2+737.9^2}\;(f^2+12194^2)} \right) + 2.0
+\end{flalign}
+
+La ponderación se aplica sumando esta al nivel de presión de la banda de frecuencia $f$.
+
+\subsection{Suma de niveles}
+
+En ocasiones es necesario sumar los niveles en decibelios de varias fuentes o sumar el nivel obtenido en lineal para pasarlo a bandas de octava, tercios de octava o a nivel global, para ello la suma se realiza del siguiente modo:
+
+\begin{flalign}
+	L_{sum} = 10\log_{10}\left( 10^{\nicefrac{L_1}{10}} + 10^{\nicefrac{L_2}{10}} + ... + 10^{\nicefrac{L_n}{10}}\right)
+\end{flalign}
+\begin{condiciones}[Donde:]
+	L_1, L_2, L_n & \rightarrow & Son los n niveles en dB a sumar.
+\end{condiciones}
+
+Por ejemplo, para el paso de tercios de octava a bandas de octava la suma para obtener el valor en la banda de octava de 125 Hz será:
+
+\begin{flalign*}
+	L_{125\text{Hz}} = 10\log_{10}\left( 10^{\nicefrac{L_{100\text{Hz}}}{10}} + 10^{\nicefrac{L_{125\text{Hz}}}{10}} + 10^{\nicefrac{L_{160\text{Hz}}}{10}} \right)
+\end{flalign*}
+
+\subsection{Ruido rosa/blanco}
+\label{ruidos}
+En la mayoría de mediciones para conocer principalmente la respuesta en frecuencia de los elementos de emisión, captación o recintos, se emiten señales como el ruido blanco o el ruido rosa.
+\\
+\par
+El ruido blanco se caracteriza por ser una señal con el mismo nivel en todas las frecuencias produciendo, cuando se traslada a bandas de octava, que haya un incremento de 3dB por octava dado que cada octava tiene el doble de ancho de banda que la anterior y por tanto se suma el doble de energía ($10\log_{10}(2)=3 dB$).
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/ruidoblanco}
+    }
+    \caption{Representación de ruido blanco tanto en lineal como por octavas.}
+    \label{graf:ruidoblanco}
+\end{figure}
+\FloatBarrier
+El ruido rosa corrige el efecto producido en el ruido blanco, introduciendo una atenuación de 3dB por octava, es por ello por lo que es el ruido más habitual en mediciones que se analizan por bandas de octava, ya que mantiene el mismo valor de energía en todas las bandas de octava.
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/ruidorosa}
+    }
+    \caption{Representación de ruido rosa tanto en lineal como por octavas.}
+    \label{graf:ruidorosa}
+\end{figure}
+\FloatBarrier
+
+
+\subsection{Nivel continuo equivalente}
+
+El nivel continuo equivalente es la media energética del nivel de un ruido o sonido promediado en el tiempo, es básicamente un nivel promedio de una medida contínua. Debido a la alta variabilidad de nivel de un sonido no es correcto escoger un valor de un instante concreto, se debe obtener un promedio de todos los valores instantáneos obtenidos. 
+
+Este nivel se puede calcular como:
+
+\begin{flalign}
+	L_{eq} = 10\log_{10}\left( \frac{1}{T} \bigintsss_0^{T}\left( \frac{p^2(t)}{p^2_0} \right)\text{d}t \right)
+\end{flalign}
+\begin{condiciones}[Donde:]
+	p^2(t) & \rightarrow & Son los valores instantáneos de presión al cuadrado.\\
+	T & \rightarrow & Es la duración de la medida.
+\end{condiciones}
+
+Para entenderlo fácilmente se muestra en la figura \ref{graf:leq} una señal captada y su valor $L_{eq}$.
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/leq}
+    }
+    \caption{Representación de señal captada y su $L_{eq}$.}
+    \label{graf:leq}
+\end{figure}
+\FloatBarrier
+
+En ocasiones los equipos, como sonómetros, ofrecen valores de $L_{eq}$ para un intervalo de tiempo determinado $T$ y en incrementos de $\Delta t$, para calcular el nivel continuo equivalente para todo el intervalo temporal de medida se puede utilizar:
+
+\begin{flalign}
+	L_{eq} = 10\log_{10}\left( \frac{1}{T} \sum\limits_{i=1}^n \Delta t_i 10^{\nicefrac{L_{eq_i}}{10}} \right)
+\end{flalign}
+
+\section{Parámetros de acústica de recintos}
+
+Son todos aquellos parámetros donde no actúa directamente ni el emisor ni el receptor pero sí las características del recinto. Se basa principalmente en la acústica geométrica \ref{acusticageometrica}.
+
+\subsection{Acústica geométrica}
+\label{acusticageometrica}
+La acústica geométrica sustituye la propagación del sonido por medio de ondas a una propagación por medio de rayos emitidos desde la fuente, del mismo modo que en la óptica geométrica. Esto simplifica mucho los cálculos de propagación en recintos.
+La acústica geométrica asume los siguientes aspectos:
+
+\begin{itemize}
+	\item La reflexión del sonido es especular.
+	\item La longitud de onda del sonido a analizar ($\lambda=c/f$) debe ser pequeña respecto a las dimensiones y obstáculos del recinto, si no es así se producirían fenómenos de difracción.
+	\item Las dimensiones del relieve o rugosidad de las superficies del recinto y de los obstáculos deben ser inferiores a la longitud de onda del sonido a analizar, en caso contrario el sonido se reflejaría de forma difusa.
+\end{itemize}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{archivos/geometrica.pdf}
+    \caption{Ejemplo de llegada del sonido directo y de las primeras reflexiones a un receptor. Figura extraída y modificada de \cite{Carrión1998}, pág. 51.}
+\end{figure}
+\FloatBarrier
+
+\subsection{Modos propios}
+\label{modospropios}
+
+Las ondas acústicas al reflejarse producen interferencias entre las ondas incidentes y las ondas reflejadas, estas interferencias pueden ser destructivas, reduciendo el nivel de presión acústica o constructivas, aumentando el nivel. Esto es parte de la acústica ondulatoria.
+
+Este efecto, que se produce en posiciones y frecuencias concretas dentro de un recinto, se denomina modos propios. Para facilitar su comprensión se muestra en la figura \ref{graf:ondas} una onda incidente, la onda reflejada y el resultado frente a la distancia. Esto demuestra que es posible tener niveles menores o mayores de lo esperado en algunas posiciones de un recinto.
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/ondas}
+    }
+    \caption{Ejemplo básico de interferencia de ondas (100 Hz) en dos dimensiones frente a la distancia.}
+    \label{graf:ondas}
+\end{figure}
+\FloatBarrier
+
+Los modos propios varían según las dimensiones del recinto, es por ello por lo que se denomina \textit{propio} pues cada recinto producirá unos modos.
+
+Es posible calcular las frecuencias que van a producir un modo propio para un recinto rectangular con:
+
+\begin{flalign}
+	f = \frac{c}{2}\sqrt{ \left(\frac{n_x}{L_x}\right)^2 +\left(\frac{n_y}{L_y}\right)^2 +\left(\frac{n_z}{L_z}\right)^2 }
+\end{flalign}
+
+\begin{condiciones}[Donde:]
+	n_x,n_y,n_z & \rightarrow & Son los índices para cada modo propio. 0,1,2,3,...\\
+	L_x,L_y,L_z & \rightarrow & Son las dimensiones del recinto, largo, ancho y alto en metros.\\
+	c & \rightarrow & Es la velocidad del sonido en el aire.
+\end{condiciones}
+
+Los modos propios en un recinto rectangular pueden ser:
+\begin{description}
+\itemsep0em
+	\item[Axiales:] Son los modos producidos entre dos superficies (techo y suelo, pared izquierda y pared derecha, pared frontal y posterior). Las combinaciones de índices pueden ser: ($n_x$,$0$,$0$) ; ($0$,$n_y$,$0$) ; ($0$,$0$,$n_z$).
+	\item[Tangenciales:] Son los modos producidos entre cuatro superficies, es decir, entre aristas enfrentadas (suelo+pared izquierda y techo+pared derecha, ...). Las combinaciones de índices pueden ser: ($n_x$,$n_y$,$0$) ; ($n_x$,$0$,$n_z$) ; ($0$,$n_y$,$n_z$).
+	\item[Oblicuos:] Son los modos producidos entre seis superficies, es decir, vértices enfrentados. Las combinaciones de índices pueden ser: ($n_x$,$n_y$,$n_z$).
+\end{description}
+
+La diferencia de nivel en distintas posiciones se va reduciendo cuando la densidad modal (número de modos en una frecuencia o banda de frecuencia) aumenta, llegando a ser imperceptible. El cálculo de la densidad modal desde 0 a una frecuencia determinado por \cite{Morse1968} se obtiene como:
+\begin{flalign}
+	Dn (f) = \frac{4\pi Vf^3}{3c^3} + \frac{\pi S f^2}{4c^2} + \frac{Lf}{8c}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	V & \rightarrow & Es el volumen del recinto en $m^3$.\\
+	S & \rightarrow & Es la superficie del recinto en $m^2$.\\
+	L & \rightarrow & Es el perímetro del recinto en $m$.\\
+	f & \rightarrow & Es la frecuencia límite para el cálculo.
+\end{condiciones}
+
+Derivando esta ecuación como indica \cite{Mankovsky1971} se puede obtener la densidad modal para una frecuencia concreta:
+\begin{flalign}
+	Dn(f_i) = \frac{4\pi Vf_i^2}{3c^3} + \frac{\pi S f_i}{4c^2} + \frac{L}{8c}
+\end{flalign}
+
+Se puede obtener una aproximación de la densidad modal en una banda de octava o tercio de octava completa mediante:
+\begin{flalign}
+	Dn(f_i,\Delta f_i) = \left( \frac{4\pi Vf_i^2}{3c^3} + \frac{\pi S f_i}{4c^2} + \frac{L}{8c} \right) \Delta f_i \label{ecu:densmodal}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	f_i & \rightarrow & Es la frecuencia central de la banda.\\
+	\Delta f_i & \rightarrow & Es el ancho de la banda.
+\end{condiciones}
+
+Es posible conocer a partir de que frecuencia la respuesta modal no será apreciable por una persona (debido al número de modos que contiene) y por tanto más allá de esa frecuencia no tiene importancia estudiar la respuesta modal. El cálculo, definido por \cite{schroeder1954}, tenía en cuenta a partir de qué frecuencia se producían mínimo 10 modos en todas las bandas y revisado en \cite{Schroeder1962} donde aclaró que era suficiente con 3 modos. Debido al estudio de Schroeder la ecuación recibió el nombre de \textit{frecuencia de Schroeder} también conocida como frecuencia límite o de cruce:
+\begin{flalign}
+	f_s = 2000 \sqrt{\frac{T}{V}}\label{ecu:schroeder}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	T & \rightarrow & Es el tiempo medio de reverberación (entre 500 Hz y 1 KHz) en segundos.\\
+	V & \rightarrow & Es el volumen del recinto en $m^3$.
+\end{condiciones}
+
+\subsection{Coeficiente de absorción medio}
+\label{coefmedioabs}
+La absorción acústica es la disipación de la energía acústica al paso de ésta por un material. Los materiales absorbentes son diseñados para producir esta disipación a ciertas frecuencias sobre las que se desea actuar. Debido a que el propósito de este trabajo no es profundizar en el funcionamiento y diseño de estos materiales, si se tiene interés se recomienda la lectura de \cite{Cox2016}, donde se desarrollan todos los conceptos sobre los materiales para el acondicionamiento acústico de recintos.
+
+El coeficiente de absorción de los materiales se suele ofrecer u obtener por bandas de frecuencia, pero en algunos cálculos es necesario un coeficiente global, en el documento DB-HR del Código Técnico de la Edificación (\textit{sección 3.2}) se indica que este coeficiente se obtiene realizando el promedio del coeficiente de absorción en las bandas de 500 Hz, 1000 Hz y 2000 Hz (ecuación \ref{ecu:coefmedio}). Estos coeficientes no tienen unidades y comprenden un valor entre 0 y 1, donde 0 es reflexión total y 1 es la absorción total.
+
+\begin{flalign}
+ 	\alpha_{mid} =& \frac{\alpha_{500}+\alpha_{1000}+\alpha_{2000}}{3}\label{ecu:coefmedio}
+ \end{flalign}
+
+\subsection{Absorción acústica}
+
+Para los cálculos acústicos, en ocasiones, se utiliza el valor de absorción total o equivalente del recinto; éste se calcula como la suma de las áreas de absorción por su coeficiente de absorción (medio o por bandas). Las unidades de absorción son los $m^2$.
+
+\begin{flalign}
+	A_T = \sum_{i=1}^n S_i \alpha_i
+\end{flalign}
+\begin{condiciones}[Donde:]
+S_i & \rightarrow & Es la superficie del material $i$ en $m^2$.\\
+\alpha_i & \rightarrow & Es el coeficiente de absorción del material $i$, no tiene unidades. El valor se encuentra entre $0$ y $1$.	
+\end{condiciones}
+
+\subsection{Constante del recinto}
+ La constante del recinto es un valor que relaciona la absorción media de las superficies del recinto y el área. Se representa con las letras $Rc$ provenientes de \textit{room constant} y sus unidades son los $m^2$.
+ 
+ \begin{flalign}
+ 	Rc =& \frac{A_T}{1-\overline{\alpha}}
+ \end{flalign}
+\begin{condiciones}[Donde:]
+	\overline{\alpha} & = & $\nicefrac{A_T}{S}$, es el coeficiente medio de absorción, no confundir con coeficiente de absorción medio (\ref{coefmedioabs}).\\
+	S & \rightarrow & Es el área total de todas las superficies.
+\end{condiciones}
+
+\subsection{Camino libre medio en acústica}
+
+El camino libre medio (en inglés \textit{mean free path}) o MFP aplicado a la acústica geométrica, describe la distancia media que recorre el sonido entre una reflexión y otra.
+\cite{jager1911theorie} propuso utilizar una modificación de la teoría cinética de los gases \cite[][cap. 10]{Bernoulli1738a}, obteniendo así el valor del camino libre medio para ondas acústicas como:
+
+\begin{flalign}
+	\text{MFP}=4\frac{V}{S}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	V & \rightarrow & Es el volumen del recinto en $m^3$.\\
+	S & \rightarrow & Es la suma del área de todas las superficies del recinto en $m^2$.
+\end{condiciones}
+
+\citeauthor{jager1911theorie} demostró teóricamente que este valor para MFP es válido para cualquier factor de forma de recinto en el supuesto de que la distribución de energía acústica sea uniforme.
+Años más tarde, \cite{Schuster1929} y \cite{Eyring1930} obtuvieron otros valores de MFP para recintos con factores de forma muy concretos:
+\begin{flalign*}
+	&&\text{Cubo } &\rightarrow \text{MFP}=2\sqrt{3}\frac{V}{S}&&\\
+	&&\text{Cilindro (altura=diámetro)} &\rightarrow \text{MFP}=3\sqrt{2}\frac{V}{S}&&\\
+	&&\text{Esfera }&\rightarrow \text{MFP}=\text{diámetro}=6\frac{V}{S}&&
+\end{flalign*}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{archivos/mfp.pdf}
+    \caption{Trazado de rayos para calcular el camino libre medio (promedio de $R_i$). Figura extraída y modificada de \cite{Self2009}, pág. 109.}
+\end{figure}
+
+Poco después, \cite{Knudsen1932} demostró empíricamente (figuras \ref{fig:knudsen1} y \ref{fig:knudsen2}) que el valor de MFP propuesto por \citeauthor{jager1911theorie} no es excesivamente dependiente del factor de forma del recinto. Lo realizó emitiendo rayos lumínicos simulando la emisión de una fuente acústica sobre varios modelos de auditorios a escala, promediando la longitud entre reflexión y reflexión de estos rayos; determinó que el valor $4V/S$ es una buena aproximación del camino libre medio.
+ 
+%\begin{figure}[ht]
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{archivos/mfpknudsen1.pdf}
+%    \caption{Modelos utilizados para el cálculo de MFP por Vern O. Knudsen. Figura extraída del libro \cite{Knudsen1932}, pág. 140.}
+%    \label{fig:knudsen1}
+%\end{figure}
+%\FloatBarrier
+%\begin{figure}[ht]
+%    \centering
+%    \includegraphics[width=0.5\textwidth]{archivos/mfpknudsen2.pdf}
+%    \caption{Resultados obtenidos con el cálculo de MFP por Vern O. Knudsen. Tabla extraída del libro \cite{Knudsen1932}, pág. 141.}
+%    \label{fig:knudsen2}
+%\end{figure}
+%\FloatBarrier
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+    	\centering
+        \includegraphics[width=0.9\linewidth]{archivos/mfpknudsen1.pdf}
+        \caption{}
+        \label{fig:knudsen1}
+    \end{subfigure}
+    ~ % Añadir el espacio deseado, si se deja la linea en blanco la siguiente subfigura ira en una nueva linea
+    \begin{subfigure}[b]{0.48\textwidth}
+    	\centering
+        \includegraphics[width=0.9\linewidth]{archivos/mfpknudsen2.pdf}
+        \caption{}
+        \label{fig:knudsen2}
+    \end{subfigure}
+    \caption{a) Modelos utilizados para el cálculo de MFP por Vern O. Knudsen. Figura extraída del libro \cite{Knudsen1932}, pág. 140. b) Resultados obtenidos con el cálculo de MFP por Vern O. Knudsen. Tabla extraída del libro \cite{Knudsen1932}, pág. 141.}
+\end{figure}
+\FloatBarrier 
+
+El factor $k$ es el valor que multiplica a $V/A$ en la ecuación del tiempo de reverberación (ecuación \ref{ecu:tr}). En la tabla (figura \ref{fig:knudsen2}) está en unidades del sistema imperial, la conversión al sistema internacional de unidades se obtiene multiplicando por la velocidad del sonido en unidades imperiales (1124 pies/s) y dividiendo por la misma velocidad en unidades métricas (343 m/s), tal que $k_\text{S.I.} = k_\text{I.}\cdot\nicefrac{1124}{343}$.
+
+Este factor $k$ se obtiene mediante:
+\begin{flalign}
+	 k=l_{\mathrm{MFP}}\frac{S\ln 10^6}{ Vc}\label{factork}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	l_{\mathrm{MFP}} & \rightarrow & Es el valor de MFP experimental en metros.
+\end{condiciones}
+
+
+\subsection{Tiempo de reverberación}
+
+El tiempo de reverberación se define como el tiempo que transcurre para que el nivel de presión de un sonido se reduzca 60 $dB$ (una millonésima parte) desde el instante que deja de emitirse. Siempre se expresa en segundos.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{archivos/tiempoRT.pdf}
+    \caption{Diagrama de la definición de tiempo de reverberación.}
+\end{figure}
+\FloatBarrier
+
+En la práctica es difícil medir una caída completa de 60 $dB$ por lo que es habitual utilizar:
+
+\begin{description}
+	\item [EDT:] \textit{Early Decay Time}. Es el tiempo que transcurre para que el nivel de presión se reduzca 10 $dB$ desde el instante que deja de emitirse un sonido. Tiene relación con la sensación subjetiva de la reverberación. Definido por \cite{Jordan1970}.
+	\item [T20:] Es el tiempo que transcurre desde que se ha reducido 5 $dB$ hasta que se ha reducido 25 $dB$. Describe las propiedades acústicas del recinto. Definido por \cite{Atal1966}.
+	\item [T30:] Es el tiempo que transcurre desde que se ha reducido 5 $dB$ hasta que se ha reducido 35 $dB$. Describe las propiedades acústicas del recinto. Definido por \cite{Atal1966}.
+\end{description}
+
+Una vez obtenido uno de estos valores se extrapola para obtener el tiempo para una caída de 60 $dB$, es decir, el EDT se multiplica por 6, el T20 por 3 y el T30 por 2. Es una práctica habitual ofrecer el valor T20 o T30 ya extrapolado.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{archivos/EDT2030.pdf}
+    \caption{Diagrama de la definición de EDT, T20 y T30.}
+\end{figure}
+\FloatBarrier
+
+El cálculo teórico del tiempo de reverberación tiene en consideración la superficie, volumen y absorción del recinto. Existen en la literatura múltiples propuestas para el cálculo del tiempo de reverberación, aquí se explicarán las dos más comunes, \citeauthor{Sabine1922} y \citeauthor{Eyring1930}:
+
+\begin{description}
+	\item [Sabine:] Wallace Clement Sabine propuso su método de cálculo al final del siglo XIX que más tarde fue recogido en \textit{Collected Papers on Acoustics} \citep{Sabine1922}. Este cálculo es útil cuando el coeficiente de absorción medio $\overline{\alpha}$ se encuentra entre $0$-$0.2$ y el reparto es homogéneo, superado este valor el cálculo introduce errores mayores al 10\%.
+		\begin{flalign}\label{eq:sabine}
+			T = \frac{l_{\mathrm{MFP}} \ln 10^6 }{c\ \overline{\alpha}}=\frac{4 \ln 10^6\ V}{c\ S\ \overline{\alpha}}=\frac{4 \ln 10^6\ V}{c\ S\ \overline{\alpha}}\approx 0,161\frac{V}{S\ \overline{\alpha}}
+		\end{flalign}
+	
+	\item [Eyring:] Carl Ferdinand Eyring propuso una mejora en el cálculo de \citeauthor{Sabine1922} en \cite{Eyring1930}, modificando el término de absorción total o equivalente $A$. En este caso se corrige el problema para un coeficiente mayor a $0.2$ aunque el reparto de los coeficientes debe seguir siendo homogéneo\footnote{Para un coeficiente cercano al 1 y/o  reparto de coeficientes muy extremos tanto Sabine como Eyring no son fiables, en casos como éste se debe utilizar \cite{Millington1932}.}. 
+		\begin{flalign}\label{eq:eyring}
+			T = \frac{l_{\mathrm{MFP}} \ln 10^6 }{-c\ \ln (1-\overline{\alpha})} = \frac{4 \ln 10^6\ V}{-c\ S \ln (1-\overline{\alpha})}\approx 0,161\frac{V}{-S \ln (1-\overline{\alpha})}
+		\end{flalign}
+\end{description}
+
+Ambas ecuaciones tienen similitudes y en la literatura es habitual encontrar la ecuación del tiempo de reverberación como:
+\begin{flalign}
+	T =k\frac{V}{A}\approx 0,161\frac{V}{A}\label{ecu:tr}
+\end{flalign}
+\begin{condiciones}[Donde:]
+k & \rightarrow & Constante proporcional al MFP del recinto 	(ecuación \ref{factork}).\\
+A & \rightarrow & Puede ser 	$\left\{ \begin{array}{c}S\ \overline{\alpha} \quad\quad\quad\quad\;\;\; \text{Absorción equivalente de Sabine.}\\ -S \ln (1-\overline{\alpha})  \quad \text{Absorción equivalente de Eyring.}\end{array} \right.$
+\end{condiciones}
+
+\section{Parámetros de inteligibilidad y calidad acústica}
+
+La inteligibilidad de forma genérica en la acústica se refiere a la medición de la capacidad para comprender la voz hablada. A continuación se definen algunos de los parámetros más importantes asociados a la inteligibilidad y se comentarán también algunos relacionados con la música. Existen multitud de parámetros para evaluar la inteligibilidad o la calidad acústica de un recinto, en este trabajo se exponen únicamente los desarrollados en el capítulo de resultados. Si se desea conocer muchos de estos parámetros, en \cite{Lacatis2008} se muestra un histórico de los parámetros acústicos junto a los autores y los artículos.
+
+\subsection{Claridad C50,C80}
+\label{claridad}
+La claridad fue establecida por \cite{Reichardt1974} y ampliada por múltiples autores donde destaca \cite{Marshall1994}. Se define, para el caso de la palabra, como la relación entre la energía acústica recibida durante los primeros 50 milisegundos y la energía acústica después de esos 50 milisegundos, en el caso de la música el tiempo se extiende hasta los 80 milisegundos. El parámetro es adimensional y se expresa en decibelios.
+
+Permite conocer con facilidad si predomina el campo útil sobre el campo perjudicial descritos al inicio de este capítulo. Tanto para el caso de uso para música (80 ms) como para palabra (50 ms) el cálculo general es:
+
+\begin{flalign}
+	C_t = 10\log_{10}\left( \frac{\bigints_{\;0}^{t}p^2(t)\text{d}t}{\bigints_{\;t}^{\infty}p^2(t)\text{d}t} \right)
+\end{flalign}
+\begin{condiciones}[Donde:]
+ 	t & \rightarrow & Es el periodo de integración, 50 u 80 milisegundos.\\
+ 	p^2 & \rightarrow & Es el valor de presión acústica al cuadrado obtenida con la respuesta al impulso (ver apartado \ref{respimpulso}).
+\end{condiciones}
+
+Este cálculo se realiza únicamente con los valores obtenidos en las bandas de octava desde 125 Hz hasta la de 4000 Hz. El valor recomendado (ISO 3382-1) para C50 debe estar comprendido entre -4dB y 4dB y para C80 entre -5dB y 5dB.
+\\
+\par
+Además de este cálculo general es habitual el uso de los \textit{promedio} (\textit{average}). 
+
+El C50 \textit{speech average}, definido por \cite{Marshall1994}, tiene en cuenta las bandas de octava de 500 Hz, 1000 Hz, 2000 Hz y 4000 Hz, y además incorpora una ponderación para cada una de ellas, quedando el cálculo del siguiente modo:
+
+\begin{flalign}
+	C_{50,\text{AV}} = 0.15\cdot C_{50,\text{500 Hz}} +0.25\cdot C_{50,\text{1 kHz}} + 0.35\cdot C_{50,\text{2 kHz}} + 0.25\cdot C_{50,\text{4 kHz}}
+\end{flalign}
+
+El valor recomendado para el C50 \textit{speak average} según \cite{Carrión1998} debe ser mayor a 2dB.
+\\
+\par 
+El C80 \textit{music average} o C80(3), definido también en \cite{Marshall1994}, realiza el promedio del valor de claridad para las bandas de 500 Hz, 1000 Hz y 2000 Hz:
+
+\begin{flalign}
+	C_{80,\text{AV}} = \frac{C_{80,\text{500 Hz}}+C_{80,\text{1 kHz}}+C_{80,\text{2 kHz}}}{3}
+\end{flalign}
+
+El valor recomendado de C80(3) según \cite{beranek1986acoustics} debe estar comprendido entre -4dB y 0dB.
+\\
+Es posible obtener el parámetro de claridad a partir del de definición (apartado \ref{definicion}):
+
+\begin{flalign}
+	C_t = 10\log_{10}\left( \frac{D_t}{1-D_t}\right)
+\end{flalign}
+
+\subsection{Definición D50,D80}
+\label{definicion}
+
+El parámetro definición se estableció en \cite{Thiele1953}. Es similar a la claridad pero en lugar de relacionar los primeros 50 u 80 milisegundos con el resto del tiempo, se relacionan esos primeros milisegundos con el total. Del mismo modo que la claridad se tienen en cuenta las bandas de octava entre 125 Hz y 4000 Hz. 
+
+Este parámetro es adimensional y no tiene unidades.
+\vspace{-0.2cm}
+\begin{flalign}
+	D_t = \frac{\bigints_{\;0}^{t}p^2(t)\text{d}t}{\bigints_{\;0}^{\infty}p^2(t)\text{d}t}
+\end{flalign}
+\begin{condiciones}[Donde:]
+ 	t & \rightarrow & Es el periodo de integración, 50 u 80 milisegundos.\\
+ 	p^2 & \rightarrow & Es el valor de presión acústica al cuadrado obtenida con la respuesta al impulso (ver apartado \ref{respimpulso}).
+\end{condiciones}
+
+Este parámetro se puede obtener a través de la claridad operando:
+\vspace{-0.2cm}
+\begin{flalign}
+	D_t = \frac{1}{1+10^{-\nicefrac{C_t}{10}}}
+\end{flalign}
+
+Para el D50, \cite{Arau1999} recomienda valores superiores a 0.5. En el caso del D80, dado que casi no es utilizado no hay fuentes en la literatura que recomienden valores, pero utilizando los valores de claridad C80 recomendados en la ISO 3382-1 se obtienen los valores de definición comprendidos entre 0.25 y 0.75.
+
+\subsection{Sonoridad G}
+\label{sonoridad}
+La sonoridad definida en \cite{Lehmann1976} es el cociente entre el nivel recibido en un punto debido a una fuente sonora omnidireccional y el nivel que genera la misma fuente a 10 metros en campo libre. Este cálculo ofrece información sobre la ganancia acústica que produce un recinto mediante reflexiones y está inversamente relacionado con la absorción acústica del recinto. El parámetro $G$ (\textit{sound strength}) es adimensional y se expresa en escala logarítmica.
+
+Generalmente este parámetro es utilizado en recintos para música. El cálculo tiene mayor utilidad si el recinto es lo suficientemente grande como para que la distancia entre el escenario o punto de emisión y la zona de recepción más cercana sea mayor a 10 metros. 
+
+Este párametro se calcula como:
+	\vspace{-0.2cm}
+	\begin{flalign}
+		G = 10\log_{10}\left( \frac{\bigints_{\;0}^{\infty} p^2(t) \text{d}t}{\bigints_{\;0}^{\infty} p^2_{10m}(t) \text{d}t} \right)= L_p - L_{p,10m}
+	\end{flalign} 
+
+En \cite{Beranek2011} se recomienda un valor entre 4 dB y 7.5 dB para la $G_{mid}$ que se refiere al parámetro $G$ teniendo en cuenta únicamente las bandas de frecuencia de 500 Hz y 1000 Hz. 
+
+
+
+\subsection{Índice de articulación AI}
+\label{indicearticulacion}
+El índice de articulación es una herramienta que permite conocer la cantidad de habla que puede percibir un receptor, definido por \cite{French1947} y ampliamente desarrollado por \cite{Kryter1962}, asignando unos pesos a cada banda de frecuencia de la relación señal ruido recibida. Estos pesos están definidos por \citeauthor{Kryter1962} para tercios de octava, bandas de octava y bandas de octava habituales (de 250 Hz a 4000 Hz), aquí se va a definir el cálculo para el caso de bandas de octava habituales:
+
+\begin{flalign}
+	AI = \sum\limits_{i=1}^{5} W_iR_i
+\end{flalign}
+
+\begin{condiciones}[Donde:]
+	i & \rightarrow & Es el índice de la banda de octava (250 Hz, 500 Hz, 1 kHz, 2 kHz y 4 kHz).\\
+	W_i & \rightarrow & Es el peso para cada banda de frecuencia, indicado en la tabla \ref{pesosai}.\\
+	R_i & \rightarrow & Es la relación señal ruido para cada banda de frecuencia en dB.
+\end{condiciones}
+
+\begin{table}[ht]
+\centering
+{\scalefont{0.9}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Frecuencia (Hz) & 250 & 500 & 1000 & 2000 & 4000 \\ \midrule
+Peso $W$ & 0.0018 & 0.0050 & 0.0075 & 0.0107 & 0.0083 \\ \bottomrule
+\end{tabular}
+}
+\caption{Peso de cada banda de octava para el cálculo de AI.}
+\label{pesosai}
+\end{table}
+\FloatBarrier
+
+El valor comprende entre 0 y 1, donde 0 es el valor correspondiente al nulo entendimiento del habla y 1 al completo entendimiento de éste.
+
+\citeauthor{Kryter1962} también define una corrección del AI debido al tiempo de reverberación del recinto representado por la curva de la figura \ref{graf:correcionai}.
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/correccionai}
+    }
+    \caption{Valores de corrección de AI según tiempo de reverberación.}
+    \label{graf:correcionai}
+\end{figure}
+\FloatBarrier
+
+Este parámetro da pie a crear un índice buscando el efecto contrario, zonas donde la privacidad de la conversación sea máxima, este índice de privacidad se calcula como:
+\begin{flalign}
+	PI = 1 - AI
+\end{flalign}
+
+Teniendo privacidad máxima con un índice igual a 0, y ninguna privacidad con un valor igual a 1.
+
+\section{Teoría de campos acústicos}
+
+La teoría de los campos acústicos aplicada en este trabajo es la desarrollada en el apartado \ref{teoriarevisadacorregida}, denominada \textit{teoría revisada corregida}. A continuación se muestran los antecedentes del cálculo de los campos acústicos.
+
+\subsection{Campos directo y reverberado}
+
+El campo directo por definición es el campo generado por las ondas sonoras que no han sufrido reflexiones, mientras que el campo reverberado es el campo generado por las ondas sonoras que han sufrido al menos una reflexión. Habitualmente el campo reverberado se descompone en campo temprano y campo tardío (\textit{early field} y \textit{late field}). También se puede denominar reflexión temprana y tardía o primeras reflexiones y cola reverberante.
+
+%\begin{figure}[ht]
+%    \centering
+%    \includegraphics[width=0.4\textwidth]{archivos/campos.pdf}
+%    \caption{Descripción de los campos acústicos. Figura extraída y modificada de \cite{Self2009}, pág. 111.}
+%    \label{descampos}
+%\end{figure}
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.65\textwidth]{archivos/campos2.pdf}
+    \caption{Ecograma asociado a un receptor con indicación del campo directo, las primeras reflexiones y la cola reverberante. Figura extraída de \cite{Carrión1998}, pág. 50.}
+    \label{ecograma}
+\end{figure}
+Un ecograma (figura \ref{ecograma}) muestra el nivel y tiempo de llegada de cada rayo sonoro a un receptor, facilitando la representación de los campos acústicos en el receptor.
+En la práctica es relativamente sencillo desglosar la historia temporal (campo directo, primeras reflexiones y cola reverberante), se suele separar la pendiente en $\Delta t$ para separar el campo en un símil de rayos acústicos. Habitualmente se separa en incrementos de 1 milisegundo.
+
+\par Para el cálculo teórico se ha escrito mucho pero existe una teoría sobradamente aceptada; es la propuesta de \cite{Hopkins1948} que describe el campo acústico total como la suma del campo directo y el campo reverberado, que años más tarde fue modificada por \cite{davis1984}. Este cálculo asume que el campo reverberante es estacionario, es decir, constante en cualquier punto del recinto.
+
+\begin{flalign}
+	I =& \frac{WQ}{4\pi r^2} + \frac{4W}{A}\label{eq:hopkins}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	I & \rightarrow & Es la intensidad acústica total en $W/m^2$.\\
+	r & \rightarrow & Es la distancia emisor-receptor en metros.\\
+	A & \rightarrow & Es la absorción equivalente de Sabine o Eyring.
+\end{condiciones}
+
+El término $\nicefrac{WQ}{4\pi r^2}$ corresponde a la intensidad del campo directo a distancia $r$ de la fuente y el término $\nicefrac{4W}{A}$ corresponde a la intensidad del campo reverberado que, como se puede observar, presupone que es constante en cualquier punto del recinto.
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/hopkinsstryker}
+    }
+    \caption{Comparación de los campos acústicos obtenidos experimentalmente y mediante la ecuación Hopkins-Stryker. El tiempo de integración del experimental es 0-1 ms para el campo directo y 1-$\infty$ para el campo reverberante.}
+    \label{graf:hopkinsstryker}
+\end{figure}
+
+Se ha comprobado empíricamente que el término de campo directo corresponde aproximadamente al espacio temporal de 0 a 1ms\footnote{Esta afirmación es válida cuando los datos son ideales temporalmente hablando, tal como los ofrece un programa de simulación acústica, en la práctica el espacio temporal del campo directo fluctúa entre los 2 y los 10 milisegundos.\label{unmilisegundo}} de un ecograma y el término del campo reverberado corresponde aproximadamente al espacio temporal desde 1ms a infinito (figura \ref{graf:hopkinsstryker}). 
+
+\subsubsection{Distancia crítica}
+
+La distancia crítica se define como la distancia donde el campo directo y el reverberado se cruzan, a partir de este punto el campo reverberante predomina sobre el campo directo y se indica como una zona de baja inteligibilidad. Esto no es correcto, estando comprobado empíricamente que esta distancia no se aproxima a la zona donde la inteligibilidad se reduce.
+
+El cálculo de la distancia crítica es una función derivada de la ecuación Hopkins-Stryker \ref{eq:hopkins}, se puede obtener fácilmente igualando los términos de ambos campos y despejando la distancia, así se obtiene la distancia donde el valor de los campos es el mismo.
+
+\begin{flalign*}
+	&& \frac{WQ}{4\pi D_c^2} &= \frac{4W}{A} &&\\
+	&& \frac{Q}{4\pi D_c^2} &= \frac{4}{A} &&
+\end{flalign*}
+\begin{flalign}
+	D_c = \sqrt{\frac{QA}{16\pi}}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	D_c & \rightarrow & Es la distancia crítica en metros.\\
+	A & \rightarrow & Es la absorción equivalente de Sabine o Eyring.
+\end{condiciones}
+
+\subsection{Teoría revisada o moderna}
+\label{teoriarevisada}
+
+La \textit{teoría revisada} o \textit{teoría moderna} es una mejora del cálculo de campos acústicos propuesta por \cite{Barron1988} y ampliada en \cite{Barron2015}, en la que se describe mejor el comportamiento de los mismos. En esta \textit{teoría revisada} el campo reverberante ya no se considera estacionario o constante sino que tiene una pendiente respecto a la distancia, además permite obtener los campos acústicos definiendo un tiempo de integración para los diferentes campos.
+
+El campo total se calcula como:
+\begin{flalign*}
+	I_0^\infty (r,t)&= \frac{WQ}{4\pi r^2} + \frac{4W}{A} 10^{-\left(\frac{60t}{10T} \right)}\\
+	I_0^\infty (r,t)&= \frac{WQ}{4\pi r^2} + \frac{4W}{A} e^{-\left(\frac{6\ln(10)t}{T} \right)}\\
+\end{flalign*}
+\vspace{-1cm}
+\begin{flalign}
+	I_0^\infty (r,t)&= \frac{WQ}{4\pi r^2} + \frac{4W}{A} e^{-\left(\frac{13,82t}{T} \right)}\label{eq:barronT}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	I_0^\infty & \rightarrow & Es la intensidad acústica total en $W/m^2$. Desde 0 milisegundos a infinito (fin de la cola reverberante).\\
+	r & \rightarrow & Es la distancia emisor-receptor en metros.\\
+	t & \rightarrow & Es el tiempo que tarda el sonido desde el emisor al receptor en segundos.\\
+	T & \rightarrow & Es el tiempo de reverberación.\\
+	A & \rightarrow & Es la absorción equivalente de Sabine o Eyring.
+\end{condiciones}
+El tiempo $t$ se puede sustituir por $r/c$ para que en lugar de estar en función del tiempo y la distancia se calcule sólo en función de la distancia emisor-receptor ($r=$ distancia ; $c=$ velocidad del sonido en el aire).
+
+
+La ecuación permite obtener el campo de primeras reflexiones y el de cola reverberante por separado a partir del término de campo reverberante incluido en la ecuación \ref{eq:barronT} (segundo sumando). Con ello es posible redefinir los campos como \textit{campo útil} (0 - $t_0$) y \textit{campo perjudicial} ($t_0$ - $\infty$). El campo útil incluye el campo directo y el campo temprano; y el campo perjudicial el campo reverberante. Para obtener el campo temprano se realiza la diferencia entre el total del campo reverberante (segundo sumando de la ecuación anterior) y el campo a partir de cierto tiempo de integración (campo reverberante), obteniendo así el campo entre 1 milisegundo y $t_0$ también denominado temprano o \textit{early}. 
+
+
+\begin{flalign}
+	I_L = I_t^\infty (r)&= \frac{4W}{A} e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\right)}\\
+	I_E = I_1^t (r)&= \frac{4W}{A} \left(e^{-\left(\frac{13,82\frac{r}{c}}{T}\right)} - e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\right)}\right)\label{tempranobarron}
+\end{flalign}
+\begin{condiciones}[Donde:]
+	I_t^\infty & \rightarrow & Es la intensidad del campo tardío o cola reverberante (\textit{Late}) en $W/m^2$ desde el tiempo $t_0$ a infinito. Este campo pasa a denominarse \textit{campo perjudicial}.\\
+	I_1^t & \rightarrow & Es la intensidad del campo temprano o primeras reflexiones (\textit{Early}) en $W/m^2$ desde 1 ms a $t_0$. No tiene en cuenta el campo directo que ocupa el espacio temporal de 0 a 1 milisegundo\textsuperscript{\ref{unmilisegundo}}.\\
+	t_0 & \rightarrow & Es el tiempo de integración, en segundos, donde terminan las primeras reflexiones y comienza la cola reverberante. En recintos para palabra el tiempo son 50 milisegundos y para música 80 milisegundos \citep{Haas1949}.
+\end{condiciones}
+
+Por lo que el cálculo general de la teoría revisada para el campo útil y el campo perjudicial se calculan como:
+
+\begin{flalign}
+	I_t^\infty (r)&= \frac{4W}{A} e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\right)}\\
+	I_0^t (r)&= \frac{WQ}{4\pi r^2} + \frac{4W}{A} \left(e^{-\left(\frac{13,82\frac{r}{c}}{T}\right)} - e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\right)}\right)
+\end{flalign}
+\begin{condiciones}[Donde:]
+	I_0^t & \rightarrow & Es la intensidad del campo útil en $W/m^2$ para el tiempo de integración de 0 a $t_0$.\\
+	I_t^\infty & \rightarrow & Es la intensidad del campo perjudicial en $W/m^2$ para el tiempo de integración de $t_0$ a infinito.
+\end{condiciones}
+
+
+También es posible obtener directamente el nivel de presión acústica teniendo en cuenta la ecuación \ref{eq:intensidadimpedancia} y \ref{eq:nivelpresion}:
+
+\begin{flalign}
+	L_p{_t^\infty} (r)&= 10\log_{10} \left[\frac{Z}{p_0^2} \left(\frac{4W}{A} e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\right)}\right)\right]\label{eq:barron1}\\
+	L_p{_0^t} (r)&= 10\log_{10} \left[\frac{Z}{p_0^2} \left(\frac{WQ}{4\pi r^2} +\frac{4W}{A} \left(e^{-\left(\frac{13,82\frac{r}{c}}{T}\right)} -e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\right)}\right)\right)\right]\label{eq:barron2}
+\end{flalign}
+
+Como curiosidad, \cite{Barron1988} proponen introducir la potencia acústica en picovatios ($10^{-12}$), con ello el término $Z/p_o^2 \approx 10^{12}$ se anula. Esta simplificación introduce una pérdida aproximada del 3\% de intensidad acústica, por lo que la simplificación no se utilizará.
+
+Se ha comparado la \textit{teoría revisada} de \cite{Barron1988} con los resultados obtenidos experimentalmente (figura \ref{graf:barron}) y siguen sin ajustarse al comportamiento real de un recinto; las pendientes son similares pero los niveles absolutos no se ajustan, por lo que el punto de cruce o distancia crítica obtenida con la \textit{teoría revisada} no es correcta.
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/barronlee}
+    }
+    \caption{Comparación de los campos acústicos obtenidos experimentalmente y mediante \cite{Barron1988}. El tiempo de integración es 50 ms.}
+    \label{graf:barron}
+\end{figure}
+\FloatBarrier
+
+\subsection{Teoría revisada corregida}
+\label{teoriarevisadacorregida}
+Como solución al problema de la \textit{teoría revisada} se ha propuesto en \cite{Sato2008} incluir una serie de coeficientes de ajuste para adaptar los campos acústicos obtenidos con la \textit{teoría revisada} a los campos acústicos obtenidos experimentalmente. La solución propuesta asume una serie de aproximaciones que no se van a trasladar en este trabajo, también se ha modificado la ubicación de algunos coeficientes. Estos cambios quedan del siguiente modo:
+
+\begin{flalign*}
+	I_L(r)&= \frac{4W}{A} e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\epsilon_L\right)}C_L\\
+	I_E (r)&= \frac{4W}{A} \left(e^{-\left(\frac{13,82\frac{r}{c}}{T}\epsilon_E\right)}C_E - e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\epsilon_L\right)}C_L\right)\\
+	I_D (r)&= \frac{WQ}{4\pi r^2}C_D\\
+\end{flalign*}
+\begin{condiciones}[Donde:]
+	I_D,I_E,I_L & \rightarrow & Son las intensidades de los campos directo (0-1ms), temprano (1ms-$t_0$) y tardío ($t_0$-$\infty$) respectivamente.\\
+	\epsilon_L,C_L & \rightarrow & Son los coeficientes del campo perjudicial (Late).\\
+	C_D & \rightarrow & Es el coeficiente del campo directo (Direct).\\
+	\epsilon_E,C_E & \rightarrow & Son los coeficientes del campo de primeras reflexiones (Early).
+\end{condiciones}
+
+A raíz de este trabajo se han analizado los tres campos por separado (para el periodo de integración de 50 ms) tanto en mediciones in situ como en simulaciones acústicas y se ha observado que el campo temprano (1 - 50 ms) no tiene un comportamiento lineal como ya proponía la ecuación \ref{tempranobarron} de \citeauthor{Barron1988} y utilizada por \cite{Sato2008}, sino que éste se reduce con la inversa de la distancia, en la figura \ref{graf:campostempranos} se observan los campos tempranos de los dos recintos que se analizan en la sección \ref{medicionesinsitu}, también el campo temprano teórico tal como se ha propuesto en la literatura hasta el momento y el campo temprano tal como se propone calcular en este trabajo (ecuación \ref{tempranonuevo}).
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/comparaciontemprano}
+    }
+    \caption{Comparación de los campos tempranos (1ms-50ms)  del aula OP/S003, EP/0-26M, teórico según \cite{Sato2008} y teórico propuesto por el autor de este trabajo.}
+    \label{graf:campostempranos}
+\end{figure}
+\FloatBarrier
+
+
+
+La hipótesis de este comportamiento del campo temprano es que este campo incluye las primeras reflexiones y generalmente, sobretodo en recintos rectangulares, estos \textit{rayos} reflejados tienen la misma dirección de propagación produciendo que la onda acústica esférica del campo directo se comporte en este campo como una onda cilíndrica.
+
+La hipótesis del decaimiento del campo temprano con la inversa de la distancia se basa en los siguientes supuestos:
+\begin{description}
+\itemsep0em
+	\item[Supuesto 1:] El recinto tiene forma rectangular.
+	 \item[Supuesto 2:] Sólo existe una fuente sonora y ésta es omnidireccional.
+	 \item[Supuesto 3:] El tiempo de integración del campo temprano comprende el intervalo temporal entre 1 ms y 50 ms.
+	 \item[Supuesto 4:] El volumen del recinto es superior a 600 $m^3$.
+\end{description}
+
+Será objeto de estudio en futuros trabajos el comportamiento del campo temprano en otros recintos con diferentes factores de forma y distintas fuentes para validar esta hipótesis en los diferentes casos o por el contrario confirmar este comportamiento únicamente con los supuestos enunciados anteriormente (el supuesto número 4 ha sido sólo comprobado mediante simulaciones).
+\\
+\par
+
+Por lo tanto, los cálculos de los campos teniendo en cuenta la propuesta para el campo temprano de incluir la inversa de la distancia, quedan del siguiente modo:
+\begin{flalign}
+	I_L(r)&= \frac{4W}{A} e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\epsilon_L\right)}C_L\\
+	I_E (r)&= \frac{4W}{Ar} \left(e^{-\left(\frac{13,82\frac{r}{c}}{T}\epsilon_E\right)}C_E - e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\epsilon_L\right)}C_L\right)\label{tempranonuevo}\\
+	I_D (r)&= \frac{WQ}{4\pi r^2}C_D\\
+	I_{\text{útil}} &= I_D + I_E\\
+	I_{\text{perjudicial}} &= I_L
+\end{flalign}
+\begin{condiciones}[Donde:]
+	I_D,I_E,I_L & \rightarrow & Son las intensidades de los campos directo (0-1ms), temprano (1ms-$t$) y tardío ($t$-$\infty$) respectivamente.\\
+	\epsilon_L,C_L & \rightarrow & Son los coeficientes del campo perjudicial (Late).\\
+	C_D & \rightarrow & Es el coeficiente del campo directo (Direct).\\
+	\epsilon_E,C_E & \rightarrow & Son los coeficientes del campo de primeras reflexiones (Early).
+\end{condiciones}
+
+Del mismo modo que en la teoría revisada (\ref{teoriarevisada}) se puede calcular directamente el nivel de presión acústica del campo útil (0-$t_0$ ms) y del campo perjudicial ($t_0$ ms- $\infty$).
+
+\begin{flalign}
+	L_{p,\text{perjudicial}} (r)&= 10\log_{10} \left[\frac{Z}{p_0^2} \left(\frac{4W}{A} e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\epsilon_L\right)}C_L\right)\right]\label{eq:corregida1}\\
+	L_{p,\text{útil}} (r)&= 10\log_{10} \left[\frac{Z}{p_0^2} \left(\frac{WQ}{4\pi r^2}C_D + \frac{4W}{Ar} \left(e^{-\left(\frac{13,82\frac{r}{c}}{T}\epsilon_E\right)}C_E - e^{-\left(\frac{13,82\left(\frac{r}{c}+t_0\right)}{T}\epsilon_L\right)}C_L\right)\right)\right]\label{eq:corregida2}
+\end{flalign}
+
+
+Los coeficientes propuestos se obtienen a partir del ajuste de las curvas de la teoría revisada corregida respecto a las curvas obtenidas experimentalmente o con simulaciones acústicas mediante regresión.
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/teoriacorregida}
+    }
+    \caption{Comparación de los campos acústicos obtenidos experimentalmente y mediante la teoría revisada corregida. El tiempo de integración es 50 ms y los coeficientes: $\epsilon_L=1.244$, $C_L=1.268$, $C_D=1.070$, $\epsilon_E=-0.296$ y $C_E=3.588$.}
+    \label{graf:corregida}
+\end{figure}
+\FloatBarrier
+
+\section{Otros conceptos}
+En este trabajo se han utilizado en las medidas in situ señales MLS, y tanto en las medidas in situ como en los modelos se han obtenido las respuestas al impulso en distintas ubicaciones del recinto (receptores), a continuación se describen estos conceptos.
+
+
+\subsection{Señal MLS}
+
+Una señal MLS (\textit{maximum length sequence}) está constituída por variaciones pseudoaleatorias entre -1 y 1, con periodo $P=\nicefrac{2^N-1}{f_{clock}}$ ($N$ es el número de bits y $f_{clock}$ es la frecuencia de reloj del sistema que genera la señal MLS) y una respuesta en frecuencia plana, es decir, igual al ruido blanco (apartado \ref{ruidos}). La pseudoaleatoridad de la señal se refiere a que es periódica y en cada periodo tiene una aleatoriedad conocida, esto permite comparar correctamente la señal emitida con la captada.
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/mls}
+    }
+    \caption{Fracción temporal de una señal MLS.}
+    \label{graf:mls}
+\end{figure}
+
+
+Esta señal permite mediante un proceso, que se resume a continuación, eliminar ruidos de fondo y obtener una respuesta en frecuencia y temporal de la probeta de medida (material, recinto, equipo, etc) definida.
+
+La señal se basa en la teoría de secuencias de registro de desplazamiento ampliamente desarrollada en \cite{Golomb1967}. Una vez emitida y captada la señal en los puntos deseados, se puede obtener la respuesta al impulso (apartado \ref{respimpulso}) mediante una correlación cruzada de la señal emitida y la captada o mediante la transformada de Hadamard \citep{Sylvester1908}. 
+
+El desarrollo extenso de estos procesos se pueden consultar en \cite{Cohn1977} o \cite{Sarwate1980}. En este trabajo no se va a extender la descripción de la MLS ni su proceso ya que no se ha desarrollado ninguna herramienta que haga uso de esta señal, sólo es utilizado internamente en el software 01dB.
+
+\subsection{Respuesta al impulso}
+\label{respimpulso}
+
+La respuesta al impulso (también llamada respuesta impulsiva) de un sistema es la salida de éste al introducirle un impulso. Este impulso, idealmente, es infinitamente corto en el tiempo y de amplitud infinitamente alta, en la práctica esto es imposible por lo que se hace uso de un pulso muy corto y de amplitud controlada para una vez obtenida la respuesta al impulso se pueda obtener unos niveles calibrados según la entrada.
+
+
+\begin{figure}[ht]
+    \centering
+    {\scalefont{0.8}
+    \input{archivos/graficastikz/impulso}
+    }
+    \caption{Respuesta al impulso de un sistema.}
+    \label{graf:impulso}
+\end{figure}
+
+
+
+
+

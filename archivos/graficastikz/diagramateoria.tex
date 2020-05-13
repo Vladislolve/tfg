@@ -1,0 +1,44 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Estilos de bloques
+\tikzstyle{decision} = [diamond, draw=blue, thick, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=1pt,rounded corners]
+\tikzstyle{block} = [rectangle, draw=blue, thick,fill=blue!20, text width=16em, text centered, minimum height=2em,rounded corners]
+\tikzstyle{blockwide} = [rectangle, draw=blue, thick, fill=blue!20,text width=9em, text centered, minimum height=2em,rounded corners]
+\tikzstyle{blockmin} = [trapezium, trapezium left angle=70, trapezium right angle=110, fill=red,draw=none, text badly centered, text=white, minimum height=2em,rounded corners,inner xsep=-5pt]
+\tikzstyle{blockini} = [rectangle, draw=red, thick, fill=red!20,text width=7em, text centered, minimum height=3em,rounded corners]
+\tikzstyle{line} = [draw, thick, -latex, shorten >=1pt,rounded corners]
+\tikzstyle{iniciofinal} = [draw=teal, text centered,ellipse,fill=teal!20,
+    minimum height=4em,text width=4em]
+    
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Nodos
+    % MAIN
+    \node [iniciofinal] (modelo) {Modelo validado};
+    \node [blockini, right of=modelo,xshift=0.8cm] (escala) {EASE \\ \tiny{Escalado del recinto}};
+    \node [blockwide,below of=escala,yshift=0.3cm] (trazado) {EASE \\ \tiny{Trazado de rayos}};
+    \node [blockwide,below of=trazado,yshift=0.5cm] (ease) {EASE2Matlab \\ \tiny{Obtención de curvas}};
+    \node [blockwide,below of=ease,yshift=0.1cm] (teoria) {EASE2Matlab \\ \footnotesize{Teoría \\ revisada corregida} \\ \tiny{Regresión múltiple}};
+    \node [blockmin, right of=teoria,xshift=1.1cm] (coeficientes) {\textbf{Coeficientes}};
+    \node [blockwide, right of=coeficientes,xshift=1.1cm] (calculocurva) {EASE2Matlab \\ \tiny{Cálculo de curvas con los coeficientes}};
+    \node [blockwide, right of=calculocurva,xshift=1.4cm] (representacionteoria) {EASE2Matlab \\ \tiny{Representación curvas}};
+    \node [blockwide, above of=representacionteoria,yshift=-0.1cm] (representacion) {EASE2Matlab \\ \tiny{Representación curvas}};
+    \node [block, below of=coeficientes,yshift=0.3cm] (relacion) {Analizar la relación \\ coeficientes/parámetros de recinto};
+    
+    
+    % Lineas
+    \path [line] (modelo) -- (escala);
+    \path [line] (trazado) -- (ease);
+    \path [line] (teoria) -- (coeficientes);
+    \path [line] (coeficientes) -- (calculocurva);
+    \path [line,dashed] (coeficientes) -- (relacion);
+    \path [line] (calculocurva) -- (representacionteoria);
+    \path [line,dashed] (ease) -- (teoria);
+    \path [line] (escala) -- (trazado);
+    \path [line] (ease) -- (representacion);
+    
+\end{tikzpicture}

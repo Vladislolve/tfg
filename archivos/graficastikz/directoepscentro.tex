@@ -1,0 +1,50 @@
+% This file was created by matlab2tikz.
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.475\textwidth,
+height=0.5\textwidth,
+at={(0\textwidth,0\textwidth)},
+scale only axis,
+xmin=0,
+xmax=1792,
+xlabel style={font=\color{white!15!black}},
+xlabel={$\text{Volumen m}^\text{3}$},
+ymin=0.821021815283302,
+ymax=0.966424411496746,
+ylabel style={font=\color{white!15!black}},
+ylabel={Valor},
+axis background/.style={fill=white},
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=black, line width=2.0pt]
+  table[row sep=crcr]{%
+0	0.964500000000044\\
+1792	0.95634281599996\\
+};
+\addlegendentry{data1}
+
+\addplot [color=black, line width=1.0pt, draw=none, mark=+, mark options={solid, black}]
+  table[row sep=crcr]{%
+28	0.821021815283302\\
+48	0.868813841069823\\
+77	0.94997457415343\\
+115	0.966424411496746\\
+163	0.965836431300659\\
+224	0.964523473227246\\
+298	0.963624025788249\\
+387	0.962909181940631\\
+492	0.962276380144203\\
+615	0.961462720433474\\
+756	0.960939901124675\\
+918	0.960200289849126\\
+1101	0.958966346108582\\
+1307	0.961415025486758\\
+1537	0.95750825760274\\
+1792	0.956966964697358\\
+};
+\addlegendentry{data2}
+
+\end{axis}
+\end{tikzpicture}%

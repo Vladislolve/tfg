@@ -1,0 +1,4 @@
+archivos/figuras-procesadas/TFG-TFM_EPS_UA-figure29.pdf: archivos/graficastikz/EPSVaciaCentro125Hz.dat
+archivos/figuras-procesadas/TFG-TFM_EPS_UA-figure29.pdf: archivos/graficastikz/EPSVaciaCentro500Hz.dat
+archivos/figuras-procesadas/TFG-TFM_EPS_UA-figure29.pdf: archivos/graficastikz/EPSVaciaCentro2000Hz.dat
+archivos/figuras-procesadas/TFG-TFM_EPS_UA-figure29.pdf: archivos/graficastikz/EPSVaciaCentro4000Hz.dat

@@ -1,0 +1,69 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Estilos de bloques
+\tikzstyle{decision} = [diamond, draw=blue, thick, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=1pt,rounded corners]
+\tikzstyle{block} = [rectangle, draw=blue, thick,fill=blue!20, text width=5em, text centered, minimum height=2em,rounded corners]
+\tikzstyle{blockwide} = [rectangle, draw=blue, thick, fill=blue!20,text width=7em, text centered, minimum height=2em,rounded corners]
+\tikzstyle{blockmin} = [rectangle, draw=gray, thick, fill=gray!20,text width=7em, text centered, minimum height=2em,rounded corners]
+\tikzstyle{blockini} = [rectangle, draw=red, thick, fill=red!20,text width=7em, text centered, minimum height=3em,rounded corners]
+\tikzstyle{line} = [draw, thick, -latex, shorten >=1pt,rounded corners]
+\tikzstyle{iniciofinal} = [draw=teal, text centered,ellipse,fill=teal!20,
+    minimum height=4em,text width=4em]
+    
+\begin{tikzpicture}[node distance = 2.5cm, auto]
+    % Nodos
+    % MAIN
+    \node [iniciofinal] (seleccion) {Recinto a analizar};
+    % In situ
+    \node [blockini, right of=seleccion,xshift=0.2cm] (dBTrig) {dBTrig \\ \tiny{Medicion in situ}};
+    \node [block,right of=dBTrig,xshift=0.2cm] (dBFA) {dBFA  \\ \tiny{Ecograma 1 ms}};
+    \node [blockwide, right of=dBFA,xshift=0.2cm] (dbfa2matlab) {dBFA2Matlab \\ \tiny{Obtención de curvas}};
+    % CATT
+    \node [blockini, below of=dBTrig,yshift=-0.5cm] (catt) {CATT-Acoustic  \\ \tiny{Diseño de modelo}};
+    \node [blockwide, below of=dBFA,yshift=-0.5cm] (trazado) {CATT-Acoustic  \\ \tiny{Trazado de rayos}};
+    \node [blockwide, below of=dbfa2matlab,yshift=-0.5cm] (catt2matlab) {CATT2Matlab \\ \tiny{Obtención de curvas}};
+    % EASE
+    \node [blockini, above of=dBTrig,yshift=0.5cm] (ease) {EASE \\ \tiny{Diseño de modelo}};
+    \node [blockwide, above of=dBFA,yshift=0.5cm] (trazadoease) {EASE \\ \tiny{Trazado de rayos}};
+    \node [blockwide, above of=dbfa2matlab,yshift=0.5cm] (ease2matlab) {EASE2Matlab \\ \tiny{Obtención de curvas}};
+    % VS
+    \node [decision, right of=dbfa2matlab,yshift=1.5cm,xshift=-1cm] (comprobacionease) {\tiny{¿Modelo válido?}};
+    \node [decision, right of=dbfa2matlab,yshift=-1.5cm,xshift=-1cm] (comprobacion) {\tiny{¿Modelo válido?}};
+    \node [iniciofinal, right of=comprobacion,xshift=0.3cm] (calculo) {Modelo validado CATT};
+    \node [iniciofinal, right of=comprobacionease,xshift=0.3cm] (calculoease) {Modelo validado EASE};
+    \node [blockmin, below of=comprobacion,yshift=-0.5cm] (ajustar) {\tiny{Actualizar parámetros}};
+    \node [blockmin, above of=comprobacionease,yshift=0.5cm] (ajustarease) {\tiny{Actualizar parámetros}};
+    
+    % Lineas
+    % MAIN
+    \path [line] (seleccion) -- (dBTrig);
+    \path [line,dashed] (seleccion) |- (catt.west);
+    \path [line,dashed] (seleccion) |- (ease.west);
+    % In situ
+    \path [line] (dBTrig) -- (dBFA);
+    \path [line] (dBFA) -- (dbfa2matlab);
+    % General
+    \path [line] ($(dbfa2matlab.east)+(0cm,-0.1cm)$) -| (comprobacion);
+    \path [line] ($(dbfa2matlab.east)+(0cm,0.1cm)$) -| (comprobacionease);
+    \path [line] (comprobacion) -- node [near start] {Si} (calculo);
+    \path [line] (comprobacionease) -- node [near start] {Si} (calculoease);
+    % CATT
+    \path [line] (catt) -- (trazado);
+    \path [line] (trazado) -- (catt2matlab);
+    % EASE
+    \path [line] (ease) -- (trazadoease);
+    \path [line] (trazadoease) -- (ease2matlab);
+    % In situ vs CATT
+    \path [line] (catt2matlab) |- (comprobacion);
+    \path [line] (comprobacion.south) -- node [near start] {No} (ajustar);
+    \path [line] (ajustar.west) --++ (-6.2,0) -- (catt.south);
+    % In situ vs EASE
+    \path [line] (ease2matlab) |- (comprobacionease);
+    \path [line] (comprobacionease.north) -- node [near start] {No} (ajustarease);
+    \path [line] (ajustarease.west) --++ (-6.2,0) -- (ease.north);
+\end{tikzpicture}

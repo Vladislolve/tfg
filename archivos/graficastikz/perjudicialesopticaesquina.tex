@@ -1,0 +1,61 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{mycolor1}{rgb}{1.00000,0.00000,1.00000}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\textwidth,
+height=0.6\textwidth,
+at={(0\textwidth,0\textwidth)},
+scale only axis,
+xmin=0,
+xmax=50,
+xlabel style={font=\color{white!15!black}},
+xlabel={Distancia (m)},
+ymin=70,
+ymax=84,
+axis y line=left,
+axis x line=bottom,
+cycle list name=color list,
+ylabel style={font=\color{white!15!black}},
+ylabel={Nivel de presión acústica (dB)},
+axis background/.style={fill=white},
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+
+% Capos utiles
+
+% 1
+\addplot+[ line width=1.5,domain=0.5:18.47, samples=10,every node/.style={xshift=-4pt}]
+{10*log10(1.0337e+12 * ( ( 4*0.0026389378 / (512*(-ln(1-0.1176))) * ( e^(-(13.82*((x/343)+0.05)*1.244 / 1.24))*1.268))))} node [pos=1,pin=0:{\tiny{495 $m^3$}}] {};
+
+% 1.2
+\addplot+[ line width=1.5,domain=0.5:22.72, samples=10,every node/.style={xshift=-4pt}]
+{10*log10(1.0337e+12 * ( ( 4*0.0026389378 / (737*(-ln(1-0.1176))) * ( e^(-(13.82*((x/343)+0.05)*1.276 / 1.49))*1.198))))} node [pos=1,pin=0:{\tiny{855 $m^3$}}] {};
+
+% 1.5
+\addplot+[ line width=1.5,domain=0.5:27.72, samples=10,every node/.style={xshift=-4pt}]
+{10*log10(1.0337e+12 * ( ( 4*0.0026389378 / (1152*(-ln(1-0.1176))) * ( e^(-(13.82*((x/343)+0.05)*1.274 / 1.86))*1.084))))} node [pos=1,pin=0:{\tiny{1670 $m^3$}}] {};
+
+%% 1.7
+\addplot[line width=1.5,color=teal, domain=0.5:31.41, samples=10,every node/.style={xshift=-4pt}]
+{10*log10(1.0337e+12 * ( ( 4*0.0026389378 / (1479*(-ln(1-0.1176))) * ( e^(-(13.82*((x/343)+0.05)*1.313 / 2.11))*1.061))))} node [pos=1,pin=0:{\tiny{2431 $m^3$}}] {};
+
+% 20
+\addplot+[ line width=1.5,domain=0.5:36.95, samples=10,every node/.style={xshift=-4pt}]
+{10*log10(1.0337e+12 * ( ( 4*0.0026389378 / (2048*(-ln(1-0.1176))) * ( e^(-(13.82*((x/343)+0.05)*1.335 / 2.49))*1.019))))} node [pos=1,pin=0:{\tiny{3958 $m^3$}}] {};
+
+% 20
+%\addplot+[ domain=0.5:23.88, samples=70,every node/.style={xshift=-4pt}]
+%{10*log10(1.0337e+12 * ( ( 4*0.0026389378 / (\S*(-ln(1-0.1176))*x) * ( e^(-(13.82*(x/343)*\epsilonE / \T))*\CE - e^(-(13.82*((x/343)+0.05)*\epsilonL / \T))*\CL))))} node [pos=0.75,pin=15:{$\epsilon_E=-2$}] {};
+
+\end{axis}
+\end{tikzpicture}%
+
+
+

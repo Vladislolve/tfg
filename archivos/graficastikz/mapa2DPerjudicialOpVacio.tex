@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}
+
+\begin{groupplot}[
+      group style = {
+        group size = 2 by 1,
+        horizontal sep = 2cm,
+      },
+      view = {0}{90},
+      colormap name=jet,
+      ]
+      
+  % GRAFICA 1
+  \nextgroupplot[
+  	width=0.45\textwidth,
+  	view={0}{90},
+	xlabel style={font=\color{white!15!black}},
+	xlabel={Lx (m)},
+	ylabel style={font=\color{white!15!black}},
+	ylabel={Ly (m)},
+	axis equal image=true,
+	point meta min=71,
+	point meta max=76,
+          colorbar,
+          colorbar style = {
+          	ylabel={SPL (dB)},
+            at={(rel axis cs: 1.11,1)},
+            ylabel style={font=\normalfont,at={(rel axis cs: -2.8,0.5)}},
+            %anchor=south,
+            width=2mm,
+            axis line style={draw=none}
+          },
+	]
+
+	\addplot3 [
+    	surf,
+    	shader=interp,
+    	mesh/cols=51,mesh/ordering=y varies,
+	]
+    	table {archivos/graficastikz/OpVaciaEsquinaPerjudicialMalla.dat};
+    	
+    	
+    % Imprime la fuente
+\addplot[only marks,mark=*,white,mark size=3pt,mark options={fill=black}]
+    	coordinates {
+    	(0.4,0.6)
+    	};	
+    	
+    % Imprime los receptores
+\addplot[only marks,mark=triangle*,white, mark size=2pt, mark options={fill=blue}]
+    	coordinates {
+    	(1,1.60)
+		(3.10,1.60)
+		(5.70,1.60)
+		(8,1.60)
+		(10.4,1.60)
+		(12.8,1.60)
+		(15.4,1.60)
+		(1,4.50)
+		(3.10,4.50)
+		(5.70,4.50)
+		(8,4.50)
+		(10.4,4.50)
+		(12.8,4.50)
+		(15.4,4.50)
+		(1,7.60)
+		(3.10,7.60)
+		(5.70,7.60)
+		(8,7.60)
+		(10.4,7.60)
+		(12.8,7.60)
+		(15.4,7.60)
+		(17.7,7.60)
+		};	
+		
+	% GRAFICA 2
+  \nextgroupplot[
+  	width=0.45\textwidth,
+  	view={0}{90},
+	xlabel style={font=\color{white!15!black}},
+	xlabel={Lx (m)},
+	ylabel style={font=\color{white!15!black}},
+	ylabel={Ly (m)},
+	axis equal image=true,
+	point meta min=71,
+	point meta max=76,
+	yticklabel pos=right,
+	]
+	
+	\addplot3 [
+    	surf,
+    	shader=interp,
+    	mesh/cols=51,mesh/ordering=y varies,
+	]
+    	table {archivos/graficastikz/OpVaciaCentroPerjudicialMalla.dat};
+    	
+    	
+    % Imprime la fuente
+\addplot[only marks,mark=*,white,mark size=3pt,mark options={fill=black}]
+    	coordinates {
+    	(9.4,4.6)
+    	};	
+    	
+    % Imprime los receptores
+\addplot[only marks,mark=triangle*,white, mark size=2pt, mark options={fill=blue}]
+    	coordinates {
+    	(1,1.60)
+		(3.10,1.60)
+		(5.70,1.60)
+		(8,1.60)
+		(10.4,1.60)
+		(12.8,1.60)
+		(15.4,1.60)
+		(1,4.50)
+		(3.10,4.50)
+		(5.70,4.50)
+		(8,4.50)
+		(10.4,4.50)
+		(12.8,4.50)
+		(15.4,4.50)
+		(1,7.60)
+		(3.10,7.60)
+		(5.70,7.60)
+		(8,7.60)
+		(10.4,7.60)
+		(12.8,7.60)
+		(15.4,7.60)
+		(17.7,7.60)
+		};	
+\end{groupplot}
+
+\end{tikzpicture}%

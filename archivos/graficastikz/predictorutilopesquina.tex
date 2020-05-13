@@ -1,0 +1,63 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\textwidth,
+height=0.65\textwidth,
+at={(0\textwidth,0\textwidth)},
+scale only axis,
+xmin=75,
+xmax=88,
+xlabel style={font=\color{white!15!black}},
+xlabel={SPL Teo. Rev. Corregida (dB)},
+ymin=75,
+ymax=88,
+axis equal image=true,
+%minor x tick num= 1,
+%minor y tick num= 1,
+%ytick distance=0.1,
+ylabel style={font=\color{white!15!black}},
+ylabel={SPL EASE (dB)},
+axis background/.style={fill=white},
+xmajorgrids,
+xminorgrids,
+ymajorgrids,
+yminorgrids,
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+\addplot [color=black, only marks, mark=o]
+  table[row sep=crcr]{%
+87.1277550611968	87.5831033959196\\
+79.6754872626557	79.4264780958694\\
+78.3326673816969	78.4333711955838\\
+76.8468643393087	77.5479243850983\\
+76.8612684404271	76.8423616282149\\
+76.4290703842402	76.2689054995099\\
+80.2469029713596	79.2233946312489\\
+79.7283523968088	78.9804714407593\\
+78.7617201801592	78.3351352391715\\
+76.8891694043067	77.7330448151132\\
+77.9181962233661	77.1010463288947\\
+83.4623086675921	83.2312991280153\\
+76.9428881306448	76.5420593786241\\
+75.5728813031650	76.0577340702879\\
+76.6630383745993	75.7182868816898\\
+75.9345334655598	75.8820085953827\\
+76.4126252632454	75.9632533730322\\
+80.4045039689526	80.2696707303139\\
+78.6559229050811	78.8768862477834\\
+77.1663192028700	77.7996020008082\\
+76.1735762643118	77.0007498880819\\
+76.3340029077443	76.3759491383136\\
+82.2179401358662	81.5435456903297\\
+81.5257517559293	80.8275664990050\\
+};
+
+\addplot [blue,samples at={75,88}] {x};
+\end{axis}
+\end{tikzpicture}%

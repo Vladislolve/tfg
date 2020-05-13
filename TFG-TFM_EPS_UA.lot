@@ -1,0 +1,31 @@
+\selectlanguage *{spanish}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Frecuencias centrales para las bandas de octava más utilizadas (ISO 266:1997).\relax }}{17}{table.caption.22}% 
+\contentsline {table}{\numberline {4.2}{\ignorespaces Peso de cada banda de octava para el cálculo de AI.\relax }}{30}{table.caption.32}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces Tiempos de reverberación obtenidos en el aula OP/S003 por banda de octava, con y sin mobiliario.\relax }}{42}{table.caption.42}% 
+\contentsline {table}{\numberline {5.2}{\ignorespaces Tiempos de reverberación obtenidos en el aula EP/0-26M por banda de octava, con y sin mobiliario.\relax }}{46}{table.caption.51}% 
+\contentsline {table}{\numberline {5.3}{\ignorespaces Tiempos de reverberación calculados en el aula OP/S003 por banda de octava, con y sin mobiliario mediante CATT-Acoustic (T30 extrapolado).\relax }}{55}{table.caption.63}% 
+\contentsline {table}{\numberline {5.4}{\ignorespaces Desviación de los tiempos de reverberación calculados en el aula OP/S003 por banda de octava, con y sin mobiliario mediante CATT-Acoustic (T30 extrapolado) respecto a los medidos in situ.\relax }}{55}{table.caption.64}% 
+\contentsline {table}{\numberline {5.5}{\ignorespaces Tiempos de reverberación calculados en el aula EP/0-26M por banda de octava, con y sin mobiliario mediante CATT-Acoustic (T30 extrapolado).\relax }}{58}{table.caption.68}% 
+\contentsline {table}{\numberline {5.6}{\ignorespaces Desviación de los tiempos de reverberación calculados en el aula EP/0-26M por banda de octava, con y sin mobiliario mediante CATT-Acoustic (T30 extrapolado) respecto a los medidos in situ.\relax }}{59}{table.caption.69}% 
+\contentsline {table}{\numberline {5.7}{\ignorespaces Tiempos de reverberación calculados en el aula OP/S003 por banda de octava, con y sin mobiliario mediante EASE (T30 extrapolado).\relax }}{62}{table.caption.75}% 
+\contentsline {table}{\numberline {5.8}{\ignorespaces Desviación de los tiempos de reverberación calculados en el aula OP/S003 por banda de octava, con y sin mobiliario mediante EASE (T30 extrapolado) respecto a los medidos in situ.\relax }}{62}{table.caption.76}% 
+\contentsline {table}{\numberline {5.9}{\ignorespaces Tiempos de reverberación calculados en el aula EP/0-26M por banda de octava, con y sin mobiliario mediante EASE (T30 extrapolado).\relax }}{64}{table.caption.80}% 
+\contentsline {table}{\numberline {5.10}{\ignorespaces Desviación de los tiempos de reverberación calculados en el aula EP/0-26M por banda de octava, con y sin mobiliario mediante EASE (T30 extrapolado) respecto a los medidos in situ.\relax }}{64}{table.caption.81}% 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Coeficientes obtenidos en el aula OP/S003 simulada en EASE, sin mobiliario y fuente en el centro. Recinto escalado desde un factor de escala de 0.5 a 2.\relax }}{82}{table.caption.104}% 
+\contentsline {table}{\numberline {6.2}{\ignorespaces Coeficientes obtenidos en el aula OP/S003 simulada en EASE, sin mobiliario y fuente en la esquina. Recinto escalado desde un factor de escala de 0.5 a 2.\relax }}{83}{table.caption.106}% 
+\contentsline {table}{\numberline {6.3}{\ignorespaces Coeficientes obtenidos en el aula EP/0-26M simulada en EASE, sin mobiliario y fuente en el centro. Recinto escalado desde un factor de escala de 0.5 a 2.\relax }}{84}{table.caption.108}% 
+\contentsline {table}{\numberline {6.4}{\ignorespaces Coeficientes obtenidos en el aula EP/0-26M simulada en EASE, sin mobiliario y fuente en la esquina. Recinto escalado desde un factor de escala de 0.5 a 2.\relax }}{85}{table.caption.110}% 
+\contentsline {table}{\numberline {6.5}{\ignorespaces Comparación de cálculos de coeficientes mediante ajuste de curvas y mediante ecuaciones obtenidas con el programa Eureqa para el aula EP/0-26M con factor de escala 2.6 y fuente en la esquina.\relax }}{91}{table.caption.120}% 
+\contentsline {table}{\numberline {6.6}{\ignorespaces Comparación de cálculos de coeficientes mediante ajuste de curvas y mediante ecuaciones obtenidas con el programa Eureqa para el aula EP/0-26M con factor de escala 2.6 y fuente en el centro.\relax }}{91}{table.caption.121}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {B.1}{\ignorespaces Resultados con el aula OP/S003 sin mobiliario simulada con EASE.\relax }}{116}{table.caption.140}% 
+\contentsline {table}{\numberline {B.2}{\ignorespaces Resultados con el aula EP/0-26M sin mobiliario simulada con EASE.\relax }}{117}{table.caption.141}% 

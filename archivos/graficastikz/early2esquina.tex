@@ -1,0 +1,54 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pgfkeys{/pgf/number format/.cd,1000 sep={\,}}
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\textwidth,
+height=0.6\textwidth,
+at={(0\textwidth,0\textwidth)},
+scale only axis,
+xmin=0,
+xmax=4000,
+clip=false,
+axis y line=left,
+axis x line=bottom,
+xlabel style={font=\color{white!15!black}},
+xlabel={$\text{Volumen m}^\text{3}$},
+ymin=-4,
+ymax=9,
+minor x tick num= 4,
+minor y tick num= 4,
+yminorgrids,
+ymajorgrids,
+ylabel style={font=\color{white!15!black}},
+ylabel={Valor},
+axis background/.style={fill=white},
+legend columns=2,
+legend style={legend cell align=left, align=left, draw=white!15!black,at={(0.5,1.29)},anchor=north,/tikz/every even column/.append style={column sep=0.4cm}}
+]
+
+
+
+\addplot [color=red, line width=2.0pt,domain=0:4000, samples=10]
+{0.0003481*x-0.5459};
+\addlegendentry{$\epsilon_E$ OP/S003}
+
+\addplot [color=red, dotted,line width=2.0pt,domain=0:4000, samples=10]
+{0.001029*x+2.928};
+\addlegendentry{$C_E$ OP/S003}
+
+\addplot [color=blue, line width=2.0pt,domain=0:4000, samples=10]
+{0.0006844*x-2.193};
+\addlegendentry{$\epsilon_E$ EP/0-26M}
+
+\addplot [color=blue, dotted,line width=2.0pt,domain=0:4000, samples=10]
+{0.0008754*x+1.511};
+\addlegendentry{$C_E$ EP/0-26M}
+
+\end{axis}
+\end{tikzpicture}%

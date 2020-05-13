@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.8\textwidth,
+height=0.35\textwidth,
+at={(0\textwidth,0\textwidth)},
+scale only axis,
+xmin=0,
+xmax=13,
+xlabel style={font=\color{white!15!black}},
+xlabel={Distancia (en metros)},
+ymin=74,
+ymax=90,
+minor x tick num= 1,
+minor y tick num= 4,
+grid=both,
+ylabel style={font=\color{white!15!black}},
+ylabel={Nivel de presión acústica (dB)},
+axis background/.style={fill=white},
+%xmajorgrids,
+%xminorgrids,
+%ymajorgrids,
+%yminorgrids,
+legend style={legend cell align=left, align=left, draw=white!15!black}
+]
+% Curvas EASE
+\addplot[color=blue,line width=1.2pt,domain=0.9:12, samples=85]{87.08*x^(-0.03497)};
+
+\addplot[color=red,line width=1.2pt,domain=0.9:12, samples=85]{-0.1566*x+82.19};
+
+
+% Curvas insitu
+\addplot[color=black,densely dotted,line width=1.2pt,domain=0.9:12, samples=85]{81.61*x^(-0.04478)+5.4};
+\addplot[color=black,dashed,line width=1.2pt,domain=0.9:12, samples=85]{-0.1274*x+76.03+5.4};
+
+\addlegendentry{\scriptsize{\textbf{0 a 50 ms}} - EASE}
+\addlegendentry{\scriptsize{\textbf{50 ms a $\infty$}} - EASE}
+\addlegendentry{\scriptsize{\textbf{0 a 50 ms}} - In situ}
+\addlegendentry{\scriptsize{\textbf{50 ms a $\infty$}} - In situ}
+
+% Errores
+\addplot[color=blue, only marks,,mark size=1.8pt,mark=x,error bars/.cd,y dir=both, y explicit,error bar style={line width=1pt}] 
+		table [x=x,y=y, y error plus=ymas, y error minus=ymenos]
+			{archivos/graficastikz/EpsvaciaEsquinaUtilErrores.dat};
+			
+\addplot[color=red, only marks,mark size=1.8pt,mark=x,error bars/.cd,y dir=both, y explicit,error bar style={line width=1pt}] 
+		table [x=x,y=y, y error plus=ymas, y error minus=ymenos]
+			{archivos/graficastikz/EpsvaciaEsquinaPerjudicialErrores.dat};
+			
+\addplot[color=black, only marks,mark size=1.8pt,mark=x,error bars/.cd,y dir=both, y explicit,error mark=triangle,error bar style={densely dotted,line width=1pt}] 
+		table [x=x,y=y, y error plus=ymas, y error minus=ymenos]
+			{archivos/graficastikz/EpsvaciaEsquinaUtilErroresinsitu.dat};
+			
+\addplot[color=black, only marks,mark size=1.8pt,mark=x,error bars/.cd,y dir=both, y explicit,error mark=diamond,error bar style={dashed,line width=1pt}] 
+		table [x=x,y=y, y error plus=ymas, y error minus=ymenos]
+			{archivos/graficastikz/EpsvaciaEsquinaPerjudicialErroresinsitu.dat};
+
+% Puntos
+%\addplot [color=blue, only marks,mark size=0.7pt]
+%  table[row sep=crcr]{%
+%0.945832966226067	88.3808391236599\\
+%2.01558924386890	85.2936795349521\\
+%3.04292622322658	83.4748783371691\\
+%3.08781476128346	83.5272045055965\\
+%3.56407070636933	82.8240090793044\\
+%4.11885906532379	82.6625494089014\\
+%4.23076825174814	82.0778955814787\\
+%5.06013833802990	81.7870262070404\\
+%5.21338661524349	81.7665926486219\\
+%5.77252977471749	81.9443544059675\\
+%5.98493107729738	81.3208054322234\\
+%6.04070360140274	81.6650826299988\\
+%6.31685048105462	81.2999367072749\\
+%6.45653932071973	81.4997990721067\\
+%6.96725196903342	81.0025149070337\\
+%7.02797979507625	81.4677403312375\\
+%7.42526767194288	81.1018723483650\\
+%7.72055049850721	80.9235270091036\\
+%7.98590007450632	80.9954788950488\\
+%8.50471045950419	80.6731668471498\\
+%8.53670896774630	80.8362954223367\\
+%9.02858792946051	80.5508547076089\\
+%9.35746226281464	80.7488175613742\\
+%9.65012953280939	80.7098929463617\\
+%10.0878639959111	80.2520438800622\\
+%10.2617201287114	80.5048862291226\\
+%10.4960706933595	80.6697126771525\\
+%10.8998853204976	80.5700129654216\\
+%11.2050211958746	80.4092875811931\\
+%11.9413148354777	80.7996545494746\\
+%};
+%
+%\addplot [color=red, only marks,mark size=0.7pt]
+%  table[row sep=crcr]{%
+%0.945832966226067	82.1762817068517\\
+%2.01558924386890	81.9749784864042\\
+%3.04292622322658	81.7480751216254\\
+%3.08781476128346	81.4879654117737\\
+%3.56407070636933	81.5826814679269\\
+%4.11885906532379	81.4704552735545\\
+%4.23076825174814	81.5454353466553\\
+%5.06013833802990	81.4595895500597\\
+%5.21338661524349	81.1794515116566\\
+%5.77252977471749	81.5109656456417\\
+%5.98493107729738	81.3075137554158\\
+%6.04070360140274	81.3663646693337\\
+%6.31685048105462	81.0543473658963\\
+%6.45653932071973	81.2451624624217\\
+%6.96725196903342	81.1187342986678\\
+%7.02797979507625	81.1404282911666\\
+%7.42526767194288	80.9681387400627\\
+%7.72055049850721	80.8269321373207\\
+%7.98590007450632	80.9042299768582\\
+%8.50471045950419	80.7491795550527\\
+%8.53670896774630	80.7793706338611\\
+%9.02858792946051	80.7196944369790\\
+%9.35746226281464	80.7432806230875\\
+%9.65012953280939	80.6287695808118\\
+%10.0878639959111	80.5865014414949\\
+%10.2617201287114	80.5608617896108\\
+%10.4960706933595	80.5417583543006\\
+%10.8998853204976	80.5121065468405\\
+%11.2050211958746	80.5229843812398\\
+%11.9413148354777	80.4741526201567\\
+%  };
+\end{axis}
+\end{tikzpicture}%

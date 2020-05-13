@@ -1,0 +1,161 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{tikzpicture}
+
+\begin{groupplot}[
+      group style = {
+        group size = 2 by 1,
+        horizontal sep = 2cm,
+      },
+      view = {0}{90},
+      colormap name=jet,
+      ]
+      
+  % GRAFICA 1
+  \nextgroupplot[
+  	width=0.45\textwidth,
+  	view={0}{90},
+	xlabel style={font=\color{white!15!black}},
+	xlabel={Lx (m)},
+	ylabel style={font=\color{white!15!black}},
+	ylabel={Ly (m)},
+	axis equal image=true,
+	point meta min=74,
+	point meta max=78,
+%          colorbar horizontal,
+%          colorbar style = {
+%          	xlabel={Nivel de presión acústica (dB)},
+%            at={(rel axis cs: 1.1,-0.3)},
+%            anchor=south,
+%            height=3mm,
+%            axis line style={draw=none}
+%          },
+	colorbar,
+	colorbar style = {
+		ylabel={SPL (dB)},
+	at={(rel axis cs: 1.11,1)},
+	ylabel style={font=\normalfont,at={(rel axis cs: -2.8,0.5)}},
+	%anchor=south,
+	width=2mm,
+	axis line style={draw=none}
+	},
+	]
+
+	\addplot3 [
+    	surf,
+    	shader=interp,
+    	mesh/cols=39,mesh/ordering=y varies,
+	]
+    	table {archivos/graficastikz/EPSVacioEsquinaPerjudicialMalla.dat};
+    	
+    	
+    % Imprime la fuente
+    \addplot[only marks,mark=*,black,mark size=3pt]
+    	coordinates {
+    	(0.6,6.5)
+    	};	
+    	
+    % Imprime los receptores
+\addplot[only marks,mark=triangle*,white, mark size=2pt, mark options={fill=blue}]
+    	coordinates {
+    	(11.05,6.25)
+		(10.20,6.25)
+		(9.08,6.25)
+		(7.96,6.25)
+		(6.84,6.25)
+		(5.72,6.25)
+		(4.60,6.25)
+		(3.48,6.25)
+		(2.36,6.25)
+		(1.24,6.25)
+		(11.05,3.55)
+		(10.20,3.55)
+		(9.08,3.55)
+		(7.96,3.55)
+		(6.84,3.55)
+		(5.72,3.55)
+		(4.60,3.55)
+		(3.48,3.55)
+		(2.36,3.55)
+		(1.24,3.55)
+		(11.05,0.80)
+		(10.20,0.80)
+		(9.08,0.80)
+		(7.96,0.80)
+		(6.84,0.80)
+		(5.72,0.80)
+		(4.60,0.80)
+		(3.48,0.80)
+		(2.36,0.80)
+		(1.24,0.80)
+		};	
+		
+	% GRAFICA 2
+  \nextgroupplot[
+  	width=0.45\textwidth,
+  	view={0}{90},
+	xlabel style={font=\color{white!15!black}},
+	xlabel={Lx (m)},
+	ylabel style={font=\color{white!15!black}},
+	ylabel={Ly (m)},
+	axis equal image=true,
+	point meta min=74,
+	point meta max=78,
+	yticklabel pos=right,
+	]
+	
+	\addplot3 [
+    	surf,
+    	shader=interp,
+    	mesh/cols=39,mesh/ordering=y varies,
+	]
+    	table {archivos/graficastikz/EPSVacioCentroPerjudicialMalla.dat};
+    	
+    	
+    % Imprime la fuente
+\addplot[only marks,mark=*,white,mark size=3pt,mark options={fill=black}]
+    	coordinates {
+    	(5.95,3.55)
+    	};	
+    	
+    % Imprime los receptores
+\addplot[only marks,mark=triangle*,white, mark size=2pt, mark options={fill=blue}]
+    	coordinates {
+    	(11.05,6.25)
+		(10.20,6.25)
+		(9.08,6.25)
+		(7.96,6.25)
+		(6.84,6.25)
+		(5.72,6.25)
+		(4.60,6.25)
+		(3.48,6.25)
+		(2.36,6.25)
+		(1.24,6.25)
+		(11.05,3.55)
+		(10.20,3.55)
+		(9.08,3.55)
+		(7.96,3.55)
+		(6.84,3.55)
+		(5.72,3.55)
+		(4.60,3.55)
+		(3.48,3.55)
+		(2.36,3.55)
+		(1.24,3.55)
+		(11.05,0.80)
+		(10.20,0.80)
+		(9.08,0.80)
+		(7.96,0.80)
+		(6.84,0.80)
+		(5.72,0.80)
+		(4.60,0.80)
+		(3.48,0.80)
+		(2.36,0.80)
+		(1.24,0.80)
+		};	
+\end{groupplot}
+
+\end{tikzpicture}%

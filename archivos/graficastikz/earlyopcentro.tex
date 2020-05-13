@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Cambiar separador de miles de coma a nada
+\pgfkeys{/pgf/number format/.cd,1000 sep={\,}}
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\textwidth,
+height=0.75\textwidth,
+at={(0\textwidth,0\textwidth)},
+scale only axis,
+xmin=0,
+xmax=4000,
+clip=false,
+axis y line=left,
+axis x line=bottom,
+xlabel style={font=\color{white!15!black}},
+xlabel={$\text{Volumen m}^\text{3}$},
+ymin=-4,
+ymax=5,
+minor x tick num= 4,
+minor y tick num= 3,
+ytick distance=2,
+yminorgrids,
+ymajorgrids,
+ylabel style={font=\color{white!15!black}},
+ylabel={Valor},
+axis background/.style={fill=white},
+legend columns=2,
+legend style={legend cell align=left, align=left, draw=white!15!black,at={(0.5,1.23)},anchor=north,/tikz/every even column/.append style={column sep=0.4cm}}
+]
+\addplot [color=black, line width=2.0pt]
+  table[row sep=crcr]{%
+0	-3.37790322235378\\
+3816	1.84010868494488\\
+};
+\addlegendentry{Tendencia $\epsilon_E$}
+
+
+\addplot [color=black, line width=1.0pt, only marks, mark=o, mark options={solid, black}]
+  table[row sep=crcr]{%
+60	-3.55321241450702\\
+103	-3.31047548842434\\
+164	-3.34076327527828\\
+244	-3.27070170460775\\
+348	-2.99828698154261\\
+477	-2.12288326327689\\
+635	-1.24963656654836\\
+824	-2.09450633405459\\
+1048	-0.337635567612779\\
+1309	1.20010691483321\\
+1610	-1.17637922927179\\
+1954	1.15397561228974\\
+2344	-1.77582465748037\\
+2782	1.74627129651935\\
+3272	-0.425165596463103\\
+3816	0.0866729612512245\\
+};
+\addlegendentry{$\epsilon_E$}
+
+\addplot [color=gray, dotted, line width=2.0pt]
+  table[row sep=crcr]{%
+0	1.05609932981679\\
+3816	4.08423709477438\\
+};
+\addlegendentry{Tendencia $C_E$}
+
+
+\addplot [color=gray, line width=1.0pt, only marks, mark=+, mark options={solid, white!40!black}]
+  table[row sep=crcr]{%
+60	0.909361391903076\\
+103	1.05401299682444\\
+164	1.11807395119286\\
+244	1.19858975410943\\
+348	1.32544787277129\\
+477	1.68316333601661\\
+635	2.08308694450579\\
+824	1.75614806457497\\
+1048	2.57911202462492\\
+1309	3.55867114127341\\
+1610	2.33369659464688\\
+1954	3.6926587685266\\
+2344	2.01396018234527\\
+2782	4.32135820546\\
+3272	2.9444181409981\\
+3816	3.18153369427773\\
+};
+\addlegendentry{$C_E$}
+
+\end{axis}
+\end{tikzpicture}%

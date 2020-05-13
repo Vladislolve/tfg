@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=0.5\textwidth,
+height=0.35\textwidth,
+at={(0\textwidth,0\textwidth)},
+scale only axis,
+area style,
+stack plots=y,
+xmode=log,
+xmin=11.5,
+xmax=12000,
+grid=major,
+xtick={16.62,31.25,62.5,125,250,500,1000,2000,4000,8000,16000},
+xticklabels={{16},{31.25},{62.5},{125},{250},{500},{1000},{2000},{4000},{8000},{16000}},
+xminorticks=true,
+xlabel style={font=\color{white!15!black}},
+xlabel={Frecuencia (Hz)},
+ymin=0,
+ymax=50,
+ylabel style={font=\color{white!15!black}},
+ylabel={Nivel (dB)},
+axis background/.style={fill=white},
+legend style={at={(0.03,0.97)}, anchor=north west, legend cell align=left, align=left, draw=white!15!black}
+]
+\draw[line width=1.5pt,  pattern=north west lines, pattern color=orange] (axis cs:12.0485434560398,-10) rectangle (axis cs:22.0970869120796,20.7918124604762);
+\draw[line width=1.5pt,  pattern=north west lines, pattern color=orange] (axis cs:22.0970869120796,-10) rectangle (axis cs:44.1941738241592,23.6172783601759);
+\draw[line width=1.5pt,  pattern=north west lines, pattern color=orange] (axis cs:44.1941738241592,-10) rectangle (axis cs:88.3883476483184,26.5321251377534);
+\draw[line width=1.5pt, pattern=north west lines, pattern color=orange] (axis cs:88.3883476483184,-10) rectangle (axis cs:176.776695296637,29.4939000664491);
+\draw[line width=1.5pt,  pattern=north west lines, pattern color=orange] (axis cs:176.776695296637,-10) rectangle (axis cs:353.553390593274,32.5042000230889);
+\draw[line width=1.5pt,  pattern=north west lines, pattern color=orange] (axis cs:353.553390593274,-10) rectangle (axis cs:707.106781186548,35.5022835305509);
+\draw[line width=1.5pt,  pattern=north west lines, pattern color=orange] (axis cs:707.106781186547,-10) rectangle (axis cs:1414.2135623731,38.5003325768977);
+\draw[line width=1.5pt,  pattern=north west lines, pattern color=orange] (axis cs:1414.21356237309,-10) rectangle (axis cs:2828.42712474619,41.5075643986031);
+\draw[line width=1.5pt,  pattern=north west lines, pattern color=orange] (axis cs:2828.42712474619,-10) rectangle (axis cs:5656.85424949238,44.5163294745699);
+\draw[line width=1.5pt,  pattern=north west lines, pattern color=orange] (axis cs:5656.85424949238,-10) rectangle (axis cs:11313.7084989848,47.5266294312097);
+\addlegendimage{line width=1.5pt,  pattern=north west lines, pattern color=orange}
+\addlegendentry{Ruido blanco - octavas}
+
+\addplot[fill=mycolor1, draw=black] table[row sep=crcr]{%
+1	20\\
+16000	20\\
+}
+\closedcycle;
+\addlegendentry{Ruido blanco - lineal}
+
+\end{axis}
+\end{tikzpicture}%

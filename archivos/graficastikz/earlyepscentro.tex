@@ -1,0 +1,92 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Escuela Politécnica Superior de la Universidad de Alicante
+% Realizado por: Jose Manuel Requena Plens
+% Contacto: info@jmrplens.com / Telegram:@jmrplens
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pgfkeys{/pgf/number format/.cd,1000 sep={\,}}
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=\textwidth,
+height=0.75\textwidth,
+at={(0\textwidth,0\textwidth)},
+scale only axis,
+xmin=0,
+xmax=2000,
+clip=false,
+axis y line=left,
+axis x line=bottom,
+xlabel style={font=\color{white!15!black}},
+xlabel={$\text{Volumen m}^\text{3}$},
+ymin=-6,
+ymax=4,
+minor x tick num= 4,
+minor y tick num= 3,
+yminorgrids,
+ymajorgrids,
+ylabel style={font=\color{white!15!black}},
+ylabel={Valor},
+axis background/.style={fill=white},
+legend columns=2,
+legend style={legend cell align=left, align=left, draw=white!15!black,at={(0.5,1.23)},anchor=north,/tikz/every even column/.append style={column sep=0.4cm}}
+]
+\addplot [color=black, line width=2.0pt]
+  table[row sep=crcr]{%
+0	-5.57367495467111\\
+1792	1.96246199823895\\
+};
+\addlegendentry{Tendencia $\epsilon_E$}
+
+
+\addplot [color=black, line width=1.0pt, only marks, mark=o, mark options={solid, black}]
+  table[row sep=crcr]{%
+28	-5.70618713539602\\
+48	-5.75528892697321\\
+77	-5.91667115304563\\
+115	-5.04721857658683\\
+163	-3.87211405855624\\
+224	-3.89468299315035\\
+298	-4.86949897875638\\
+387	-3.64550971341328\\
+492	-3.50513085150465\\
+615	-2.1617549471332\\
+756	-0.122646983119239\\
+918	-2.65469286746361\\
+1101	-0.943492762102323\\
+1307	1.47843356421663\\
+1537	0.890076438545748\\
+1792	-0.238929055954941\\
+};
+\addlegendentry{$\epsilon_E$}
+
+\addplot [color=gray, dotted, line width=2.0pt]
+  table[row sep=crcr]{%
+0	0.624331320779447\\
+1792	3.1394960540365\\
+};
+\addlegendentry{Tendencia $C_E$}
+
+\addplot [color=gray, line width=1.0pt, only marks, mark=+, mark options={solid, white!40!black}]
+  table[row sep=crcr]{%
+28	0.588834145781448\\
+48	0.663645718519774\\
+77	0.708375493317362\\
+115	0.862779406961863\\
+163	1.07715414108247\\
+224	1.07289352212911\\
+298	1.03551164791338\\
+387	1.25694408325285\\
+492	1.29810607647232\\
+615	1.66494587074476\\
+756	2.27665970461385\\
+918	1.63028285539667\\
+1101	2.1158421863654\\
+1307	3.10109503946478\\
+1537	2.78159036282273\\
+1792	2.4929291213939\\
+};
+\addlegendentry{$C_E$}
+
+\end{axis}
+\end{tikzpicture}%
