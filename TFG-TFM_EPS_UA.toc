@@ -1,96 +1,20 @@
 \selectlanguage *{spanish}
 \contentsline {chapter}{\numberline {1}Objetivos}{1}{chapter.1}% 
-\contentsline {subsection}{\numberline {1.0.1}Validación de modelos}{1}{subsection.1.0.1}% 
-\contentsline {chapter}{\numberline {2}Motivacion}{3}{chapter.2}% 
+\contentsline {chapter}{\numberline {2}Motivación}{3}{chapter.2}% 
 \contentsline {chapter}{\numberline {3}Introducción}{5}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Cronología de la acústica}{5}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Los campos acústicos}{7}{section.3.2}% 
-\contentsline {chapter}{\numberline {4}Marco Teórico}{9}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Parámetros básicos}{9}{section.4.1}% 
-\contentsline {subsection}{\numberline {4.1.1}Directividad}{9}{subsection.4.1.1}% 
-\contentsline {subsection}{\numberline {4.1.2}Factor e índice de directividad}{10}{subsection.4.1.2}% 
-\contentsline {subsection}{\numberline {4.1.3}Potencia acústica}{11}{subsection.4.1.3}% 
-\contentsline {subsection}{\numberline {4.1.4}Intensidad acústica}{12}{subsection.4.1.4}% 
-\contentsline {subsection}{\numberline {4.1.5}Presión acústica}{12}{subsection.4.1.5}% 
-\contentsline {subsection}{\numberline {4.1.6}Divergencia esférica}{12}{subsection.4.1.6}% 
-\contentsline {subsection}{\numberline {4.1.7}Divergencia cilíndrica}{13}{subsection.4.1.7}% 
-\contentsline {subsection}{\numberline {4.1.8}Densidad del aire}{14}{subsection.4.1.8}% 
-\contentsline {subsection}{\numberline {4.1.9}Velocidad del sonido en el aire}{14}{subsection.4.1.9}% 
-\contentsline {subsection}{\numberline {4.1.10}Impedancia acústica específica del aire}{15}{subsection.4.1.10}% 
-\contentsline {subsection}{\numberline {4.1.11}Escala logarítmica}{15}{subsection.4.1.11}% 
-\contentsline {subsection}{\numberline {4.1.12}Relación entre presión y potencia o intensidad acústica}{16}{subsection.4.1.12}% 
-\contentsline {subsection}{\numberline {4.1.13}Bandas de frecuencia}{16}{subsection.4.1.13}% 
-\contentsline {subsection}{\numberline {4.1.14}Ponderación A}{17}{subsection.4.1.14}% 
-\contentsline {subsection}{\numberline {4.1.15}Suma de niveles}{17}{subsection.4.1.15}% 
-\contentsline {subsection}{\numberline {4.1.16}Ruido rosa/blanco}{18}{subsection.4.1.16}% 
-\contentsline {subsection}{\numberline {4.1.17}Nivel continuo equivalente}{19}{subsection.4.1.17}% 
-\contentsline {section}{\numberline {4.2}Parámetros de acústica de recintos}{20}{section.4.2}% 
-\contentsline {subsection}{\numberline {4.2.1}Acústica geométrica}{20}{subsection.4.2.1}% 
-\contentsline {subsection}{\numberline {4.2.2}Modos propios}{21}{subsection.4.2.2}% 
-\contentsline {subsection}{\numberline {4.2.3}Coeficiente de absorción medio}{22}{subsection.4.2.3}% 
-\contentsline {subsection}{\numberline {4.2.4}Absorción acústica}{23}{subsection.4.2.4}% 
-\contentsline {subsection}{\numberline {4.2.5}Constante del recinto}{23}{subsection.4.2.5}% 
-\contentsline {subsection}{\numberline {4.2.6}Camino libre medio en acústica}{23}{subsection.4.2.6}% 
-\contentsline {subsection}{\numberline {4.2.7}Tiempo de reverberación}{26}{subsection.4.2.7}% 
-\contentsline {section}{\numberline {4.3}Parámetros de inteligibilidad y calidad acústica}{27}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Claridad C50,C80}{27}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Definición D50,D80}{29}{subsection.4.3.2}% 
-\contentsline {subsection}{\numberline {4.3.3}Sonoridad G}{29}{subsection.4.3.3}% 
-\contentsline {subsection}{\numberline {4.3.4}Índice de articulación AI}{30}{subsection.4.3.4}% 
-\contentsline {section}{\numberline {4.4}Teoría de campos acústicos}{31}{section.4.4}% 
-\contentsline {subsection}{\numberline {4.4.1}Campos directo y reverberado}{31}{subsection.4.4.1}% 
-\contentsline {subsubsection}{\numberline {4.4.1.1}Distancia crítica}{33}{subsubsection.4.4.1.1}% 
-\contentsline {subsection}{\numberline {4.4.2}Teoría revisada o moderna}{33}{subsection.4.4.2}% 
-\contentsline {subsection}{\numberline {4.4.3}Teoría revisada corregida}{35}{subsection.4.4.3}% 
-\contentsline {section}{\numberline {4.5}Otros conceptos}{38}{section.4.5}% 
-\contentsline {subsection}{\numberline {4.5.1}Señal MLS}{38}{subsection.4.5.1}% 
-\contentsline {subsection}{\numberline {4.5.2}Respuesta al impulso}{39}{subsection.4.5.2}% 
-\contentsline {chapter}{\numberline {5}Desarrollo}{41}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Mediciones in situ}{41}{section.5.1}% 
-\contentsline {subsection}{\numberline {5.1.1}Aula OP/S003}{41}{subsection.5.1.1}% 
-\contentsline {subsection}{\numberline {5.1.2}Aula EP/0-26M}{46}{subsection.5.1.2}% 
-\contentsline {section}{\numberline {5.2}Validación de modelos}{51}{section.5.2}% 
-\contentsline {subsection}{\numberline {5.2.1}CATT-Acoustic}{52}{subsection.5.2.1}% 
-\contentsline {subsubsection}{\numberline {5.2.1.1}Aula OP/S003}{53}{subsubsection.5.2.1.1}% 
-\contentsline {subsubsection}{\numberline {5.2.1.2}Aula EP/0-26M}{58}{subsubsection.5.2.1.2}% 
-\contentsline {subsection}{\numberline {5.2.2}EASE}{60}{subsection.5.2.2}% 
-\contentsline {subsubsection}{\numberline {5.2.2.1}Aula OP/S003}{61}{subsubsection.5.2.2.1}% 
-\contentsline {subsubsection}{\numberline {5.2.2.2}Aula EP/0-26M}{64}{subsubsection.5.2.2.2}% 
-\contentsline {section}{\numberline {5.3}Selección de modelos}{66}{section.5.3}% 
-\contentsline {section}{\numberline {5.4}Obtención de coeficientes}{68}{section.5.4}% 
-\contentsline {subsection}{\numberline {5.4.1}Escalado de los recintos}{68}{subsection.5.4.1}% 
-\contentsline {subsection}{\numberline {5.4.2}Método de obtención de coeficientes}{69}{subsection.5.4.2}% 
-\contentsline {section}{\numberline {5.5}Inteligibilidad}{70}{section.5.5}% 
-\contentsline {chapter}{\numberline {6}Resultados}{73}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Recintos sin modificar}{73}{section.6.1}% 
-\contentsline {subsection}{\numberline {6.1.1}Comparación de los valores obtenidos frente a los predichos}{75}{subsection.6.1.1}% 
-\contentsline {subsection}{\numberline {6.1.2}Inteligibilidad}{77}{subsection.6.1.2}% 
-\contentsline {subsubsection}{\numberline {6.1.2.1}OP/S003}{78}{subsubsection.6.1.2.1}% 
-\contentsline {subsubsection}{\numberline {6.1.2.2}EP/0-26M}{79}{subsubsection.6.1.2.2}% 
-\contentsline {section}{\numberline {6.2}Recintos escalados}{81}{section.6.2}% 
-\contentsline {subsection}{\numberline {6.2.1}Aula OP/S003}{81}{subsection.6.2.1}% 
-\contentsline {subsubsection}{\numberline {6.2.1.1}Fuente en el centro}{81}{subsubsection.6.2.1.1}% 
-\contentsline {subsubsection}{\numberline {6.2.1.2}Fuente en la esquina}{83}{subsubsection.6.2.1.2}% 
-\contentsline {subsection}{\numberline {6.2.2}Aula EPS/0-26M}{84}{subsection.6.2.2}% 
-\contentsline {subsubsection}{\numberline {6.2.2.1}Fuente en el centro}{84}{subsubsection.6.2.2.1}% 
-\contentsline {subsubsection}{\numberline {6.2.2.2}Fuente en la esquina}{85}{subsubsection.6.2.2.2}% 
-\contentsline {subsection}{\numberline {6.2.3}Comparación de coeficientes}{85}{subsection.6.2.3}% 
-\contentsline {subsection}{\numberline {6.2.4}Relación de coeficientes con las características del recinto}{89}{subsection.6.2.4}% 
-\contentsline {chapter}{\numberline {7}Conclusiones}{93}{chapter.7}% 
-\contentsline {section}{\numberline {7.1}Validación de modelos}{93}{section.7.1}% 
-\contentsline {section}{\numberline {7.2}Teoría revisada corregida}{95}{section.7.2}% 
-\contentsline {section}{\numberline {7.3}Relación de coeficientes con las características del recinto}{96}{section.7.3}% 
-\contentsline {chapter}{\nonumberline Bibliografía}{97}{chapter*.123}% 
-\contentsline {chapter}{\numberline {A}Programas desarrollados}{103}{appendix.A}% 
-\contentsline {section}{\numberline {A.1}CATT2Matlab}{103}{section.A.1}% 
-\contentsline {subsection}{\numberline {A.1.1}Datos generales}{104}{subsection.A.1.1}% 
-\contentsline {subsection}{\numberline {A.1.2}Parámetros acústicos}{104}{subsection.A.1.2}% 
-\contentsline {subsection}{\numberline {A.1.3}Historia temporal}{105}{subsection.A.1.3}% 
-\contentsline {subsection}{\numberline {A.1.4}Otros detalles}{107}{subsection.A.1.4}% 
-\contentsline {section}{\numberline {A.2}EASEPostFile2Matlab}{108}{section.A.2}% 
-\contentsline {subsection}{\numberline {A.2.1}Automatización de exportación}{108}{subsection.A.2.1}% 
-\contentsline {subsection}{\numberline {A.2.2}Programa}{110}{subsection.A.2.2}% 
-\contentsline {subsection}{\numberline {A.2.3}Datos generales}{111}{subsection.A.2.3}% 
-\contentsline {subsection}{\numberline {A.2.4}Historia temporal}{111}{subsection.A.2.4}% 
-\contentsline {section}{\numberline {A.3}dBFA2Matlab}{113}{section.A.3}% 
-\contentsline {chapter}{\numberline {B}Tablas de resultados}{115}{appendix.B}% 
+\contentsline {section}{\numberline {3.1}Revisiones y mejoras de CORDIC}{5}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Cronología de la acústica}{6}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Los campos acústicos}{6}{section.3.3}% 
+\contentsline {chapter}{\numberline {4}Marco Teórico}{7}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Parámetros básicos}{7}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Directividad}{7}{subsection.4.1.1}% 
+\contentsline {chapter}{\numberline {5}Desarrollo}{9}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Mediciones in situ}{9}{section.5.1}% 
+\contentsline {subsection}{\numberline {5.1.1}Aula OP/S003}{9}{subsection.5.1.1}% 
+\contentsline {chapter}{\numberline {6}Resultados}{11}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Recintos sin modificar}{11}{section.6.1}% 
+\contentsline {chapter}{\numberline {7}Conclusiones}{13}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Validación de modelos}{13}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}Teoría revisada corregida}{15}{section.7.2}% 
+\contentsline {section}{\numberline {7.3}Relación de coeficientes con las características del recinto}{16}{section.7.3}% 
+\contentsline {chapter}{\nonumberline Bibliografía}{17}{chapter*.21}% 
