@@ -3,9 +3,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Respuesta al impulso de un sistema.\relax }}{8}{figure.caption.17}% 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Rotation Mode\relax }}{8}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Vectoring Mode\relax }}{9}{figure.caption.18}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Aula OP/S003.\relax }}{10}{figure.caption.18}% 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Características de FP CORDIC\relax }}{11}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Arquitectura de FP CORDIC\relax }}{12}{figure.caption.22}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Resultados de 64FP CORDIC y una CPU AMD Athlon 64 Processor 3200+. Num\_C es el número de co-procesadores de CORDIC usados en el experimento.\relax }}{13}{figure.caption.23}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Tabla de comparaciones del CORDIC propuesto con otros trabajos parecidos. (A) Dispositivo. (B) Latencia (ciclos). (C) Frecuencia (MHz). (D) LUTs. (E) Registros. (F) Memoria. (G) DSP.\relax }}{13}{figure.caption.24}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Unidad de procesamiento de CORDIC de doble precisión\relax }}{14}{figure.caption.25}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

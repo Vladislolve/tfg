@@ -1,20 +1,15 @@
 \selectlanguage *{spanish}
-\contentsline {chapter}{\numberline {1}Objetivos}{1}{chapter.1}% 
-\contentsline {chapter}{\numberline {2}Motivación}{3}{chapter.2}% 
-\contentsline {chapter}{\numberline {3}Introducción}{5}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Revisiones y mejoras de CORDIC}{5}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Cronología de la acústica}{6}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Los campos acústicos}{6}{section.3.3}% 
-\contentsline {chapter}{\numberline {4}Marco Teórico}{7}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Parámetros básicos}{7}{section.4.1}% 
-\contentsline {subsection}{\numberline {4.1.1}Directividad}{7}{subsection.4.1.1}% 
-\contentsline {chapter}{\numberline {5}Desarrollo}{9}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Mediciones in situ}{9}{section.5.1}% 
-\contentsline {subsection}{\numberline {5.1.1}Aula OP/S003}{9}{subsection.5.1.1}% 
-\contentsline {chapter}{\numberline {6}Resultados}{11}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Recintos sin modificar}{11}{section.6.1}% 
-\contentsline {chapter}{\numberline {7}Conclusiones}{13}{chapter.7}% 
-\contentsline {section}{\numberline {7.1}Validación de modelos}{13}{section.7.1}% 
-\contentsline {section}{\numberline {7.2}Teoría revisada corregida}{15}{section.7.2}% 
-\contentsline {section}{\numberline {7.3}Relación de coeficientes con las características del recinto}{16}{section.7.3}% 
-\contentsline {chapter}{\nonumberline Bibliografía}{17}{chapter*.21}% 
+\contentsline {chapter}{\numberline {1}Objetivos}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Motivación}{3}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Introducción}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Revisiones y mejoras de CORDIC}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Presente y futuro de CORDIC}{5}{section.3.2}%
+\contentsline {chapter}{\numberline {4}CORDIC}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Algoritmo de CORDIC}{7}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Mejoras a CORDIC}{9}{section.4.2}%
+\contentsline {chapter}{\numberline {5}CORDIC y punto flotante}{11}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Marco Teórico}{15}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Desarrollo}{17}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Resultados}{19}{chapter.8}%
+\contentsline {chapter}{\numberline {9}Conclusiones}{21}{chapter.9}%
+\contentsline {chapter}{\nonumberline Bibliografía}{23}{chapter*.26}%

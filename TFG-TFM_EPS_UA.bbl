@@ -1,2046 +1,394 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
-Arau-Puchades%
+de Lange%
+, van~der Hoeven%
+, Deprettere%
+\BCBL {}\ \BBA {} Bu%
 }{%
-Arau-Puchades%
-}{%
-{\protect \APACyear {1996}}%
+de Lange%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1988}}%
 }]{%
-Arau1996}
+de_lange_optimal_1988}
 \APACinsertmetastar {%
-Arau1996}%
+de_lange_optimal_1988}%
 \begin{APACrefauthors}%
-Arau-Puchades, H.%
+de Lange, A.%
+, van~der Hoeven, A.%
+, Deprettere, E.%
+\BCBL {}\ \BBA {} Bu, J.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{1996}{}{}.
+\APACrefYearMonthDay{1988}{{\APACmonth{06}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Influencia del radio de reverberación en el
-  establecimiento de la densidad de energía sonora estacionaria en campo
-  difuso} {Influencia del radio de reverberación en el establecimiento de la
-  densidad de energía sonora estacionaria en campo difuso}.{\BBCQ}
+{\BBOQ}\APACrefatitle {An optimal floating-point pipeline {CMOS} {CORDIC}
+  processor} {An optimal floating-point pipeline {CMOS} {CORDIC}
+  processor}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Revista de acústica}{27}{}{19-21}.
+\BIn{} \APACrefbtitle {1988., {IEEE} {International} {Symposium} on {Circuits}
+  and {Systems}} {1988., {IEEE} {International} {Symposium} on {Circuits} and
+  {Systems}}\ (\BPGS\ 2043--2047 vol.3).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ISCAS.1988.15343} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Arau-Puchades%
+Dhume%
+\ \BBA {} Srinivasakannan%
 }{%
-Arau-Puchades%
-}{%
-{\protect \APACyear {1999}}%
-}]{%
-Arau1999}
-\APACinsertmetastar {%
-Arau1999}%
-\begin{APACrefauthors}%
-Arau-Puchades, H.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1999}.
-\newblock
-\APACrefbtitle {ABC de la ac{\'u}stica arquitect{\'o}nica} {Abc de la
-  ac{\'u}stica arquitect{\'o}nica}.
-\newblock
-\APACaddressPublisher{}{Ceac}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Arau-Puchades%
-}{%
-Arau-Puchades%
+Dhume%
+\ \BBA {} Srinivasakannan%
 }{%
 {\protect \APACyear {2012}}%
 }]{%
-Arau2012}
+dhume_parameterizable_2012}
 \APACinsertmetastar {%
-Arau2012}%
+dhume_parameterizable_2012}%
 \begin{APACrefauthors}%
-Arau-Puchades, H.%
+Dhume, N.%
+\BCBT {}\ \BBA {} Srinivasakannan, R.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
 \APACrefYearMonthDay{2012}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Sound Pressure Levels in Rooms: A Study of Steady State
-  Intensity, Total Sound Level, Reverberation Distance, a New Discussion of
-  Steady State Intensity and other Experimental Formulae} {Sound pressure
-  levels in rooms: A study of steady state intensity, total sound level,
-  reverberation distance, a new discussion of steady state intensity and other
-  experimental formulae}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Parameterizable {CORDIC}-{Based} {Floating}-{Point}
+  {Library} {Operations}} {Parameterizable {CORDIC}-{Based} {Floating}-{Point}
+  {Library} {Operations}}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{Building Acoustics}{19}{3}{205-220}.
-\newblock
-\begin{APACrefDOI} \doi{10.1260/1351-010X.19.3.205} \end{APACrefDOI}
+\APACjournalVolNumPages{}{}{}{18}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Arau-Puchades%
-\ \BBA {} Berardi%
+Hekstra%
+\ \BBA {} Deprettere%
 }{%
-Arau-Puchades%
-\ \BBA {} Berardi%
-}{%
-{\protect \APACyear {2015}}%
-}]{%
-Arau-Puchades2015}
-\APACinsertmetastar {%
-Arau-Puchades2015}%
-\begin{APACrefauthors}%
-Arau-Puchades, H.%
-\BCBT {}\ \BBA {} Berardi, U.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {A Revised Sound Energy Theory Based on a New Formula for
-  the Reverberation Radius in Rooms with Non-Diffuse Sound Field} {A revised
-  sound energy theory based on a new formula for the reverberation radius in
-  rooms with non-diffuse sound field}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Archives of Acoustics}{40}{1}{}.
-\newblock
-\begin{APACrefDOI} \doi{10.1515/aoa-2015-0005} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Atal%
-, Schroeder%
-\BCBL {}\ \BBA {} Sessler%
-}{%
-Atal%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {1966}}%
-}]{%
-Atal1966}
-\APACinsertmetastar {%
-Atal1966}%
-\begin{APACrefauthors}%
-Atal, B.%
-, Schroeder, M.%
-\BCBL {}\ \BBA {} Sessler, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1966}.
-\newblock
-\APACrefbtitle {Subjective Reverberation Time and Its Relation to Sound Decay}
-  {Subjective reverberation time and its relation to sound decay}.
-\newblock
-\APACaddressPublisher{}{Bell Telephone Laboratories}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Barron%
-}{%
-Barron%
-}{%
-{\protect \APACyear {1971}}%
-}]{%
-BARRON1971475}
-\APACinsertmetastar {%
-BARRON1971475}%
-\begin{APACrefauthors}%
-Barron, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1971}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The subjective effects of first reflections in concert
-  halls—The need for lateral reflections} {The subjective effects of first
-  reflections in concert halls—the need for lateral reflections}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Sound and Vibration}{15}{4}{475 - 494}.
-\newblock
-\begin{APACrefDOI} \doi{10.1016/0022-460X(71)90406-8} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Barron%
-}{%
-Barron%
-}{%
-{\protect \APACyear {1973}}%
-}]{%
-Barron1973}
-\APACinsertmetastar {%
-Barron1973}%
-\begin{APACrefauthors}%
-Barron, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1973}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Growth and decay of sound intensity in rooms according
-  to some formulae of geometric acoustics theory} {Growth and decay of sound
-  intensity in rooms according to some formulae of geometric acoustics
-  theory}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Sound and Vibration}{27}{}{183-196}.
-\newblock
-\begin{APACrefDOI} \doi{10.1016/0022-460x(73)90060-6} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Barron%
-}{%
-Barron%
-}{%
-{\protect \APACyear {2009}}%
-}]{%
-Barron2009}
-\APACinsertmetastar {%
-Barron2009}%
-\begin{APACrefauthors}%
-Barron, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2009}.
-\newblock
-\APACrefbtitle {Auditorium Acoustics and Architectural Design} {Auditorium
-  acoustics and architectural design}\ (\PrintOrdinal{2a}\ \BEd).
-\newblock
-\APACaddressPublisher{}{Spon Press}.
-\newblock
-\begin{APACrefDOI} \doi{10.4324/9780203874226} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Barron%
-}{%
-Barron%
-}{%
-{\protect \APACyear {2015}}%
-}]{%
-Barron2015}
-\APACinsertmetastar {%
-Barron2015}%
-\begin{APACrefauthors}%
-Barron, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Theory and measurement of early, late and total sound
-  levels in rooms} {Theory and measurement of early, late and total sound
-  levels in rooms}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{137}{6}{3087-3098}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.4919655} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Barron%
-\ \BBA {} Lee%
-}{%
-Barron%
-\ \BBA {} Lee%
-}{%
-{\protect \APACyear {1988}}%
-}]{%
-Barron1988}
-\APACinsertmetastar {%
-Barron1988}%
-\begin{APACrefauthors}%
-Barron, M.%
-\BCBT {}\ \BBA {} Lee, L\BPBI J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1988}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Energy relations in concert auditoriums. I} {Energy
-  relations in concert auditoriums. i}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{84}{2}{618-628}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.396840} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Bate%
-\ \BBA {} Pillow%
-}{%
-Bate%
-\ \BBA {} Pillow%
-}{%
-{\protect \APACyear {1947}}%
-}]{%
-Bate1947}
-\APACinsertmetastar {%
-Bate1947}%
-\begin{APACrefauthors}%
-Bate, A\BPBI E.%
-\BCBT {}\ \BBA {} Pillow, M\BPBI E.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1947}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Mean free path of sound in an auditorium} {Mean free
-  path of sound in an auditorium}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Proceedings of the Physical Society}{59}{4}{535}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Beranek%
-}{%
-Beranek%
+Hekstra%
+\ \BBA {} Deprettere%
 }{%
 {\protect \APACyear {1993}}%
 }]{%
-beranek1986acoustics}
+hekstra_floating_1993}
 \APACinsertmetastar {%
-beranek1986acoustics}%
+hekstra_floating_1993}%
 \begin{APACrefauthors}%
-Beranek, L\BPBI L.%
+Hekstra, G.%
+\BCBT {}\ \BBA {} Deprettere, E.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYear{1993}.
+\APACrefYearMonthDay{1993}{{\APACmonth{06}}}{}.
 \newblock
-\APACrefbtitle {Acoustics} {Acoustics}\ (\PrintOrdinal{4a}\ \BEd).
+{\BBOQ}\APACrefatitle {Floating point {Cordic}} {Floating point
+  {Cordic}}.{\BBCQ}
 \newblock
-\APACaddressPublisher{}{American Institute of Physics}.
+\BIn{} \APACrefbtitle {Proceedings of {IEEE} 11th {Symposium} on {Computer}
+  {Arithmetic}} {Proceedings of {IEEE} 11th {Symposium} on {Computer}
+  {Arithmetic}}\ (\BPGS\ 130--137).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ARITH.1993.378100} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Beranek%
+Hou%
+, Wang%
+, Zou%
+\BCBL {}\ \BBA {} Liu%
 }{%
-Beranek%
-}{%
-{\protect \APACyear {2006}}%
-}]{%
-Beranek2006}
-\APACinsertmetastar {%
-Beranek2006}%
-\begin{APACrefauthors}%
-Beranek, L\BPBI L.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2006}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Analysis of Sabine and Eyring equations and their
-  application to concert hall audience and chair absorption} {Analysis of
-  sabine and eyring equations and their application to concert hall audience
-  and chair absorption}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{120}{3}{1399-1410}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.2221392} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Beranek%
-}{%
-Beranek%
-}{%
-{\protect \APACyear {2011}}%
-}]{%
-Beranek2011}
-\APACinsertmetastar {%
-Beranek2011}%
-\begin{APACrefauthors}%
-Beranek, L\BPBI L.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2011}{ma}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The sound strength parameter G and its importance in
-  evaluating and planning the acoustics of halls for music} {The sound strength
-  parameter g and its importance in evaluating and planning the acoustics of
-  halls for music}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{129}{5}{3020--3026}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.3573983} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Bernoulli%
-}{%
-Bernoulli%
-}{%
-{\protect \APACyear {1738}}%
-}]{%
-Bernoulli1738a}
-\APACinsertmetastar {%
-Bernoulli1738a}%
-\begin{APACrefauthors}%
-Bernoulli, D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1738}.
-\newblock
-\APACrefbtitle {Hydrodynamica: sive de viribus et motibus fluidorum
-  commentarii} {Hydrodynamica: sive de viribus et motibus fluidorum
-  commentarii}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Bistafa%
-\ \BBA {} Bradley%
-}{%
-Bistafa%
-\ \BBA {} Bradley%
-}{%
-{\protect \APACyear {2000}}%
-}]{%
-Bistafa2000}
-\APACinsertmetastar {%
-Bistafa2000}%
-\begin{APACrefauthors}%
-Bistafa, S\BPBI R.%
-\BCBT {}\ \BBA {} Bradley, J\BPBI S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2000}{feb}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Reverberation time and maximum background-noise level
-  for classrooms from a comparative study of speech intelligibility metrics}
-  {Reverberation time and maximum background-noise level for classrooms from a
-  comparative study of speech intelligibility metrics}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{107}{2}{861--875}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.428268} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Bolt%
-, Doak%
-\BCBL {}\ \BBA {} Westervelt%
-}{%
-Bolt%
+Hou%
 \ \protect \BOthers {.}}{%
-{\protect \APACyear {1950}}%
+{\protect \APACyear {2019}}%
 }]{%
-Bolt1950}
+hou_low_2019}
 \APACinsertmetastar {%
-Bolt1950}%
+hou_low_2019}%
 \begin{APACrefauthors}%
-Bolt, R\BPBI H.%
-, Doak, P\BPBI E.%
-\BCBL {}\ \BBA {} Westervelt, P\BPBI J.%
+Hou, N.%
+, Wang, M.%
+, Zou, X.%
+\BCBL {}\ \BBA {} Liu, M.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{1950}{}{}.
+\APACrefYearMonthDay{2019}{{\APACmonth{07}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Pulse Statistics Analysis of Room Acoustics} {Pulse
-  statistics analysis of room acoustics}.{\BBCQ}
+{\BBOQ}\APACrefatitle {A {Low} {Latency} {Floating} {Point} {CORDIC}
+  {Algorithm} for {Sin}/{Cosine} {Function}} {A {Low} {Latency} {Floating}
+  {Point} {CORDIC} {Algorithm} for {Sin}/{Cosine} {Function}}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{22}{3}{328-340}.
+\BIn{} \APACrefbtitle {2019 {IEEE} 4th {International} {Conference} on {Signal}
+  and {Image} {Processing} ({ICSIP})} {2019 {IEEE} 4th {International}
+  {Conference} on {Signal} and {Image} {Processing} ({ICSIP})}\ (\BPGS\
+  751--755).
 \newblock
-\begin{APACrefDOI} \doi{10.1121/1.1906608} \end{APACrefDOI}
+\APACrefnote{ISSN: null}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/SIPROCESS.2019.8868623} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Bonello%
+Leibson%
 }{%
-Bonello%
-}{%
-{\protect \APACyear {1981}}%
-}]{%
-bonello1981a}
-\APACinsertmetastar {%
-bonello1981a}%
-\begin{APACrefauthors}%
-Bonello, O\BPBI J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1981}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {A New Criterion for the Distribution of Normal Room
-  Modes} {A new criterion for the distribution of normal room modes}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of the Audio Engineering
-  Society}{29}{9}{597-606}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Borish%
-\ \BBA {} Angell%
-}{%
-Borish%
-\ \BBA {} Angell%
-}{%
-{\protect \APACyear {1983}}%
-}]{%
-borish1983an}
-\APACinsertmetastar {%
-borish1983an}%
-\begin{APACrefauthors}%
-Borish, J.%
-\BCBT {}\ \BBA {} Angell, J\BPBI B.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1983}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {An Efficient Algorithm for Measuring the Impulse
-  Response Using Pseudorandom Noise} {An efficient algorithm for measuring the
-  impulse response using pseudorandom noise}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{J. Audio Eng. Soc}{31}{7/8}{478--488}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-J.~Bradley%
-}{%
-J.~Bradley%
-}{%
-{\protect \APACyear {2012}}%
-}]{%
-Bradley2012}
-\APACinsertmetastar {%
-Bradley2012}%
-\begin{APACrefauthors}%
-Bradley, J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2012}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Optimising Sound Quality for Classrooms} {Optimising
-  sound quality for classrooms}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Brazilian Acoustical Association}{}{}{1-15}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-J\BPBI S.~Bradley%
-}{%
-J\BPBI S.~Bradley%
-}{%
-{\protect \APACyear {1986}}%
-}]{%
-Bradley1986}
-\APACinsertmetastar {%
-Bradley1986}%
-\begin{APACrefauthors}%
-Bradley, J\BPBI S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1986}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Predictors of speech intelligibility in rooms}
-  {Predictors of speech intelligibility in rooms}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{80}{3}{837--845}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.393907} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-J\BPBI S.~Bradley%
-, Reich%
-\BCBL {}\ \BBA {} Norcross%
-}{%
-J\BPBI S.~Bradley%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {1999}}%
-}]{%
-Bradley1999}
-\APACinsertmetastar {%
-Bradley1999}%
-\begin{APACrefauthors}%
-Bradley, J\BPBI S.%
-, Reich, R\BPBI D.%
-\BCBL {}\ \BBA {} Norcross, S\BPBI G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1999}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {On the combined effects of signal-to-noise ratio and
-  room acoustics on speech intelligibility} {On the combined effects of
-  signal-to-noise ratio and room acoustics on speech intelligibility}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{106}{4}{1820--1828}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.427932} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-J\BPBI S.~Bradley%
-, Sato%
-\BCBL {}\ \BBA {} Picard%
-}{%
-J\BPBI S.~Bradley%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2003}}%
-}]{%
-Bradley2003}
-\APACinsertmetastar {%
-Bradley2003}%
-\begin{APACrefauthors}%
-Bradley, J\BPBI S.%
-, Sato, H.%
-\BCBL {}\ \BBA {} Picard, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2003}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {On the importance of early reflections for speech in
-  rooms} {On the importance of early reflections for speech in rooms}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{113}{6}{3233}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1570439} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Carrión%
-}{%
-Carrión%
-}{%
-{\protect \APACyear {1998}}%
-}]{%
-Carrión1998}
-\APACinsertmetastar {%
-Carrión1998}%
-\begin{APACrefauthors}%
-Carrión, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1998}.
-\newblock
-\APACrefbtitle {Dise{\~n}o ac{\'u}stico de espacios arquitect{\'o}nicos}
-  {Dise{\~n}o ac{\'u}stico de espacios arquitect{\'o}nicos}.
-\newblock
-\APACaddressPublisher{}{Edicions UPC, Universitat Polit{\'e}cnica de
-  Catalunya}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Chiles%
-\ \BBA {} Barron%
-}{%
-Chiles%
-\ \BBA {} Barron%
-}{%
-{\protect \APACyear {2004}}%
-}]{%
-Barron2004}
-\APACinsertmetastar {%
-Barron2004}%
-\begin{APACrefauthors}%
-Chiles, S.%
-\BCBT {}\ \BBA {} Barron, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2004}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Sound level distribution and scatter in proportionate
-  spaces} {Sound level distribution and scatter in proportionate
-  spaces}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{116}{3}{1585-1595}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1775279} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Choi%
-}{%
-Choi%
-}{%
-{\protect \APACyear {2017}}%
-}]{%
-Cho2017}
-\APACinsertmetastar {%
-Cho2017}%
-\begin{APACrefauthors}%
-Choi, Y\BHBI J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Comparison of Two Types of Combined Measures, STI and
-  U50, for Predicting Speech Intelligibility in Classrooms} {Comparison of two
-  types of combined measures, sti and u50, for predicting speech
-  intelligibility in classrooms}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Archives of Acoustics}{42}{3}{}.
-\newblock
-\begin{APACrefDOI} \doi{10.1515/aoa-2017-0056} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Cohn%
-\ \BBA {} Lempel%
-}{%
-Cohn%
-\ \BBA {} Lempel%
-}{%
-{\protect \APACyear {1977}}%
-}]{%
-Cohn1977}
-\APACinsertmetastar {%
-Cohn1977}%
-\begin{APACrefauthors}%
-Cohn, M.%
-\BCBT {}\ \BBA {} Lempel, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1977}{jan}{}.
-\newblock
-{\BBOQ}\APACrefatitle {On fast M-sequence transforms} {On fast m-sequence
-  transforms}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{{IEEE} Transactions on Information
-  Theory}{23}{1}{135--137}.
-\newblock
-\begin{APACrefDOI} \doi{10.1109/tit.1977.1055666} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Cox%
-\ \BBA {} D'Antonio%
-}{%
-Cox%
-\ \BBA {} D'Antonio%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-Cox2016}
-\APACinsertmetastar {%
-Cox2016}%
-\begin{APACrefauthors}%
-Cox, T.%
-\BCBT {}\ \BBA {} D'Antonio, P.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2016}.
-\newblock
-\APACrefbtitle {Acoustic Absorbers and Diffusers: Theory, Design and
-  Application} {Acoustic absorbers and diffusers: Theory, design and
-  application}\ (\PrintOrdinal{2a}\ \BEd).
-\newblock
-\APACaddressPublisher{}{Taylor \& Francis}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Davis%
-}{%
-Davis%
-}{%
-{\protect \APACyear {1984}}%
-}]{%
-davis1984}
-\APACinsertmetastar {%
-davis1984}%
-\begin{APACrefauthors}%
-Davis, D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1984}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The Modified Hopkins-Stryker Equation} {The modified
-  hopkins-stryker equation}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Audio Engineering
-  Society}{32}{11}{862--867}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Davis%
-, Patronis%
-\BCBL {}\ \BBA {} Brown%
-}{%
-Davis%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2014}}%
-}]{%
-Davis2014}
-\APACinsertmetastar {%
-Davis2014}%
-\begin{APACrefauthors}%
-Davis, D.%
-, Patronis, E.%
-\BCBL {}\ \BBA {} Brown, P.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2014}.
-\newblock
-\APACrefbtitle {Sound System Engineering} {Sound system engineering}.
-\newblock
-\APACaddressPublisher{}{Taylor \& Francis}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Eyring%
-}{%
-Eyring%
-}{%
-{\protect \APACyear {1930}}%
-}]{%
-Eyring1930}
-\APACinsertmetastar {%
-Eyring1930}%
-\begin{APACrefauthors}%
-Eyring, C\BPBI F.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1930}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Reverberation time in dead rooms} {Reverberation time in
-  dead rooms}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of Acoustical Society of
-  America}{1}{2}{217-241}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Fletcher%
-\ \BBA {} Munson%
-}{%
-Fletcher%
-\ \BBA {} Munson%
-}{%
-{\protect \APACyear {1933}}%
-}]{%
-Fletcher1933}
-\APACinsertmetastar {%
-Fletcher1933}%
-\begin{APACrefauthors}%
-Fletcher, H.%
-\BCBT {}\ \BBA {} Munson, W\BPBI A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1933}{oct}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Loudness, Its Definition, Measurement and Calculation}
-  {Loudness, its definition, measurement and calculation}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{5}{2}{82--108}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1915637} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-French%
-\ \BBA {} Steinberg%
-}{%
-French%
-\ \BBA {} Steinberg%
-}{%
-{\protect \APACyear {1947}}%
-}]{%
-French1947}
-\APACinsertmetastar {%
-French1947}%
-\begin{APACrefauthors}%
-French, N\BPBI R.%
-\BCBT {}\ \BBA {} Steinberg, J\BPBI C.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1947}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Factors Governing the Intelligibility of Speech Sounds}
-  {Factors governing the intelligibility of speech sounds}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{19}{1}{90--119}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1916407} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Golomb%
-}{%
-Golomb%
-}{%
-{\protect \APACyear {1967}}%
-}]{%
-Golomb1967}
-\APACinsertmetastar {%
-Golomb1967}%
-\begin{APACrefauthors}%
-Golomb, S\BPBI W.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1967}.
-\newblock
-\APACrefbtitle {Shift register sequences} {Shift register sequences}.
-\newblock
-\APACaddressPublisher{}{Holden-Day}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Guarinos%
-, Calleja%
-, Estepa%
-\BCBL {}\ \BBA {} Rico%
-}{%
-Guarinos%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2015}}%
-}]{%
-jenaro2015}
-\APACinsertmetastar {%
-jenaro2015}%
-\begin{APACrefauthors}%
-Guarinos, J\BPBI V.%
-, Calleja, M\BPBI Y.%
-, Estepa, E\BPBI C.%
-\BCBL {}\ \BBA {} Rico, J\BPBI C\BPBI E.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Estimación del campo directo "vs" campo reverberante en
-  un recinto de pública concurrencia de tamaño medio} {Estimación del campo
-  directo "vs" campo reverberante en un recinto de pública concurrencia de
-  tamaño medio}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Tecniacustica}{}{}{}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Guarinos%
-, Calleja%
-\BCBL {}\ \BBA {} Rico%
-}{%
-Guarinos%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2016}}%
-}]{%
-jenaro2016}
-\APACinsertmetastar {%
-jenaro2016}%
-\begin{APACrefauthors}%
-Guarinos, J\BPBI V.%
-, Calleja, M\BPBI Y.%
-\BCBL {}\ \BBA {} Rico, J\BPBI C\BPBI E.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2016}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Estudio de la inteligibilidad de palabra de un recinto
-  en función del balance del campo directo (útil) - reverberado
-  (perjudicial)} {Estudio de la inteligibilidad de palabra de un recinto en
-  función del balance del campo directo (útil) - reverberado
-  (perjudicial)}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{EuroRegio}{}{}{}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Hass%
-}{%
-Hass%
-}{%
-{\protect \APACyear {1951}}%
-}]{%
-Haas1949}
-\APACinsertmetastar {%
-Haas1949}%
-\begin{APACrefauthors}%
-Hass, H.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1951}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {{\"U}ber den Einfluss eines Einfach-Echos auf die
-  H{\"o}rsamkeit von Sprache} {{\"U}ber den einfluss eines einfach-echos auf
-  die h{\"o}rsamkeit von sprache}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Acustica}{1}{}{49-58}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Hopkins%
-\ \BBA {} Stryker%
-}{%
-Hopkins%
-\ \BBA {} Stryker%
-}{%
-{\protect \APACyear {1948}}%
-}]{%
-Hopkins1948}
-\APACinsertmetastar {%
-Hopkins1948}%
-\begin{APACrefauthors}%
-Hopkins, H\BPBI F.%
-\BCBT {}\ \BBA {} Stryker, N\BPBI R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1948}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {A Proposed Loudness-Efficiency Rating for Loud-Speakers
-  and the Determination of System Power Requirements for Enclosures} {A
-  proposed loudness-efficiency rating for loud-speakers and the determination
-  of system power requirements for enclosures}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Proceedings of the IRE}{36}{3}{315-335}.
-\newblock
-\begin{APACrefDOI} \doi{10.1109/JRPROC.1948.226221} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Hunt%
-}{%
-Hunt%
-}{%
-{\protect \APACyear {1964}}%
-}]{%
-Hunt1964}
-\APACinsertmetastar {%
-Hunt1964}%
-\begin{APACrefauthors}%
-Hunt, F\BPBI V.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1964}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Remarks on the Mean Free Path Problem} {Remarks on the
-  mean free path problem}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{36}{3}{556-564}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1919002} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-J{\"a}ger%
-}{%
-J{\"a}ger%
-}{%
-{\protect \APACyear {1911}}%
-}]{%
-jager1911theorie}
-\APACinsertmetastar {%
-jager1911theorie}%
-\begin{APACrefauthors}%
-J{\"a}ger, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1911}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Zur theorie des nachhalls} {Zur theorie des
-  nachhalls}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Wiener Akad, Ber., Math.-Naturwiss, Klasse,
-  Bd}{120}{}{613--634}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Jetzt%
-}{%
-Jetzt%
-}{%
-{\protect \APACyear {1979}}%
-}]{%
-Jetzt1979}
-\APACinsertmetastar {%
-Jetzt1979}%
-\begin{APACrefauthors}%
-Jetzt, J\BPBI J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1979}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Critical distance measurement of rooms from the sound
-  energy spectral response} {Critical distance measurement of rooms from the
-  sound energy spectral response}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{65}{5}{1204-1211}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.382786} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Jordan%
-}{%
-Jordan%
-}{%
-{\protect \APACyear {1970}}%
-}]{%
-Jordan1970}
-\APACinsertmetastar {%
-Jordan1970}%
-\begin{APACrefauthors}%
-Jordan, V\BPBI L.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1970}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Acoustical Criteria for Auditoriums and Their Relation
-  to Model Techniques} {Acoustical criteria for auditoriums and their relation
-  to model techniques}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{47}{2A}{408--412}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1911535} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Jurkiewicz%
-, Wulfrank%
-\BCBL {}\ \BBA {} Kahle%
-}{%
-Jurkiewicz%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2012}}%
-}]{%
-Jurkiewicz2012}
-\APACinsertmetastar {%
-Jurkiewicz2012}%
-\begin{APACrefauthors}%
-Jurkiewicz, Y.%
-, Wulfrank, T.%
-\BCBL {}\ \BBA {} Kahle, E.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2012}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Architectural shape and early acoustic efficiency in
-  concert halls (L)} {Architectural shape and early acoustic efficiency in
-  concert halls (l)}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{132}{3}{1253-1256}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.4740493} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Knudsen%
-}{%
-Knudsen%
-}{%
-{\protect \APACyear {1932}}%
-}]{%
-Knudsen1932}
-\APACinsertmetastar {%
-Knudsen1932}%
-\begin{APACrefauthors}%
-Knudsen, V\BPBI O.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1932}.
-\newblock
-\APACrefbtitle {Architectural Acoustics} {Architectural acoustics}\
-  (\PrintOrdinal{1a}\ \BEd).
-\newblock
-\APACaddressPublisher{}{J. Wiley \& sons, Incorporated}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Kosten%
-}{%
-Kosten%
-}{%
-{\protect \APACyear {1960}}%
-}]{%
-Kosten1960}
-\APACinsertmetastar {%
-Kosten1960}%
-\begin{APACrefauthors}%
-Kosten, C\BPBI W.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1960}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The mean free path in room acoustics} {The mean free
-  path in room acoustics}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Acustica}{10}{4}{245-250}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Krokstad%
-, Strøm%
-\BCBL {}\ \BBA {} Sørsdal%
-}{%
-Krokstad%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {1968}}%
-}]{%
-KROKSTAD1968118}
-\APACinsertmetastar {%
-KROKSTAD1968118}%
-\begin{APACrefauthors}%
-Krokstad, A.%
-, Strøm, S.%
-\BCBL {}\ \BBA {} Sørsdal, S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1968}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Calculating the acoustical room response by the use of a
-  ray tracing technique} {Calculating the acoustical room response by the use
-  of a ray tracing technique}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Journal of Sound and Vibration}{8}{1}{118 - 125}.
-\newblock
-\begin{APACrefDOI} \doi{10.1016/0022-460X(68)90198-3} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Kryter%
-}{%
-Kryter%
-}{%
-{\protect \APACyear {1962}}%
-{\protect \APACexlab {{\protect \BCnt {1}}}}}]{%
-Kryter1962}
-\APACinsertmetastar {%
-Kryter1962}%
-\begin{APACrefauthors}%
-Kryter, K\BPBI D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1962{\protect \BCnt {1}}}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Methods for the Calculation and Use of the Articulation
-  Index} {Methods for the calculation and use of the articulation
-  index}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{34}{11}{1689--1697}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1909094} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Kryter%
-}{%
-Kryter%
-}{%
-{\protect \APACyear {1962}}%
-{\protect \APACexlab {{\protect \BCnt {2}}}}}]{%
-Kryter1962a}
-\APACinsertmetastar {%
-Kryter1962a}%
-\begin{APACrefauthors}%
-Kryter, K\BPBI D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1962{\protect \BCnt {2}}}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Validation of the Articulation Index} {Validation of the
-  articulation index}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{34}{11}{1698--1702}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1909096} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Kundt%
-}{%
-Kundt%
-}{%
-{\protect \APACyear {1866}}%
-}]{%
-Kundt1866}
-\APACinsertmetastar {%
-Kundt1866}%
-\begin{APACrefauthors}%
-Kundt, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1866}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Ueber eine neue Art akustischer Staubfiguren und über
-  die Anwendung derselben zur Bestimmung der Schallgeschwindigkeit in festen
-  Körpern und Gasen} {Ueber eine neue art akustischer staubfiguren und über
-  die anwendung derselben zur bestimmung der schallgeschwindigkeit in festen
-  körpern und gasen}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Annalen der Physik}{203}{4}{497-523}.
-\newblock
-\begin{APACrefDOI} \doi{10.1002/andp.18662030402} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Kundt%
-}{%
-Kundt%
-}{%
-{\protect \APACyear {1868}}%
-}]{%
-Kundt1868}
-\APACinsertmetastar {%
-Kundt1868}%
-\begin{APACrefauthors}%
-Kundt, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1868}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {III. Acoustic experiments} {Iii. acoustic
-  experiments}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The London, Edinburgh, and Dublin Philosophical
-  Magazine and Journal of Science}{35}{234}{41-48}.
-\newblock
-\begin{APACrefDOI} \doi{10.1080/14786446808639937} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Kuttruff%
-}{%
-Kuttruff%
-}{%
-{\protect \APACyear {2016}}%
-}]{%
-Kuttruff2016}
-\APACinsertmetastar {%
-Kuttruff2016}%
-\begin{APACrefauthors}%
-Kuttruff, H.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2016}.
-\newblock
-\APACrefbtitle {Room acoustics} {Room acoustics}\ (\PrintOrdinal{6a}\ \BEd).
-\newblock
-\APACaddressPublisher{}{CRC Press}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Lacatis%
-\ \protect \BOthers {.}}{%
-Lacatis%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2008}}%
-}]{%
-Lacatis2008}
-\APACinsertmetastar {%
-Lacatis2008}%
-\begin{APACrefauthors}%
-Lacatis, R.%
-, Giménez, A.%
-, Barba~Sevillano, A.%
-, Cerdá, S.%
-, Romero, J.%
-\BCBL {}\ \BBA {} Cibrián, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2008}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Historical and chronological evolution of the concert
-  hall acoustics parameters} {Historical and chronological evolution of the
-  concert hall acoustics parameters}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{123}{5}{3198-3198}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.2933348} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Lehmann%
-}{%
-Lehmann%
-}{%
-{\protect \APACyear {1976}}%
-}]{%
-Lehmann1976}
-\APACinsertmetastar {%
-Lehmann1976}%
-\begin{APACrefauthors}%
-Lehmann, P.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1976}.
-\newblock
-\APACrefbtitle {{\"U}ber die Ermittlung raumakustischer Kriterien und deren
-  Zusammenhang mit subjektiven Beurteilungen der H{\"o}rsamkeit} {{\"U}ber die
-  ermittlung raumakustischer kriterien und deren zusammenhang mit subjektiven
-  beurteilungen der h{\"o}rsamkeit}.
-\newblock
-\APACaddressPublisher{}{Technische Universitat Berlin}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Mankovsky%
-}{%
-Mankovsky%
-}{%
-{\protect \APACyear {1971}}%
-}]{%
-Mankovsky1971}
-\APACinsertmetastar {%
-Mankovsky1971}%
-\begin{APACrefauthors}%
-Mankovsky, V\BPBI S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1971}.
-\newblock
-\APACrefbtitle {Acoustics of studios and auditoria} {Acoustics of studios and
-  auditoria}.
-\newblock
-\APACaddressPublisher{}{Communication Arts Books}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Marshall%
-}{%
-Marshall%
-}{%
-{\protect \APACyear {1994}}%
-}]{%
-Marshall1994}
-\APACinsertmetastar {%
-Marshall1994}%
-\begin{APACrefauthors}%
-Marshall, L\BPBI G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1994}{oc}{}.
-\newblock
-{\BBOQ}\APACrefatitle {An acoustics measurement program for evaluating
-  auditoriums based on the early/late sound energy ratio} {An acoustics
-  measurement program for evaluating auditoriums based on the early/late sound
-  energy ratio}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{96}{4}{2251--2261}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.410097} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Millington%
-}{%
-Millington%
-}{%
-{\protect \APACyear {1932}}%
-}]{%
-Millington1932}
-\APACinsertmetastar {%
-Millington1932}%
-\begin{APACrefauthors}%
-Millington, G.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1932}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {A modified formula for reverberation} {A modified
-  formula for reverberation}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{4}{1A}{69-82}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1915588} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Morse%
-\ \BBA {} Ingard%
-}{%
-Morse%
-\ \BBA {} Ingard%
-}{%
-{\protect \APACyear {1968}}%
-}]{%
-Morse1968}
-\APACinsertmetastar {%
-Morse1968}%
-\begin{APACrefauthors}%
-Morse, P.%
-\BCBT {}\ \BBA {} Ingard, K.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1968}.
-\newblock
-\APACrefbtitle {Theoretical Acoustics} {Theoretical acoustics}.
-\newblock
-\APACaddressPublisher{}{Princeton University Press}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Nijs%
-\ \BBA {} Rycht{\'{a}}rikov{\'{a}}%
-}{%
-Nijs%
-\ \BBA {} Rycht{\'{a}}rikov{\'{a}}%
-}{%
-{\protect \APACyear {2011}}%
-}]{%
-Nijs2011}
-\APACinsertmetastar {%
-Nijs2011}%
-\begin{APACrefauthors}%
-Nijs, L.%
-\BCBT {}\ \BBA {} Rycht{\'{a}}rikov{\'{a}}, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2011}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Calculating the Optimum Reverberation Time and
-  Absorption Coefficient for Good Speech Intelligibility in Classroom Design
-  Using U50} {Calculating the optimum reverberation time and absorption
-  coefficient for good speech intelligibility in classroom design using
-  u50}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Acta Acustica united with Acustica}{97}{1}{93--102}.
-\newblock
-\begin{APACrefDOI} \doi{10.3813/aaa.918390} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Nijs%
-, Versteeg%
-\BCBL {}\ \BBA {} van~der Voorden%
-}{%
-Nijs%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2004}}%
-}]{%
-}
-\APACinsertmetastar {%
-}%
-\begin{APACrefauthors}%
-Nijs, L.%
-, Versteeg, P.%
-\BCBL {}\ \BBA {} van~der Voorden, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2004}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The combination of absorbing materials and room shapes
-  to reduce noise levels} {The combination of absorbing materials and room
-  shapes to reduce noise levels}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{International Congress on Acoustics}{}{We2.B1.2}{}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Pelzer%
-, Aspöck%
-, Schröder%
-\BCBL {}\ \BBA {} Vorländer%
-}{%
-Pelzer%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2014}}%
-}]{%
-Pelzer_2014}
-\APACinsertmetastar {%
-Pelzer_2014}%
-\begin{APACrefauthors}%
-Pelzer, S.%
-, Aspöck, L.%
-, Schröder, D.%
-\BCBL {}\ \BBA {} Vorländer, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2014}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Integrating Real-Time Room Acoustics Simulation into a
-  {CAD} Modeling Software to Enhance the Architectural Design Process}
-  {Integrating real-time room acoustics simulation into a {CAD} modeling
-  software to enhance the architectural design process}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Buildings}{4}{2}{113-138}.
-\newblock
-\begin{APACrefDOI} \doi{10.3390/buildings4020113} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Plens%
-, Guarinos%
-\BCBL {}\ \BBA {} Calleja%
-}{%
-Plens%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2017}}%
-}]{%
-plens2017}
-\APACinsertmetastar {%
-plens2017}%
-\begin{APACrefauthors}%
-Plens, J\BPBI M\BPBI R.%
-, Guarinos, J\BPBI V.%
-\BCBL {}\ \BBA {} Calleja, M\BPBI Y.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Campo directo (útil) / reverberado (perjudicial).
-  Resultados experimentales frente a simulación en CATT-Acoustic} {Campo
-  directo (útil) / reverberado (perjudicial). resultados experimentales frente
-  a simulación en catt-acoustic}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Tecniacustica}{}{}{}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Reichardt%
-, Alim%
-\BCBL {}\ \BBA {} Schmidt%
-}{%
-Reichardt%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {1974}}%
-}]{%
-Reichardt1974}
-\APACinsertmetastar {%
-Reichardt1974}%
-\begin{APACrefauthors}%
-Reichardt, W.%
-, Alim, O.%
-\BCBL {}\ \BBA {} Schmidt, W.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1974}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Abhängigkeit der grenzen zwischen brauchbarer und
-  unbrauchbarer durchsichtigkeit von der art des musikmotives, der nachhallzeit
-  und der nachhalleinsatzzeit} {Abhängigkeit der grenzen zwischen brauchbarer
-  und unbrauchbarer durchsichtigkeit von der art des musikmotives, der
-  nachhallzeit und der nachhalleinsatzzeit}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Applied Acoustics}{7}{4}{243--264}.
-\newblock
-\begin{APACrefDOI} \doi{10.1016/0003-682x(74)90033-4} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Sabine%
-}{%
-Sabine%
-}{%
-{\protect \APACyear {1922}}%
-}]{%
-Sabine1922}
-\APACinsertmetastar {%
-Sabine1922}%
-\begin{APACrefauthors}%
-Sabine, W\BPBI C.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1922}.
-\newblock
-\APACrefbtitle {Collected Papers on Acoustics} {Collected papers on acoustics}.
-\newblock
-\APACaddressPublisher{}{Harvard University Press}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Sarwate%
-\ \BBA {} Pursley%
-}{%
-Sarwate%
-\ \BBA {} Pursley%
-}{%
-{\protect \APACyear {1980}}%
-}]{%
-Sarwate1980}
-\APACinsertmetastar {%
-Sarwate1980}%
-\begin{APACrefauthors}%
-Sarwate, D.%
-\BCBT {}\ \BBA {} Pursley, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1980}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Crosscorrelation properties of pseudorandom and related
-  sequences} {Crosscorrelation properties of pseudorandom and related
-  sequences}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Proceedings of the {IEEE}}{68}{5}{593--619}.
-\newblock
-\begin{APACrefDOI} \doi{10.1109/proc.1980.11697} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Sato%
-\ \BBA {} Bradley%
-}{%
-Sato%
-\ \BBA {} Bradley%
+Leibson%
 }{%
 {\protect \APACyear {2005}}%
 }]{%
-Sato2005}
+leibson_9100_2005}
 \APACinsertmetastar {%
-Sato2005}%
+leibson_9100_2005}%
 \begin{APACrefauthors}%
-Sato, H.%
-\BCBT {}\ \BBA {} Bradley, J.%
+Leibson, S.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
 \APACrefYearMonthDay{2005}{}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Acoustical conditions for speech communication in active
-  elementary school classrooms} {Acoustical conditions for speech communication
-  in active elementary school classrooms}.{\BBCQ}
+\APACrefbtitle {The 9100 {Part} 2.} {The 9100 {Part} 2.}
 \newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{117}{4}{2405--2405}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.4786138} \end{APACrefDOI}
+\begin{APACrefURL}
+  [{2020-07-02}]\url{http://www.hp9825.com/html/the_9100_part_2.html}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Sato%
-\ \BBA {} Bradley%
+Meher%
+, Valls%
+, Juang%
+, Sridharan%
+\BCBL {}\ \BBA {} Maharatna%
 }{%
-Sato%
-\ \BBA {} Bradley%
+Meher%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2009}}%
+}]{%
+meher_50_2009}
+\APACinsertmetastar {%
+meher_50_2009}%
+\begin{APACrefauthors}%
+Meher, P\BPBI K.%
+, Valls, J.%
+, Juang, T\BHBI B.%
+, Sridharan, K.%
+\BCBL {}\ \BBA {} Maharatna, K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{{\APACmonth{09}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {50 {Years} of {CORDIC}: {Algorithms}, {Architectures},
+  and {Applications}} {50 {Years} of {CORDIC}: {Algorithms}, {Architectures},
+  and {Applications}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Circuits and Systems I: Regular
+  Papers}{56}{9}{1893--1907}.
+\newblock
+\APACrefnote{Conference Name: IEEE Transactions on Circuits and Systems I:
+  Regular Papers}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/TCSI.2009.2025803} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Nguyen%
+, Nguyen%
+, Hoang%
+, Le%
+\BCBL {}\ \BBA {} Pham%
 }{%
+Nguyen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+nguyen_low-resource_2015}
+\APACinsertmetastar {%
+nguyen_low-resource_2015}%
+\begin{APACrefauthors}%
+Nguyen, H\BHBI T.%
+, Nguyen, X\BHBI T.%
+, Hoang, T\BHBI T.%
+, Le, D\BHBI H.%
+\BCBL {}\ \BBA {} Pham, C\BHBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Low-resource low-latency hybrid adaptive {CORDIC} with
+  floating-point precision} {Low-resource low-latency hybrid adaptive {CORDIC}
+  with floating-point precision}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEICE Electronics Express}{12}{9}{20150258--20150258}.
+\newblock
+\begin{APACrefURL}
+  [{2020-07-01}]\url{https://www.jstage.jst.go.jp/article/elex/12/9/12_12.20150258/_article}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1587/elex.12.20150258} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Parker%
+}{%
+Parker%
+}{%
+{\protect \APACyear {2011}}%
+}]{%
+parker_abstract_2011}
+\APACinsertmetastar {%
+parker_abstract_2011}%
+\begin{APACrefauthors}%
+Parker, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Abstract – {Floating} {Point}} {Abstract –
+  {Floating} {Point}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{DesignCon 2011}{}{}{15}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.intel.com/content/dam/www/programmable/us/en/pdfs/literature/wp/designcon2011-floating-point-design-flow.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Schelin%
+}{%
+Schelin%
+}{%
+{\protect \APACyear {1983}}%
+}]{%
+schelin_calculator_1983}
+\APACinsertmetastar {%
+schelin_calculator_1983}%
+\begin{APACrefauthors}%
+Schelin, C\BPBI W.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1983}{{\APACmonth{05}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Calculator {Function} {Approximation}} {Calculator
+  {Function} {Approximation}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The American Mathematical Monthly}{90}{5}{317--325}.
+\newblock
+\begin{APACrefURL}
+  [{2020-07-02}]\url{https://doi.org/10.1080/00029890.1983.11971220}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{Publisher: Taylor \& Francis \_eprint:
+  https://doi.org/10.1080/00029890.1983.11971220}
+\newblock
+\begin{APACrefDOI} \doi{10.1080/00029890.1983.11971220} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Volder%
+}{%
+Volder%
+}{%
+{\protect \APACyear {1959}}%
+}]{%
+volder_cordic_1959}
+\APACinsertmetastar {%
+volder_cordic_1959}%
+\begin{APACrefauthors}%
+Volder, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1959}{{\APACmonth{03}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The {CORDIC} computing technique} {The {CORDIC}
+  computing technique}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Papers presented at the the {March} 3-5, 1959, western
+  joint computer conference} {Papers presented at the the {March} 3-5, 1959,
+  western joint computer conference}\ (\BPGS\ 257--261).
+\newblock
+\APACaddressPublisher{San Francisco, California}{Association for Computing
+  Machinery}.
+\newblock
+\begin{APACrefURL} [{2020-02-25}]\url{https://doi.org/10.1145/1457838.1457886}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1145/1457838.1457886} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Walther%
+}{%
+Walther%
+}{%
+{\protect \APACyear {1971}}%
+}]{%
+walther_unified_1971}
+\APACinsertmetastar {%
+walther_unified_1971}%
+\begin{APACrefauthors}%
+Walther, J\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1971}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A unified algorithm for elementary functions} {A unified
+  algorithm for elementary functions}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the {May} 18-20, 1971, spring joint
+  computer conference on - {AFIPS} '71 ({Spring})} {Proceedings of the {May}
+  18-20, 1971, spring joint computer conference on - {AFIPS} '71 ({Spring})}\
+  (\BPG~379).
+\newblock
+\APACaddressPublisher{Atlantic City, New Jersey}{ACM Press}.
+\newblock
+\begin{APACrefURL}
+  [{2020-02-25}]\url{http://portal.acm.org/citation.cfm?doid=1478786.1478840}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1145/1478786.1478840} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zhou%
+, Dou%
+, Lei%
+, Xu%
+\BCBL {}\ \BBA {} Dong%
+}{%
+Zhou%
+\ \protect \BOthers {.}}{%
 {\protect \APACyear {2008}}%
 }]{%
-Sato2008}
+zhou_double_2008}
 \APACinsertmetastar {%
-Sato2008}%
+zhou_double_2008}%
 \begin{APACrefauthors}%
-Sato, H.%
-\BCBT {}\ \BBA {} Bradley, J\BPBI S.%
+Zhou, J.%
+, Dou, Y.%
+, Lei, Y.%
+, Xu, J.%
+\BCBL {}\ \BBA {} Dong, Y.%
 \end{APACrefauthors}%
 \unskip\
 \newblock
-\APACrefYearMonthDay{2008}{ap}{}.
+\APACrefYearMonthDay{2008}{{\APACmonth{09}}}{}.
 \newblock
-{\BBOQ}\APACrefatitle {Evaluation of acoustical conditions for speech
-  communication in working elementary school classrooms} {Evaluation of
-  acoustical conditions for speech communication in working elementary school
-  classrooms}.{\BBCQ}
+{\BBOQ}\APACrefatitle {Double {Precision} {Hybrid}-{Mode} {Floating}-{Point}
+  {FPGA} {CORDIC} {Co}-processor} {Double {Precision} {Hybrid}-{Mode}
+  {Floating}-{Point} {FPGA} {CORDIC} {Co}-processor}.{\BBCQ}
 \newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{123}{4}{2064--2077}.
+\BIn{} \APACrefbtitle {2008 10th {IEEE} {International} {Conference} on {High}
+  {Performance} {Computing} and {Communications}} {2008 10th {IEEE}
+  {International} {Conference} on {High} {Performance} {Computing} and
+  {Communications}}\ (\BPGS\ 182--189).
 \newblock
-\begin{APACrefDOI} \doi{10.1121/1.2839283} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Schroeder%
-}{%
-Schroeder%
-}{%
-{\protect \APACyear {1954}}%
-}]{%
-schroeder1954}
-\APACinsertmetastar {%
-schroeder1954}%
-\begin{APACrefauthors}%
-Schroeder, M\BPBI R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1954}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Die statistischen Parameter der Frequenzkurven von groen
-  R{\"a}umen} {Die statistischen parameter der frequenzkurven von groen
-  r{\"a}umen}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Acustica}{4}{5}{594--600}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Schroeder%
-}{%
-Schroeder%
-}{%
-{\protect \APACyear {1962}}%
-}]{%
-Schroeder1962}
-\APACinsertmetastar {%
-Schroeder1962}%
-\begin{APACrefauthors}%
-Schroeder, M\BPBI R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1962}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Frequency‐Correlation Functions of Frequency Responses
-  in Rooms} {Frequency‐correlation functions of frequency responses in
-  rooms}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The Journal of the Acoustical Society of
-  America}{34}{12}{1819-1823}.
-\newblock
-\begin{APACrefDOI} \doi{10.1121/1.1909136} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Schuster%
-\ \BBA {} Waetzmann%
-}{%
-Schuster%
-\ \BBA {} Waetzmann%
-}{%
-{\protect \APACyear {1929}}%
-}]{%
-Schuster1929}
-\APACinsertmetastar {%
-Schuster1929}%
-\begin{APACrefauthors}%
-Schuster, K.%
-\BCBT {}\ \BBA {} Waetzmann, E.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1929}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Über den Nachhall in geschlossenen Räumen} {Über den
-  nachhall in geschlossenen räumen}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Annalen der Physik}{393}{5}{671-695}.
-\newblock
-\begin{APACrefDOI} \doi{10.1002/andp.19293930505} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Self%
-\ \protect \BOthers {.}}{%
-Self%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {2009}}%
-}]{%
-Self2009}
-\APACinsertmetastar {%
-Self2009}%
-\begin{APACrefauthors}%
-Self, D.%
-, Duncan, B.%
-, Sinclair, I.%
-, Brice, R.%
-, Hood, J\BPBI L.%
-, Singmin, A.%
-\BDBL {}Watkinson, J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{2009}.
-\newblock
-\APACrefbtitle {Audio Engineering: Know It All} {Audio engineering: Know it
-  all}.
-\newblock
-\APACaddressPublisher{}{Elsevier Science}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Stephenson%
-}{%
-Stephenson%
-}{%
-{\protect \APACyear {2012}}%
-}]{%
-Stepheson2012}
-\APACinsertmetastar {%
-Stepheson2012}%
-\begin{APACrefauthors}%
-Stephenson, U.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2012}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Different assumptions - Different reverberation
-  formulae} {Different assumptions - different reverberation formulae}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Internoise}{11}{}{}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Sylvester%
-}{%
-Sylvester%
-}{%
-{\protect \APACyear {1908}}%
-}]{%
-Sylvester1908}
-\APACinsertmetastar {%
-Sylvester1908}%
-\begin{APACrefauthors}%
-Sylvester, J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{1908}.
-\newblock
-\APACrefbtitle {The Collected Mathematical Papers: (1870-1883)} {The collected
-  mathematical papers: (1870-1883)}.
-\newblock
-\APACaddressPublisher{}{Cambridge University}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Thiele%
-}{%
-Thiele%
-}{%
-{\protect \APACyear {1953}}%
-}]{%
-Thiele1953}
-\APACinsertmetastar {%
-Thiele1953}%
-\begin{APACrefauthors}%
-Thiele, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1953}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Richtungsverteilung und Zeitfolge der Schallrückwürfe
-  in Räumen} {Richtungsverteilung und zeitfolge der schallrückwürfe in
-  räumen}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Acustica}{3}{2}{2}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Vorl{\"a}nder%
-}{%
-Vorl{\"a}nder%
-}{%
-{\protect \APACyear {1995}}%
-}]{%
-Vorlander1995}
-\APACinsertmetastar {%
-Vorlander1995}%
-\begin{APACrefauthors}%
-Vorl{\"a}nder, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1995}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Revised Relation between the Sound Power and the Average
-  Sound Pressure Level in Rooms and Consequences for Acoustic Measurements}
-  {Revised relation between the sound power and the average sound pressure
-  level in rooms and consequences for acoustic measurements}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{Acta Acustica united with Acustica}{81}{4}{332-343}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Wallach%
-, Newman%
-\BCBL {}\ \BBA {} Rosenzweig%
-}{%
-Wallach%
-\ \protect \BOthers {.}}{%
-{\protect \APACyear {1949}}%
-}]{%
-Wallach1949}
-\APACinsertmetastar {%
-Wallach1949}%
-\begin{APACrefauthors}%
-Wallach, H.%
-, Newman, E\BPBI B.%
-\BCBL {}\ \BBA {} Rosenzweig, M\BPBI R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1949}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {The Precedence Effect in Sound Localization} {The
-  precedence effect in sound localization}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{The American Journal of Psychology}{62}{}{315}.
-\newblock
-\begin{APACrefDOI} \doi{10.2307/1418275} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-Welti%
-}{%
-Welti%
-}{%
-{\protect \APACyear {2009}}%
-}]{%
-welti2009investigation}
-\APACinsertmetastar {%
-welti2009investigation}%
-\begin{APACrefauthors}%
-Welti, T.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2009}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Investigation of Bonello Criteria for Use in Small Room
-  Acoustics} {Investigation of bonello criteria for use in small room
-  acoustics}.{\BBCQ}
-\newblock
-\BIn{} \APACrefbtitle {Audio Engineering Society Convention 127.} {Audio
-  engineering society convention 127.}
+\begin{APACrefDOI} \doi{10.1109/HPCC.2008.14} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
