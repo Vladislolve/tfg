@@ -12,50 +12,47 @@ Reallocated singl_function (elt_size=8) to 100 items from 50.
 Reallocated wiz_functions (elt_size=8) to 9000 items from 6000.
 Reallocated singl_function (elt_size=8) to 100 items from 50.
 Database file #1: bibliografia/bibliografia.bib
-Warning--I didn't find a database entry for "Haas1949"
-Warning--I didn't find a database entry for "Barron1988"
-Warning--I didn't find a database entry for "Sato2008"
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in dhume_parameterizable_2012
-You've used 12 entries,
+You've used 14 entries,
             6951 wiz_defined-function locations,
-            1373 strings with 13869 characters,
-and the built_in function-call counts, 23836 in all, are:
-= -- 3026
-> -- 234
-< -- 943
-+ -- 974
-- -- 24
-* -- 1452
-:= -- 3853
-add.period$ -- 60
-call.type$ -- 12
-change.case$ -- 224
+            1382 strings with 14350 characters,
+and the built_in function-call counts, 28325 in all, are:
+= -- 3597
+> -- 277
+< -- 1150
++ -- 1186
+- -- 28
+* -- 1735
+:= -- 4621
+add.period$ -- 70
+call.type$ -- 14
+change.case$ -- 263
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 664
-empty$ -- 1010
-format.name$ -- 350
-if$ -- 4733
+cite$ -- 29
+duplicate$ -- 788
+empty$ -- 1177
+format.name$ -- 414
+if$ -- 5598
 int.to.chr$ -- 0
-int.to.str$ -- 36
+int.to.str$ -- 42
 missing$ -- 0
-newline$ -- 347
-num.names$ -- 96
-pop$ -- 560
+newline$ -- 405
+num.names$ -- 112
+pop$ -- 646
 preamble$ -- 1
-purify$ -- 62
+purify$ -- 74
 quote$ -- 0
-skip$ -- 1635
+skip$ -- 1922
 stack$ -- 0
-substring$ -- 1118
-swap$ -- 415
-text.length$ -- 72
+substring$ -- 1361
+swap$ -- 490
+text.length$ -- 86
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1344
+type$ -- 1568
 warning$ -- 1
-while$ -- 135
+while$ -- 164
 width$ -- 0
-write$ -- 429
-(There were 4 warnings)
+write$ -- 505
+(There was 1 warning)

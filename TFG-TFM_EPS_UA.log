@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.7.1)  5 JUL 2020 16:58
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.7.1)  12 JUL 2020 20:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2397,31 +2397,11 @@ Overfull \hbox (20.35634pt too wide) in paragraph at lines 47--67
 ] [5] [6
 
 
+] [7] [8
+
+
 ]
-
-Package natbib Warning: Citation `Haas1949' on page vii undefined on input line
- 22.
-
-
-Package natbib Warning: Citation `Haas1949' on page vii undefined on input line
- 22.
-
-
-Package natbib Warning: Citation `Barron1988' on page vii undefined on input li
-ne 26.
-
-
-Package natbib Warning: Citation `Barron1988' on page vii undefined on input li
-ne 28.
-
-
-Package natbib Warning: Citation `Sato2008' on page vii undefined on input line
- 28.
-
-[7] [8
-
-
-] [9
+[9
 
 
 ] [10
@@ -2445,14 +2425,14 @@ LaTeX Info: Redefining \ttfamily on input line 1.
 ] [14
 
 
-]
-(./TFG-TFM_EPS_UA.lof
+] (./TFG-TFM_EPS_UA.lof
 LaTeX Info: Redefining \rmfamily on input line 1.
 LaTeX Info: Redefining \sffamily on input line 1.
 LaTeX Info: Redefining \ttfamily on input line 1.
 )
 \tf@lof=\write6
- [15] [16
+
+[15] [16
 
 
 ] (./TFG-TFM_EPS_UA.lot
@@ -2464,61 +2444,54 @@ LaTeX Info: Redefining \ttfamily on input line 1.
  [17] [18
 
 
-]
-(./TFG-TFM_EPS_UA.lol)
+] (./TFG-TFM_EPS_UA.lol)
 \tf@lol=\write8
  [19] [20
 
 
-] (./capitulos/objetivos.tex
+]
+(./capitulos/Introduccion.tex
 chapter 1.
-) (./capitulos/motivacion.tex [1
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 18.
+
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 21--21
+[][][] 
+ []
 
 
-] [2
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 21--21
+[][][] 
+ []
+
+[1
+
+
+]
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 42--42
+[][][] 
+ []
+
+
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 42--42
+[][][] 
+ []
+
+
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 50--50
+[][][] 
+ []
+
+
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 50--50
+[][][] 
+ []
+
+[2]) (./capitulos/CORDIC.tex [3] [4
 
 
 ]
 chapter 2.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 10.
-) (./capitulos/Introduccion.tex [3] [4
-
-
-]
-chapter 3.
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 9--9
-[][][] 
- []
-
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 9--9
-[][][] 
- []
-
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 28--28
-[][][] 
- []
-
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 28--28
-[][][] 
- []
-
-[5]
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 36--36
-[][][] 
- []
-
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 36--36
-[][][] 
- []
-
-) (./capitulos/CORDIC.tex [6]
-chapter 4.
 
 Overfull \hbox (2.34543pt too wide) in paragraph at lines 3--3
 [][][] 
@@ -2530,10 +2503,7 @@ Overfull \hbox (2.34543pt too wide) in paragraph at lines 3--3
  []
 
 LaTeX Font Info:    Calculating math sizes for size <7.665> on input line 16.
-[7
-
-
-]
+[5]
 
 LaTeX Font Warning: Command \boldmath invalid in math mode on input line 47.
 
@@ -2546,99 +2516,110 @@ File: archivos/CORDIC/RotationMode.png Graphic file (type bmp)
 File: archivos/CORDIC/VectoringMode.png Graphic file (type bmp)
 <archivos/CORDIC/VectoringMode.png>
 
+LaTeX Warning: Reference `graf:2009-CORDIC-Configurations' on page 6 undefined 
+on input line 77.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 79.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [8]
-[9] [10
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [7]
+[8]
+File: archivos/CORDIC/2009-CORDIC_pipelined.png Graphic file (type bmp)
+<archivos/CORDIC/2009-CORDIC_pipelined.png>
 
-]
-chapter 5.
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 87--87
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 153--153
 [][][] 
  []
 
 
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 87--87
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 153--153
 [][][] 
  []
 
+[9]
 
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 104--104
-[][][] 
- []
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 170.
 
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 104--104
-[][][] 
- []
-
-File: archivos/CORDIC/1988_CORDIC_chip_features.png Graphic file (type bmp)
-<archivos/CORDIC/1988_CORDIC_chip_features.png>
-[11]
 File: archivos/CORDIC/1988_FP_CORDIC_Architecture.png Graphic file (type bmp)
 <archivos/CORDIC/1988_FP_CORDIC_Architecture.png>
- [12]
-File: archivos/CORDIC/2008_64FP_results_AMD.png Graphic file (type bmp)
-<archivos/CORDIC/2008_64FP_results_AMD.png>
-File: archivos/CORDIC/2015_low-latency-fp.png Graphic file (type bmp)
-<archivos/CORDIC/2015_low-latency-fp.png>
+[10]
 
-Underfull \vbox (badness 1270) has occurred while \output is active []
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 207.
 
- [13]
+[11]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 230.
+
+
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 250--250
+[][][] 
+ []
+
+
+Overfull \hbox (2.34543pt too wide) in paragraph at lines 250--250
+[][][] 
+ []
+
+
+LaTeX Warning: Reference `graf:2019_4-step-and-comp-64bit' on page 12 undefined
+ on input line 258.
+
 File: archivos/CORDIC/2019_4-step-64bit.png Graphic file (type bmp)
 <archivos/CORDIC/2019_4-step-64bit.png>
-)
-(./capitulos/marcoteorico.tex [14]
-chapter 6.
-) (./capitulos/desarrollo.tex [15
 
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 267.
 
-] [16
+[12]
 
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 285.
 
-]
-chapter 7.
-) (./capitulos/resultados.tex [17] [18
-
-
-]
-chapter 8.
-) (./capitulos/conclusiones.tex [19] [20
+) (./capitulos/CORDIC_implementacion.tex [13] [14
 
 
 ]
-chapter 9.
-) (./TFG-TFM_EPS_UA.bbl [21] [22
+chapter 3.
+) (./capitulos/conclusiones.tex [15] [16
+
+
+]
+chapter 4.
+) (./TFG-TFM_EPS_UA.bbl [17] [18
 
 
 ]
 chapter without number
 
-Underfull \hbox (badness 7558) in paragraph at lines 242--257
+Underfull \hbox (badness 7558) in paragraph at lines 275--290
 []\TU/lmr/m/n/10.95 Parker, M.  (2011).  Abstract – Floating Point.  \TU/lmr/m/
 it/10.95 DesignCon 2011\TU/lmr/m/n/10.95 , 15.
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 269--289
+Underfull \hbox (badness 1117) in paragraph at lines 302--322
 []\TU/lmr/m/n/10.95 Schelin, C. W.  (1983, mayo).  Calculator Function Approxim
 ation.  \TU/lmr/m/it/10.95 The Ameri-
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 269--289
+Underfull \hbox (badness 1062) in paragraph at lines 302--322
 \TU/lmr/m/it/10.95 can Mathematical Monthly\TU/lmr/m/n/10.95 , \TU/lmr/m/it/10.
 95 90\TU/lmr/m/n/10.95 (5), 317–325.  Descargado 2020-07-02, de []$[][][][][] [
 ][][]
  []
 
-[23])
-
-Package natbib Warning: There were undefined citations.
-
+[19])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2675,10 +2656,11 @@ braces):
 >  {spanish/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/totalhyphenmin}  =>  {5}.
 
+
 Package caption Warning: Unused \captionsetup[lstlisting] on input line 74.
 See the caption package documentation for explanation.
 
-[24]
+[20]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 144.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 144.
  (./TFG-TFM_EPS_UA.aux
@@ -2690,14 +2672,18 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 144.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 144.
 Package rerunfilecheck Info: File `TFG-TFM_EPS_UA.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 58207 strings out of 479284
- 1368559 string characters out of 5886221
- 2032403 words of memory out of 5000000
- 74638 multiletter control sequences out of 15000+600000
- 569707 words of font info for 212 fonts, out of 8000000 for 9000
+ 58206 strings out of 479284
+ 1368603 string characters out of 5886221
+ 2031403 words of memory out of 5000000
+ 74650 multiletter control sequences out of 15000+600000
+ 569715 words of font info for 213 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 82i,20n,138p,10206b,1022s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 82i,21n,138p,10206b,1026s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on TFG-TFM_EPS_UA.pdf (44 pages).
+Output written on TFG-TFM_EPS_UA.pdf (40 pages).

@@ -1,5 +1,5 @@
 \chapter{CORDIC}
-\section{Algoritmo de CORDIC}
+\section{Descripción de CORDIC}
 \todo{Revisar de nuevo si las formulas estan correctas. Comentar Linear/Circular/Hyperbolic}
 
 En esta sección se describirá el funcionamiento principal del algoritmo CORDIC según descrito por Jack E. Volder.
@@ -58,7 +58,6 @@ Los valores finales que nos interesan son los siguientes:
 \end{matrix}
 \]
 
-\todo[inline]{arreglar las figuras. Tal vez se arreglen solas.}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{archivos/CORDIC/RotationMode.png}
@@ -75,16 +74,83 @@ Los valores finales que nos interesan son los siguientes:
 
 CORDIC puede operar de dos formas: \textit{Rotation Mode} (RM) (\ref{graf:RM}) y \textit{Vectoring Mode} (VM) (\ref{graf:VM}). La principal diferencia es en como se eligen las micro-rotaciones. En RM, la dirección de cada micro-rotación depende del signo de $\omega_{i}$. Si $\omega_{i}$ es positivo $\delta_{i} = 1$, si no $\delta_{i} = -1$. En VM, el vector se rota hacia el eje de $x$, por lo que la componente $y$ tiende a 0.
 
-Posteriormente, J.S. Walther propuso un CORDIC generalizado unificado para realizar multitud de operaciones matemáticas, pero esto se encuentra fuera del alcance de esta memoria.
+Posteriormente, J.S. Walther propuso un CORDIC generalizado unificado para realizar multitud de operaciones matemáticas, pero esto se encuentra fuera del alcance de esta memoria (Vea \ref{graf:2009-CORDIC-Configurations}).
+
+\begin{table}[]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|l|l|l|l|l|}
+			\hline
+			\textbf{Operación}   & \textbf{Configuración} & \textbf{Inicialización} & \textbf{Salida} & \textbf{Anotaciones} \\ \hline
+			$\cos\theta, \cos\theta, \tan\theta$ & CC-RM         & $x_0 = 1 $ $ y_0 = 0$ y $\omega_0 = \theta$           & $x_=\cos\theta$ $ y_n = \sin\theta $  & $\tan\theta = (\sin\theta/\cos\theta) $       \\ \hline
+			
+			$\cosh\theta, \sinh\theta,\tanh\theta,\exp(\theta)$& HC-RM               & $x_0 = 1$ $ y_0 = 0 $ y $\omega_0 = \theta$               & $x_n = \cos\theta$ $ y_n = \sinh\theta $        & $x_n = \sqrt{a} $ $\omega_n = 1/2\ln(a)$            \\ \hline
+			
+			$\ln(a),\sqrt{a}$& HC-VM               & $x_0 = a+1 $ $ y_0 = a-1 $ y $\omega_0 = 0$                 & $x_n = \sqrt{a}$ $ \omega_n=1/2\ln{a}$         & $\ln(a)=2\omega_n$            \\ \hline
+			
+			$\arctan(a)$& CC-VM              & $x_0 = a$ $ y_0 = 1 $ y $\omega_0 = 0$               & $\omega_n = \arctan(a) $        &             \\ \hline
+			
+			división$(b/a)$& LC-VM              &$x_0 = a$ $ y_0 = b$ y $\omega_0 = 0$                &  $\omega_n = b/a$       &             \\ \hline
+			
+			Polar a rectangular& CC-RM             &$x_0 = R$ $ y_0 = 0 $ y $\omega_0 = \theta$             & $x_n = R\cos\theta $ $ y_n = R\sin\theta$       &             \\ \hline
+			
+			Rectangular a polar $\tan^-1(b/a)$ y $\sqrt{a^2+b^2}$& CC-VM               & $ x_0 = a$ $ y_0 = b$ y $\omega_0 = 0$     &$x_n = \sqrt{a^2 + b^2} $ $ \omega_n = \arctan(b/a)$        &             \\ \hline
+			
+		\end{tabular}%
+	}
+	\caption{Diferentes configuraciones de CORDIC, segun \cite{meher_50_2009}}
+	\label{table:2009-CORDIC-Configurations}
+\end{table}
 
 \section{Mejoras a CORDIC}
+En el apartado de introducción se explicaron algunas aplicaciones de CORDIC, sin detallar el tipo o las modificaciones realizadas. En este apartado se muestran algunas de estas mejoras importantes que han permitido a CORDIC mantenerse competitivo. Muchas de estas soluciones están descritas en \cite{meher_50_2009}.
 
-En el apartado de introducción se explicaron algunas aplicaciones de CORDIC, sin tener detallar el tipo o las modificaciones realizadas. En este apartado se muestran algunas de estas mejoras.
+Como ya se comentó anteriormente, el cómputo de CORDIC es originalmente un proceso totalmente secuencial por dos razones principales: Las micro-rotaciones depende de los valores la rotación computados anteriormente, lo que sería el valor intermedio y las iteración $(i+1)$ solo puede comenzar después de que se complete la iteración $i$.
 
+Otro de los problemas es que la precisión del valor final es lineal, requiere $n+1$ iteraciones para tener una precisión de $n$ bits. Esto significa que la latencia depende del número de bits que se pasan a CORDIC.
 
+\subsection{4-Radix}
+Una solución a la reducción del número de iteraciones es calcular CORDIC con una base mayor, como por ejemplo 4. La fórmula final seria tal que:
 
-\chapter{CORDIC y punto flotante}
-\todo{Que hacer con las figuras. section o chapter?}
+\[
+\begin{matrix}
+x_{i+1} = x_{i} - \delta_{i} \times 4^{-i} \times y_{i} \\
+y_{i+1} = y_{i} - \delta_{i} \times 4^{-i} \times x_{i} \\
+\omega_{i+1} =  \omega_{i} - \delta_{i} \times \alpha_{i}
+\end{matrix}
+\]
+
+El valor $K$ tendría una fórmula:
+
+\[
+K_{i} = \frac{1}{sqrt{(1+\delta_i^2*4^{-2_{i}})}}
+\]
+
+De esta manera, para tener una salida de $n$ bits de precisión solo necesitamos $n/2$ micro-rotaciones a cambio de mas complejidad dentro del hardware. Un punto a comentar es que el factor de escala $K$ ahora depende de $\delta$, el cual puede tener 5 valores diferentes.
+
+Finalmente se quiere comentar que también existen soluciones de base mas alto, como 8-Radix.
+
+\subsection{Angle Recording}
+Los métodos de \textit{Angle Recording} (AR) quieren reducir el número de iteraciones mediante una combinación lineal de ángulos de las micro-rotaciones. Este método es ideal para procesamiento de señal, imagen, donde el ángulo de rotación se conoce \textit{a priori}.
+
+\subsection{Hybrid CORDIC}
+CORDIC híbrido se basa en la idea de que los valores menos significativos del cálculo de ángulo pueden ser reemplazados por $2^-j$ ya que $\tan(2^-j) \approx 2^-j $ si el valor $j$ es lo suficientemente grande. De esta manera podemos calcular los valores mas pequeños con un simple movimiento de bits y no necesitamos conocer el signo de rotación ya que en todo momento es positivo.
+
+\subsection{Redundant-Number-Based CORDIC}
+Este tipo de CORDIC pretende mejorar el rendimiento de las sumas y restas mediante un uso de numeración redundante para no tener que realizar el cálculo de los posibles restos que puede obtener una operación aritmética. La desventaja de este método es que necesitas mas espacio en hardware para implementar.
+
+\subsection{Pipelined CORDIC}
+El uso de \textit{pipelined} CORDIC es bastante extenso ya que cada iteración del método es idéntica y los valores anteriores después de su cálculo ya no nos interesan, es posible obtener por cada ciclo de ejecución un nuevo resultado. Para esto necesitamos tener un registro por cada etapa de CORDIC (vea \ref{graf:2009-CORDIC_pipelined}).
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.50\textwidth]{archivos/CORDIC/2009-CORDIC_pipelined.png}
+	\caption{CORDIC convencional con \textit{pipelining}}
+	\label{graf:2009-CORDIC_pipelined}
+\end{figure}
+
+\section{CORDIC y punto flotante}
+\todo{section o chapter?}
 
 \cite{parker_abstract_2011} Muestra claramente algunos de los problemas que conlleva implementar el estándar del IEEE 754 en hardware. En concreto estos problemas son relaciones con algunos aspectos de las FPGAs, pero puede ser aplicable a cualquier problema donde el hardware es limitado. Algunos de estos problemas son:
 
@@ -101,20 +167,26 @@ Una de las primeras implementaciones de un tipo de punto flotante, explicado por
 
 Según \cite{walther_unified_1971}, la primera implementación de punto flotante tenía grandes limitaciones en el tema de hardware a la hora de convertir los valores entre BCD a base 2 y, además, no había un estándar de punto flotante en aquel entonces, por lo que cada diseñador creaba su propio formato.
 
-\todo{Look at 1993 and check if they followed up with what the stated in the conclusion}
-\begin{figure}[ht]
+\begin{table}[]
 	\centering
-	\includegraphics[width=0.75\textwidth]{archivos/CORDIC/1988_CORDIC_chip_features.png}
-	\caption{Características de FP CORDIC}
-	\label{graf:FP_CORDIC_features}
-\end{figure}
+	\begin{tabular}{|l|l|l|l|l|}
+	\hline
+		Precisión & Rango                 & Throughput & Latencia                  & Transistores \\ \hline
+		16-bits   & $\pm2^{16}$ & 100ns      & 2.2 $\mu$s                     & 70000        \\
+\hline
+		Entradas  & Salidas               & Consumo    & Espacio                   & Procesador   \\ \hline
+		72        & 67                    & 1.3W       & 1.2 $cm^2$ & CMOS(2$\mu$) \\ \hline   
+	\end{tabular}
+	\caption{Características de FP CORDIC. Datos de \cite{de_lange_optimal_1988}}
+	\label{table:FP_CORDIC_feature}
+\end{table}
 
 Un diseño de CORDIC que mas se asemeja a las nuevas propuestas es el de \cite{de_lange_optimal_1988}, donde proponen un procesador de CORDIC de punto flotante y con \textit{pipelining} . Este chip podía realizar hasta $10^7$ rotaciones por segundo gracias al sistema de \textit{pipelining}. La entrada de valores era de 21 bits en punto flotante, 16 bits de mantisa y 5 bits para el exponente en complemento a dos. La salida era también en punto flotante (vea \ref{graf:Arq_FP_CORDIC}). Cabe destacar que el tipo usado en esta arquitectura no es estándar de IEEE.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.5\textwidth]{archivos/CORDIC/1988_FP_CORDIC_Architecture.png}
-	\caption{Arquitectura de FP CORDIC}
+	\caption{Arquitectura de FP CORDIC. Figura de \cite{de_lange_optimal_1988}}
 	\label{graf:Arq_FP_CORDIC}
 \end{figure}
 
@@ -130,14 +202,24 @@ Para realizar las micro-rotaciones se da ciertos cambios, como el uso del métod
 
 El diseño se basaba en tres fases: Transformación de los valores de punto flotante a punto fijo, método CORDIC y una fase de normalización, donde se devuelve el valor en punto flotante del IEEE 754.
 
-Los resultados finales en este artículo muestran un \textit{speedup} considerable comparando a una CPU de la época, en concreto la AMD Athlon 64 Processor 3200+ (vea \ref{graf:2008_64FP_results_AMD}). Otros experimentos mostraban la reducción de espacio en el hardware comparados a otras soluciones y un error de resultados razonable.
+Los resultados finales en este artículo muestran un \textit{speedup} considerable comparando a una CPU de la época, en concreto la AMD Athlon 64 Processor 3200+ (vea \ref{table:2008_64FP_results_AMD}). Otros experimentos mostraban la reducción de espacio en el hardware comparados a otras soluciones y un error de resultados razonable.
 
-\begin{figure}[ht]
+\begin{table}[]
 	\centering
-	\includegraphics[width=\textwidth]{archivos/CORDIC/2008_64FP_results_AMD.png}
+	\resizebox{\textwidth}{!}{%
+	\begin{tabular}{|l|l|l|l|l|l|l|l|}
+		\hline
+		\multirow{2}{*}{Programa} & \multirow{2}{*}{AMD Athlon ($\mu$s)} & \multicolumn{6}{c|}{Mult-CORDICs}                         \\ \cline{3-8} 
+		&                                  & Num\_C & Num\_M & Num\_D & Num\_AS & Tiempo($\mu$s) & Speedup \\ \hline
+		Problema 1                & 342.86                           & 3      & 4      & 1      & 2       & 6.95       & 49.3    \\ \hline
+		Problema 2                & 129.39                           & 2      & 8      & 0      & 7       & 7.04       & 18.4    \\ \hline
+		Problema 3                & 125.43                           & 1      & 2      & 1      & 0       & 6.52       & 19.2    \\ \hline
+		Media                     & 199.23                           & 2      & 4.7    & 0.67   & 3       & 6.84       & 28.7    \\ \hline
+	\end{tabular}
+}
 	\caption{Resultados de 64FP CORDIC y una CPU AMD Athlon 64 Processor 3200+. Num\_C es el número de co-procesadores de CORDIC usados en el experimento.}
-	\label{graf:2008_64FP_results_AMD}
-\end{figure}
+	\label{table:2008_64FP_results_AMD}
+\end{table}
 
 \cite{nguyen_low-resource_2015} propone un CORDIC con punto flotante de baja latencia. El algoritmo propuesto reduce el número de iteraciones eligiendo un grupo particular de constantes para conseguir un resultado cercano al real.
 
@@ -145,12 +227,27 @@ La reducción del número de ángulos a escoger se basa en elegir los ángulos h
 
 En cuanto a las entradas y salidas del algoritmo, la entrada es un valor del ángulo de punto fijo de 24 bits y las salidas son el $sin$/$cos$ con un valor de 32 bits IEEE 754 cada una.
 
-\begin{figure}[ht]
+\begin{table}[]
 	\centering
-	\includegraphics[width=0.7\textwidth]{archivos/CORDIC/2015_low-latency-fp.png}
-	\caption{Tabla de comparaciones del CORDIC propuesto con otros trabajos parecidos. (A) Dispositivo. (B) Latencia (ciclos). (C) Frecuencia (MHz). (D) LUTs. (E) Registros. (F) Memoria. (G) DSP.}
-	\label{graf:2015_low-latency-fp}
-\end{figure}
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|l|l|l|l|l|l|l|l|}
+			\hline
+			&                 &                 &                 &                   &                 &                   & Este trab         \\ \hline
+			Dispositivo       & Xilinx Vertex 5 & Xilinx Vertex 5 & Xilinx Vertex 7 & Altera Stratix II & Xilinx Vertex 6 & Altera Stratix IV & Altera Stratix IV \\ \hline
+			Latencia (ciclos) & 93              & -               & 130             & -                 & -               & 36                & 12/20/26          \\ \hline
+			Frecuencia        & 86.1            & 133.8           & 280             & 195.1             & 253.5           & 258.3             & 175.7             \\ \hline
+			LUTs              & 3152            & 26811           & 6514            & 6469              & 13744           & 5612              & 1139              \\ \hline
+			Registros         & -               & 16274           & 4725            & 5372              & -               & 4231              & 498               \\ \hline
+			Memoria           & 2832            & -               & 4894            & -                 & -               & 3575              & 11                \\ \hline
+			DSP               & 0               & 2               & 9               & -                 & 96              & 32                & 8                 \\ \hline
+		\end{tabular}%
+	}
+	\caption{Tabla de comparaciones del CORDIC propuesto con otros trabajos parecidos. Tabla de \cite{nguyen_low-resource_2015}}
+\label{graf:2015_low-latency-fp}
+\end{table}
+
+
+\todo{Separacion en subsection de cada articulo?}
 
 Ahora se va a mostrar los artículos mas actualizados de CORDIC. Estos artículos muestran un interés general por el método y da confianza sobre el futuro de CORDIC.
 
@@ -158,16 +255,47 @@ Ahora se va a mostrar los artículos mas actualizados de CORDIC. Estos artículo
 
 La metodología del tratamiento de los datos es muy parecida a la literatura descrita anteriormente, la entrada es un valor de punto flotante que en un módulo de pre-procesamiento realiza una conversión a punto fijo y además se procesa las excepciones que podrían aparecer en este momento, como por ejemplo un $NaN$.
 
-La unidad de procesamiento de CORDIC utiliza el llamado \textit{Point 4-step Iterative Processing Unit}, el cual ocupa mas espacio que un CORDIC tradicional, pero logra calcular por cada ciclo 16 micro-rotaciones de CORDIC, reduciendo efectivamente el tiempo por 4 (vea \ref{graf:2019_4-step-64bit}).
+La unidad de procesamiento de CORDIC utiliza el llamado \textit{Point 4-step Iterative Processing Unit}, el cual ocupa mas espacio que un CORDIC tradicional, pero logra calcular por cada ciclo 16 micro-rotaciones de CORDIC, reduciendo efectivamente el tiempo por 4 (vea \ref{graf:2019_4-step-and-comp-64bit}). El número de iteraciones es menor a otros métodos de CORDIC, como por ejemplo Para-CORDIC (vea \cite{tso-bing_juang_para-cordic_2004}).
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{archivos/CORDIC/2019_4-step-64bit.png}
-	\caption{Unidad de procesamiento de CORDIC de doble precisión}
+	\caption{Unidad de procesamiento de CORDIC de doble precisión. Figura extraída de \cite{yeshwanth_high-speed_2018}}
 	\label{graf:2019_4-step-64bit}
 \end{figure}
 
+\begin{table}[]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|l|l|l|l|l|l|}
+			\hline
+			Tipo de CORDIC        & Tradicional & Para-CORDIC & Hybrid & SF CORDIC & Artículo mencionado \\
+\hline
+			Número de iteraciones & 64          & 17          & 24     & 24        & 15                 
+\\ \hline
+		\end{tabular}%
+	}
+	\caption{Número de iteraciones comparando el multiplicador CORDIC con punto flotante de \cite{yeshwanth_high-speed_2018} a otras soluciones.}
+	\label{table:2019_4-step-comp-64bit}
+\end{table}
 
+Como se comentó anteriormente, CORDIC puede realizar una multitud de operaciones matemáticas según la necesidad del problema. \cite{yeshwanth_high-speed_2018} aprovechan el algoritmo de CORDIC con \textit{pipelining} para optimizar el rendimiento del multiplicador de las mantisas para el IEEE 754 de 32 bits. Los resultados obtenidos han sido comparados al método de Vedic. Los tiempos de CORDIC son considerablemente mejores, pero ocupa un área en hardware mayor que Vedic.
+
+
+\begin{table}[]
+	\centering
+	\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|l|l|l|l|}
+			\hline
+			\multirow{2}{*}{\textbf{Multiplicador punto flotante}} & \multicolumn{3}{l|}{\textbf{Parámetros digitales}}                                  \\ \cline{2-4} 
+			& \textbf{Latencia (ns)} & \begin{tabular}[c]{@{}l@{}}Área\\ (\textbf{LUTs})\end{tabular} & \textbf{Consumo (mW)} \\ \hline
+			Multiplicador CORDIC                          & 5.259  & 679                                                   & 96    \\ \hline
+			Multiplicador Vedic                           & 26.634 & 489                                                   & 95    \\ \hline
+		\end{tabular}%
+	}
+	\label{graf:2018-Vedic-vs-CORDIC}
+	\caption{Comparativa entre un multiplicador Vedic y CORDIC de \cite{yeshwanth_high-speed_2018}.}
+\end{table}
 
 
 

@@ -129,6 +129,39 @@ Hou, N.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Juang%
+, Hsiao%
+\BCBL {}\ \BBA {} Tsai%
+}{%
+Juang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2004}}%
+}]{%
+tso-bing_juang_para-cordic_2004}
+\APACinsertmetastar {%
+tso-bing_juang_para-cordic_2004}%
+\begin{APACrefauthors}%
+Juang, T\BHBI B.%
+, Hsiao, S\BHBI F.%
+\BCBL {}\ \BBA {} Tsai, M\BHBI Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2004}{{\APACmonth{08}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Para-{CORDIC}: parallel {CORDIC} rotation algorithm}
+  {Para-{CORDIC}: parallel {CORDIC} rotation algorithm}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Circuits and Systems I: Regular
+  Papers}{51}{8}{1515--1524}.
+\newblock
+\APACrefnote{Conference Name: IEEE Transactions on Circuits and Systems I:
+  Regular Papers}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/TCSI.2004.832734} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Leibson%
 }{%
 Leibson%
@@ -352,6 +385,40 @@ Walther, J\BPBI S.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1145/1478786.1478840} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Yeshwanth%
+, Venkatesh%
+\BCBL {}\ \BBA {} Akhil%
+}{%
+Yeshwanth%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+yeshwanth_high-speed_2018}
+\APACinsertmetastar {%
+yeshwanth_high-speed_2018}%
+\begin{APACrefauthors}%
+Yeshwanth, B.%
+, Venkatesh, V.%
+\BCBL {}\ \BBA {} Akhil, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{{\APACmonth{12}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {High-{Speed} {Single} {Precision} {Floating} {Point}
+  {Multiplier} using {CORDIC} {Algorithm}} {High-{Speed} {Single} {Precision}
+  {Floating} {Point} {Multiplier} using {CORDIC} {Algorithm}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2018 {International} {Conference} on {Electrical},
+  {Electronics}, {Communication}, {Computer}, and {Optimization} {Techniques}
+  ({ICEECCOT})} {2018 {International} {Conference} on {Electrical},
+  {Electronics}, {Communication}, {Computer}, and {Optimization} {Techniques}
+  ({ICEECCOT})}\ (\BPGS\ 135--141).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ICEECCOT43722.2018.9001506} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
