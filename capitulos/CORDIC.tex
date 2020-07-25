@@ -61,20 +61,20 @@ Los valores finales que nos interesan son los siguientes:
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{archivos/CORDIC/RotationMode.png}
-	\caption{Rotation Mode}
+	\caption{Rotation Mode. Figura de \cite{schelin_calculator_1983}}
 	\label{graf:RM}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{archivos/CORDIC/VectoringMode.png}
-	\caption{Vectoring Mode}
+	\caption{Vectoring Mode. Figura de \cite{schelin_calculator_1983}}
 	\label{graf:VM}
 \end{figure}
 
 CORDIC puede operar de dos formas: \textit{Rotation Mode} (RM) (\ref{graf:RM}) y \textit{Vectoring Mode} (VM) (\ref{graf:VM}). La principal diferencia es en como se eligen las micro-rotaciones. En RM, la dirección de cada micro-rotación depende del signo de $\omega_{i}$. Si $\omega_{i}$ es positivo $\delta_{i} = 1$, si no $\delta_{i} = -1$. En VM, el vector se rota hacia el eje de $x$, por lo que la componente $y$ tiende a 0.
 
-Posteriormente, J.S. Walther propuso un CORDIC generalizado unificado para realizar multitud de operaciones matemáticas, pero esto se encuentra fuera del alcance de esta memoria (Vea \ref{graf:2009-CORDIC-Configurations}).
+Posteriormente, J.S. Walther propuso un CORDIC generalizado unificado para realizar multitud de operaciones matemáticas, pero esto se encuentra fuera del alcance de esta memoria (Vea \ref{table:2009-CORDIC-Configurations}).
 
 \begin{table}[]
 	\centering
@@ -150,7 +150,6 @@ El uso de \textit{pipelined} CORDIC es bastante extenso ya que cada iteración d
 \end{figure}
 
 \section{CORDIC y punto flotante}
-\todo{section o chapter?}
 
 \cite{parker_abstract_2011} Muestra claramente algunos de los problemas que conlleva implementar el estándar del IEEE 754 en hardware. En concreto estos problemas son relaciones con algunos aspectos de las FPGAs, pero puede ser aplicable a cualquier problema donde el hardware es limitado. Algunos de estos problemas son:
 
@@ -232,7 +231,7 @@ En cuanto a las entradas y salidas del algoritmo, la entrada es un valor del án
 	\resizebox{\textwidth}{!}{%
 		\begin{tabular}{|l|l|l|l|l|l|l|l|}
 			\hline
-			&                 &                 &                 &                   &                 &                   & Este trab         \\ \hline
+			&                 &                 &                 &                   &                 &                   & Diseño de este artículo         \\ \hline
 			Dispositivo       & Xilinx Vertex 5 & Xilinx Vertex 5 & Xilinx Vertex 7 & Altera Stratix II & Xilinx Vertex 6 & Altera Stratix IV & Altera Stratix IV \\ \hline
 			Latencia (ciclos) & 93              & -               & 130             & -                 & -               & 36                & 12/20/26          \\ \hline
 			Frecuencia        & 86.1            & 133.8           & 280             & 195.1             & 253.5           & 258.3             & 175.7             \\ \hline
@@ -247,15 +246,14 @@ En cuanto a las entradas y salidas del algoritmo, la entrada es un valor del án
 \end{table}
 
 
-\todo{Separacion en subsection de cada articulo?}
-
+\subsection{Artículos mas recientes}
 Ahora se va a mostrar los artículos mas actualizados de CORDIC. Estos artículos muestran un interés general por el método y da confianza sobre el futuro de CORDIC.
 
 \cite{hou_low_2019} diseñan un algoritmo CORDIC usando el estándar IEEE 754 de doble precisión (64 bits).
 
 La metodología del tratamiento de los datos es muy parecida a la literatura descrita anteriormente, la entrada es un valor de punto flotante que en un módulo de pre-procesamiento realiza una conversión a punto fijo y además se procesa las excepciones que podrían aparecer en este momento, como por ejemplo un $NaN$.
 
-La unidad de procesamiento de CORDIC utiliza el llamado \textit{Point 4-step Iterative Processing Unit}, el cual ocupa mas espacio que un CORDIC tradicional, pero logra calcular por cada ciclo 16 micro-rotaciones de CORDIC, reduciendo efectivamente el tiempo por 4 (vea \ref{graf:2019_4-step-and-comp-64bit}). El número de iteraciones es menor a otros métodos de CORDIC, como por ejemplo Para-CORDIC (vea \cite{tso-bing_juang_para-cordic_2004}).
+La unidad de procesamiento de CORDIC utiliza el llamado \textit{Point 4-step Iterative Processing Unit}, el cual ocupa mas espacio que un CORDIC tradicional, pero logra calcular por cada ciclo 16 micro-rotaciones de CORDIC, reduciendo efectivamente el tiempo por 4 (vea \ref{graf:2019_4-step-64bit}). El número de iteraciones es menor a otros métodos de CORDIC, como por ejemplo Para-CORDIC (vea \cite{tso-bing_juang_para-cordic_2004}).
 
 \begin{figure}[ht]
 	\centering
@@ -281,7 +279,6 @@ La unidad de procesamiento de CORDIC utiliza el llamado \textit{Point 4-step Ite
 
 Como se comentó anteriormente, CORDIC puede realizar una multitud de operaciones matemáticas según la necesidad del problema. \cite{yeshwanth_high-speed_2018} aprovechan el algoritmo de CORDIC con \textit{pipelining} para optimizar el rendimiento del multiplicador de las mantisas para el IEEE 754 de 32 bits. Los resultados obtenidos han sido comparados al método de Vedic. Los tiempos de CORDIC son considerablemente mejores, pero ocupa un área en hardware mayor que Vedic.
 
-
 \begin{table}[]
 	\centering
 	\resizebox{\textwidth}{!}{%
@@ -297,8 +294,17 @@ Como se comentó anteriormente, CORDIC puede realizar una multitud de operacione
 	\caption{Comparativa entre un multiplicador Vedic y CORDIC de \cite{yeshwanth_high-speed_2018}.}
 \end{table}
 
+En el área de la robótica, \cite{evangelista_fully-pipelined_2018} 
 
+Dentro del trabajo de los radares de apertura sintética (\textit{Synthetic Aperture Radar}) (SAR), \cite{fang_generation_2019} proponen una mejora de los tiempos de cálculo de operaciones trigonométricas, raíces, multiplicación.
 
+El artículo sigue las pautas de muchos otros en diseñar un módulo de pre-procesamiento y post-procesamiento para la conversión de punto flotante a punto fijo y viceversa, con ciertos ajustes para no perder mucha precisión. El diseño fue implementado en una FPGA para mostrar la eficiencia de uso de espacio de hardware y precisión de los resultados.
+
+\cite{wang_gh_2020} presentan una implementación hardware basado en CORDIC generalizado hiperbólico (GH CORDIC) para el cálculo de raíces cuadradas de base $n$ en punto flotante de precisión simple. Se utilizan múltiples CORDICs en diferentes configuraciones.
+
+El cálculo de la raíz en base $n$ se realiza totalmente en punto flotante, sin ningún tipo de conversión a punto fijo. Las operaciones realizadas en el diseño son mas complejas a raíz de operar con el estándar del IEEE. Además, se usa \textit{pipelining} para mejorar la latencia. El cálculo final son 58 ciclos para una palabra de 32 bits.
+
+Los resultados finales del artículo muestran una mejora de \textit{throughput}, eficiencia energética y mejor precisión de los resultados. 
 
 
 

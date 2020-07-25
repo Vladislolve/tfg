@@ -1,12 +1,12 @@
 \selectlanguage *{spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Diferentes configuraciones de CORDIC, segun \cite {meher_50_2009}\relax }}{8}{table.caption.18}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Características de FP CORDIC. Datos de \cite {de_lange_optimal_1988}\relax }}{10}{table.caption.21}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Resultados de 64FP CORDIC y una CPU AMD Athlon 64 Processor 3200+. Num\_C es el número de co-procesadores de CORDIC usados en el experimento.\relax }}{12}{table.caption.23}%
-\contentsline {table}{\numberline {2.4}{\ignorespaces Tabla de comparaciones del CORDIC propuesto con otros trabajos parecidos. Tabla de \cite {nguyen_low-resource_2015}\relax }}{12}{table.caption.24}%
-\contentsline {table}{\numberline {2.5}{\ignorespaces Número de iteraciones comparando el multiplicador CORDIC con punto flotante de \cite {yeshwanth_high-speed_2018} a otras soluciones.\relax }}{12}{table.caption.27}%
-\contentsline {table}{\numberline {2.6}{\ignorespaces Comparativa entre un multiplicador Vedic y CORDIC de \cite {yeshwanth_high-speed_2018}.\relax }}{13}{table.caption.28}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Diferentes configuraciones de CORDIC, segun \cite {meher_50_2009}\relax }}{8}{table.caption.16}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Características de FP CORDIC. Datos de \cite {de_lange_optimal_1988}\relax }}{10}{table.caption.18}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Resultados de 64FP CORDIC y una CPU AMD Athlon 64 Processor 3200+. Num\_C es el número de co-procesadores de CORDIC usados en el experimento.\relax }}{12}{table.caption.20}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces Tabla de comparaciones del CORDIC propuesto con otros trabajos parecidos. Tabla de \cite {nguyen_low-resource_2015}\relax }}{12}{table.caption.21}%
+\contentsline {table}{\numberline {2.5}{\ignorespaces Número de iteraciones comparando el multiplicador CORDIC con punto flotante de \cite {yeshwanth_high-speed_2018} a otras soluciones.\relax }}{12}{table.caption.23}%
+\contentsline {table}{\numberline {2.6}{\ignorespaces Comparativa entre un multiplicador Vedic y CORDIC de \cite {yeshwanth_high-speed_2018}.\relax }}{13}{table.caption.24}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

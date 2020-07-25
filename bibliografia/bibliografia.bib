@@ -157,6 +157,23 @@
 	file = {Snapshot:/home/vladislove/Zotero/storage/TBL5ZGGG/00029890.1983.html:text/html}
 }
 
+@article{wang_gh_2020,
+	title = {{GH} {CORDIC}-{Based} {Architecture} for {Computing} \${N}\$ th {Root} of {Single}-{Precision} {Floating}-{Point} {Number}},
+	volume = {28},
+	issn = {1557-9999},
+	doi = {10.1109/TVLSI.2019.2959847},
+	abstract = {This article presents hardware implementation for computing arbitrary roots of a single-precision floating-point number. The proposed architecture is based on Generalized Hyperbolic COordinate Rotation Digital Computer (GH CORDIC) algorithm. Benefiting from the wide range of floating-point numbers, our design is able to compute the Nth root (N ≥ 2) of a single-precision floating-point number. After implementation, a series of tests have been carried out, including accuracy, power consumption, performance comparison, and so on. Simulation results indicate that our proposed method is capable of calculating the Nth root of a positive single-precision floating-point number with a relative error of 10-7 approximately and promises an error-flatten performance. Synthesized results from a design compiler under TSMC-40-nm CMOS technology show that our design can achieve the highest frequency of 2.38 GHz with the area consumption of 140894.44 μm2 and power consumption of 86.9573 mW.},
+	number = {4},
+	journal = {IEEE Transactions on Very Large Scale Integration (VLSI) Systems},
+	author = {Wang, Yuxuan and Luo, Yuanyong and Wang, Zhongfeng and Shen, Qinghong and Pan, Hongbing},
+	month = apr,
+	year = {2020},
+	note = {Conference Name: IEEE Transactions on Very Large Scale Integration (VLSI) Systems},
+	keywords = {Binary floating point (BFP), CMOS integrated circuits, Computer architecture, COordinate Rotation Digital Computer (CORDIC), Field programmable gate arrays, floating point arithmetic, frequency 2.38 GHz, Generalized Hyperbolic COordinate Rotation Digital Computer algorithm, GH CORDIC-based architecture, Graphics, Hardware, high speed, Mathematical model, Nth root, positive single-precision floating-point number, power 86.9573 mW, Standards, Very large scale integration},
+	pages = {864--875},
+	file = {IEEE Xplore Abstract Record:/home/vladislove/Zotero/storage/AAMCW6RE/8948355.html:text/html}
+}
+
 @inproceedings{zhou_double_2008,
 	title = {Double {Precision} {Hybrid}-{Mode} {Floating}-{Point} {FPGA} {CORDIC} {Co}-processor},
 	doi = {10.1109/HPCC.2008.14},
@@ -168,6 +185,19 @@
 	keywords = {CORDIC, floating point arithmetic, floating-point, Convergence, Hardware, Algorithm design and analysis, argument reduction algorithm, clock frequency, coprocessors, double precision, double precision hybrid-mode floating-point FPGA, Equations, field programmable gate arrays, Field programmable gate arrays, floating-point CORDIC co-processor, floating-point transcendental functions, FPGA, hybrid-mode, Mathematical model, Pipelines, Xilinx Virtex5 FPGA},
 	pages = {182--189},
 	file = {IEEE Xplore Abstract Record:/home/vladislove/Zotero/storage/TNIARNL8/4637696.html:text/html}
+}
+
+@inproceedings{evangelista_fully-pipelined_2018,
+	title = {Fully-pipelined {CORDIC}-based {FPGA} {Realization} for a 3-{DOF} {Hexapod}-{Leg} {Inverse} {Kinematics} {Calculation}},
+	doi = {10.1109/WRC-SARA.2018.8584238},
+	abstract = {This paper presents a CORDIC-based FPGA realization for a 3-DOF hexapod-leg inverse kinematics calculation. This architecture design proposal is approached first by an inverse kinematics equations analysis and how are these adapted to design an architecture scheme based on CORDIC operations. After that, a 3-DOF hexapod-leg working area is analyzed to get the CORDIC convergence requirements. Subsequently, we designed an iterative 32-bit floating point CORDIC entity that met the convergence and accuracy requirements. Moreover, a fully pipelined VLSI architecture is designed, respective hardware and clock signaling considerations are described in order to achieve high frequency and throughput. Finally, both results proposed and obtained through the kinematic calculations software, which included the angles equations used to calculate precision, hardware requirements and processing speed.},
+	booktitle = {2018 {WRC} {Symposium} on {Advanced} {Robotics} and {Automation} ({WRC} {SARA})},
+	author = {Evangelista, Guillermo and Olaya, Carlos and Rodríguez, Erick},
+	month = aug,
+	year = {2018},
+	keywords = {CORDIC, VLSI, floating point arithmetic, Convergence, Hardware, field programmable gate arrays, FPGA, pipeline arithmetic, Read only memory, pipeline processing, Clocks, architecture design proposal, architecture scheme, CORDIC convergence requirements, CORDIC operations, CORDIC-based FPGA realization, fully pipelined VLSI architecture, hexapod-leg inverse kinematics calculation, hexapod-leg working area, hexapod-leg., inverse kinematics equations analysis, iterative 32-bit floating point CORDIC entity, kinematic calculations software, Kinematics, kinematics calculation, legged locomotion, Legged locomotion, robot kinematics, word length 32 bit},
+	pages = {237--242},
+	file = {IEEE Xplore Abstract Record:/home/vladislove/Zotero/storage/ZCPMEAMU/8584238.html:text/html}
 }
 
 @article{parker_abstract_2011,
@@ -198,4 +228,20 @@
 	keywords = {Computer architecture, coordinate rotation digital computer, digital arithmetic, Vectors, Signal processing algorithms, binary value, binary-to-bipolar recoding, circular coordinate, Computer science, Concurrent computing, critical path delay, Delay, hyperbolic coordinate, initial input angle, Iterative algorithms, Matrix decomposition, microrotation angle recoding, multioperand carry-save addition structures, para-CORDIC, parallel algorithms, parallel architectures, parallel CORDIC rotation algorithm, rotation directions, Two dimensional displays},
 	pages = {1515--1524},
 	file = {IEEE Xplore Abstract Record:/home/vladislove/Zotero/storage/MGZHLY9Z/1323204.html:text/html}
+}
+
+@article{fang_generation_2019,
+	title = {Generation scheme of chirp scaling phase functions based on floating-point {CORDIC} processor},
+	volume = {2019},
+	issn = {2051-3305},
+	doi = {10.1049/joe.2019.0623},
+	abstract = {This study presents a chirp scaling (CS) phase function generation scheme based on CORDIC algorithm, it adopts single precision floating-point CORDIC processor to implement a variety of non-linear operations which are involved in CS synthetic aperture radar (SAR) imaging algorithm. We extend the range of convergence of CORDIC algorithm and reduce the data width in rotation unit module by adopting a hardware resource reduction scheme. We also adopt a unified CORDIC processor to achieve square root, multiplication, and division operation, which can substitute multiple single-function processors and simplify the complicate arithmetic in CS algorithm. As a proof of concept, we verify the performance of the proposed design scheme on Xilinx XC7VX690T FPGA platform, it is also applied to 16384 × 16384 points target SAR imaging system, the FPGA resource occupancy of the CS phase function generation module demonstrates that the usage of CORDIC processor can effectively save the consumption of hardware resources, and the maximum operating frequency is acceptable. The accuracy of phase functions can satisfy the engineering requirements.},
+	number = {21},
+	journal = {The Journal of Engineering},
+	author = {Fang, Linlin and Xie, Yizhuang and Li, Bingyi and Chen, He},
+	year = {2019},
+	note = {Conference Name: The Journal of Engineering},
+	keywords = {chirp scaling phase function generation scheme, chirp scaling phase functions, CORDIC algorithm, CS synthetic aperture radar imaging algorithm, division operation, field programmable gate arrays, floating point arithmetic, function generators, hardware resource reduction scheme, logic design, multiplication operation, nonlinear operations, radar imaging, SAR imaging system, single precision floating-point CORDIC processor, square root operation, synthetic aperture radar, unified CORDIC processor, Xilinx XC7VX690T FPGA platform},
+	pages = {7436--7439},
+	file = {IEEE Xplore Full Text PDF:/home/vladislove/Zotero/storage/CCLV2N8D/Fang et al. - 2019 - Generation scheme of chirp scaling phase functions.pdf:application/pdf;IEEE Xplore Abstract Record:/home/vladislove/Zotero/storage/LDQ7XD3A/8916167.html:text/html}
 }

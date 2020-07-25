@@ -62,6 +62,73 @@ Dhume, N.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Evangelista%
+, Olaya%
+\BCBL {}\ \BBA {} Rodríguez%
+}{%
+Evangelista%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+evangelista_fully-pipelined_2018}
+\APACinsertmetastar {%
+evangelista_fully-pipelined_2018}%
+\begin{APACrefauthors}%
+Evangelista, G.%
+, Olaya, C.%
+\BCBL {}\ \BBA {} Rodríguez, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{{\APACmonth{08}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fully-pipelined {CORDIC}-based {FPGA} {Realization} for
+  a 3-{DOF} {Hexapod}-{Leg} {Inverse} {Kinematics} {Calculation}}
+  {Fully-pipelined {CORDIC}-based {FPGA} {Realization} for a 3-{DOF}
+  {Hexapod}-{Leg} {Inverse} {Kinematics} {Calculation}}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2018 {WRC} {Symposium} on {Advanced} {Robotics} and
+  {Automation} ({WRC} {SARA})} {2018 {WRC} {Symposium} on {Advanced} {Robotics}
+  and {Automation} ({WRC} {SARA})}\ (\BPGS\ 237--242).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/WRC-SARA.2018.8584238} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fang%
+, Xie%
+, Li%
+\BCBL {}\ \BBA {} Chen%
+}{%
+Fang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+fang_generation_2019}
+\APACinsertmetastar {%
+fang_generation_2019}%
+\begin{APACrefauthors}%
+Fang, L.%
+, Xie, Y.%
+, Li, B.%
+\BCBL {}\ \BBA {} Chen, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Generation scheme of chirp scaling phase functions based
+  on floating-point {CORDIC} processor} {Generation scheme of chirp scaling
+  phase functions based on floating-point {CORDIC} processor}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{The Journal of Engineering}{2019}{21}{7436--7439}.
+\newblock
+\APACrefnote{Conference Name: The Journal of Engineering}
+\newblock
+\begin{APACrefDOI} \doi{10.1049/joe.2019.0623} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hekstra%
 \ \BBA {} Deprettere%
 }{%
@@ -385,6 +452,45 @@ Walther, J\BPBI S.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1145/1478786.1478840} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wang%
+, Luo%
+, Wang%
+, Shen%
+\BCBL {}\ \BBA {} Pan%
+}{%
+Wang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+wang_gh_2020}
+\APACinsertmetastar {%
+wang_gh_2020}%
+\begin{APACrefauthors}%
+Wang, Y.%
+, Luo, Y.%
+, Wang, Z.%
+, Shen, Q.%
+\BCBL {}\ \BBA {} Pan, H.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{{\APACmonth{04}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{GH} {CORDIC}-{Based} {Architecture} for {Computing}
+  \${N}\$ th {Root} of {Single}-{Precision} {Floating}-{Point} {Number}} {{GH}
+  {CORDIC}-{Based} {Architecture} for {Computing} \${N}\$ th {Root} of
+  {Single}-{Precision} {Floating}-{Point} {Number}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Very Large Scale Integration
+  (VLSI) Systems}{28}{4}{864--875}.
+\newblock
+\APACrefnote{Conference Name: IEEE Transactions on Very Large Scale Integration
+  (VLSI) Systems}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/TVLSI.2019.2959847} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
