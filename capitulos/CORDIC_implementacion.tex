@@ -1,4 +1,4 @@
-\chapter{Implementación de CORDIC}
+\chapter{Implementación de \gls{cordic}}
 
 \subsection{Herramientas}
 \subsubsection{Linux}
@@ -11,7 +11,7 @@ El lenguaje de descripción de hardware (HDL) escogido ha sido Verilog/SystemVer
 Ya que en la carrera se realizó prácticas con VHDL, se decidió por usar un lenguaje diferente para obtener un amplio conocimiento de los lenguajes principales. Además, Verilog tiene una similitud con el lenguaje C, por lo que puede ser mas atractivo si se tiene algún conocimiento de este lenguaje.
 
 \subsubsection{Verilator}
-La herramienta elegida para la compilación y comprobación del funcionamiento de CORDIC ha sido Verilator. Esta herramienta es gratuita y de código abierto. Además esta desarrollada para Ubuntu, pero funciona en casi todas las distribuciones de Linux.
+La herramienta elegida para la compilación y comprobación del funcionamiento de \gls{cordic} ha sido Verilator. Esta herramienta es gratuita y de código abierto. Además esta desarrollada para Ubuntu, pero funciona en casi todas las distribuciones de Linux.
 
 Su principales características son la compilación del código de Verilog a C++ o SystemC. Este código es mucho mas optimizado y permite un mejor rendimiento a la hora de simular. Además, permite diseñar \textit{testbench} en C++, por lo que puede facilitar mucho la forma de desarrollar si se tiene un conocimiento de C++.
 
@@ -113,15 +113,15 @@ La función reset() cambia la entrada de $iReset$ a 1, evalúa el módulo con un
 A partir de ahora, solo necesitamos tener un bucle en nuestra función main para probar el módulo.
 
 \subsection{Implementación básica}
-Ya que CORDIC tiene la ventaja de ser muy fácil de implementar en hardware, ya sea en términos de latencia o espacio, una implementación básica de CORDIC no es compleja de diseñar.
+Ya que \gls{cordic} tiene la ventaja de ser muy fácil de implementar en hardware, ya sea en términos de latencia o espacio, una implementación básica de \gls{cordic} no es compleja de diseñar.
 
 Las entradas de nuestro módulo $iX, iY, iAngle, iClock$ y $iReset$. Las salidas son $oX$ y $oY$. Inicialmente todos las entradas y salidas son enteros de 32 bits.
 
-\begin{lstlisting}[caption={Módulo CORDIC}]
+\begin{lstlisting}[caption={Módulo \gls{cordic}}]
 module cordic(iClock, iReset, iAngle, iX, iY, oX, oY);
 \end{lstlisting}
 
-Antes de iniciar CORDIC, necesitamos conocer en que cuadrante se encuentra el ángulo de entrada. Cada artículo citado ha tomado una decisión propia a la hora de optimizar el algoritmo. Una manera fácil de saber el cuadrante en el que se encuentra es hacer el módulo de $2*pi$ radianes y empaquetando el valor del ángulo en un registro de 32 bits. En este caso, 0 grados se traduce a un valor de todos los bits a 0 y un valor de 359.999... sería todo los bits a 1, aunque en nuestro caso solo hay valores enteros. Esta transformación tiene que ser realizada por el usuario antes de pasarla por la entrada $iAngle$. Aunque esto es posible implementarlo dentro del módulo o uno externo, por simplificar se ha decidido no hacerlo para centrarse en CORDIC.
+Antes de iniciar \gls{cordic}, necesitamos conocer en que cuadrante se encuentra el ángulo de entrada. Cada artículo citado ha tomado una decisión propia a la hora de optimizar el algoritmo. Una manera fácil de saber el cuadrante en el que se encuentra es hacer el módulo de $2*pi$ radianes y empaquetando el valor del ángulo en un registro de 32 bits. En este caso, 0 grados se traduce a un valor de todos los bits a 0 y un valor de 359.999... sería todo los bits a 1, aunque en nuestro caso solo hay valores enteros. Esta transformación tiene que ser realizada por el usuario antes de pasarla por la entrada $iAngle$. Aunque esto es posible implementarlo dentro del módulo o uno externo, por simplificar se ha decidido no hacerlo para centrarse en \gls{cordic}.
 
 Ahora solo tenemos que leer los 2 bits mas significativos para saber en que cuadrante se encuentra el ángulo. Este paso solo se ejecuta al principio del algoritmo.
 \begin{lstlisting}[caption={Pre-rotación de iAngle pasado por el usuario.}]
@@ -169,7 +169,7 @@ Se ha definido un total de 31 valores, aunque como se verá mas tarde no van a s
 
 Ahora definimos 3 registros y 3 $wire$.
 
-\begin{lstlisting}[caption={Registros y $wire$ para operar con CORDIC}]
+\begin{lstlisting}[caption={Registros y $wire$ para operar con \gls{cordic}}]
  reg signed [IOWidth-1:0] X;
  reg signed [IOWidth-1:0] Y;
  reg signed    [31:0] Z; 
@@ -179,9 +179,9 @@ Ahora definimos 3 registros y 3 $wire$.
  wire Z_sign = Z[31];  
 \end{lstlisting}
 
-Estos registros nos servirán para guardar los resultados de cada micro-rotación de CORDIC y los $wire$ guardan la operación de movimiento de bits de $X$ e $Y$ y el signo de $Z$.
+Estos registros nos servirán para guardar los resultados de cada micro-rotación de \gls{cordic} y los $wire$ guardan la operación de movimiento de bits de $X$ e $Y$ y el signo de $Z$.
 
-\begin{lstlisting}[caption={Bucle principal de CORDIC}]
+\begin{lstlisting}[caption={Bucle principal de \gls{cordic}}]
  begin
      X <= Z_sign ? X + Y_shr         : X - Y_shr;
      Y <= Z_sign ? Y - X_shr         : Y + X_shr;
@@ -191,7 +191,7 @@ Estos registros nos servirán para guardar los resultados de cada micro-rotació
 
 Este sería el código representando las fórmulas finales que se han obtenido a la hora de despejar la función $\textbf{R}$.
 
-\subsubsection{Testbench de CORDIC}
+\subsubsection{Testbench de \gls{cordic}}
 Para probar el funcionamiento, utilizaremos la \textit{testbench} definida anteriormente. Dentro de nuestro fichero "main.cpp" necesitamos inicializar Verilator con la siguiente línea:
 
 \begin{lstlisting}
@@ -200,7 +200,7 @@ Verilated::commandArgs(argc,argv);
 
 Despues de incluir el fichero "TestBench.h" en el "main.cpp", debemos de crear un tipo \textit{TestBench} y cargar nuestras con los valores desdeados.
 
-\begin{lstlisting}[caption={Creación del tipo TestBench y entrada de valores desde C++ al módulo de CORDIC en Verilog}]
+\begin{lstlisting}[caption={Creación del tipo TestBench y entrada de valores desde C++ al módulo de \gls{cordic} en Verilog}]
  TestBench *tb = new TestBench();
 
  const float K = 1.646760;
@@ -220,23 +220,23 @@ El factor $K$ es extraído de los valores a pasar antes de la ejecución. Depend
 Finalmente, iniciamos la traza y el bucle para ir ciclo por ciclo en nuestra ejecución.
 
 \begin{lstlisting}[caption={Bucle principal de main.cpp}]
-     tb->opentrace("test.vcd");
-     for(int x=0;x<NUM_TICKS;x++)
-     {
-         tb->tick();
-         ...
-     }
-     tb->close();
+ tb->opentrace("test.vcd");
+ for(int x=0;x<NUM_TICKS;x++)
+ {
+     tb->tick();
+     ...
+ }
+ tb->close();
 \end{lstlisting}
 
-Este \textit{testbench} es prácticamente idéntico en todas las implementaciones que se van a realizar, por lo que solo se va a comentar en la sección de CORDIC básico.
+Este \textit{testbench} es prácticamente idéntico en todas las implementaciones que se van a realizar, por lo que solo se va a comentar en la sección de \gls{cordic} básico.
 
 \subsection{Implementación \textit{pipeline}}
-El $pipelining$ es un método clásico de conectar elementos de procesamiento en series para  mejorar el rendimiento de los sistemas. Muchos artículos de CORDIC proponen un sistema con algún tipo de $pipelining$. En este punto se mostrará un ejemplo de $pipelining$ básico que se puede implementar con el código implementado en el punto anterior.
+El $pipelining$ es un método clásico de conectar elementos de procesamiento en series para  mejorar el rendimiento de los sistemas. Muchos artículos de \gls{cordic} proponen un sistema con algún tipo de $pipelining$. En este punto se mostrará un ejemplo de $pipelining$ básico que se puede implementar con el código implementado en el punto anterior.
 
-La operación de micro-rotación que realiza CORDIC puede ser diseñada de forma que los valores se muevan en serie por todas las etapas del método. Para esto necesitamos el mismo número de registros que etapas para guardar los valores intermedios.
+La operación de micro-rotación que realiza \gls{cordic} puede ser diseñada de forma que los valores se muevan en serie por todas las etapas del método. Para esto necesitamos el mismo número de registros que etapas para guardar los valores intermedios.
 
-\begin{lstlisting}[caption={Registros de CORDIC ampliados para \textit{pipelining}}]
+\begin{lstlisting}[caption={Registros de \gls{cordic} ampliados para \textit{pipelining}}]
 localparam ETAPAS = 16;
 
  reg signed [IOWidth:0] X [0:ETAPAS-1];
@@ -245,13 +245,13 @@ localparam ETAPAS = 16;
 
 \end{lstlisting}
 
-Verilog tiene un constructor llamado $generate$. Sus funciones principales son la instanciación de los $items$ del módulo, cambio de la estructura del diseño a partir de los parámetros pasados por Verilog y verificación funcional de los módulos. En nuestro caso lo usaremos para generar todas las etapas de ejecución del método CORDIC.
+Verilog tiene un constructor llamado $generate$. Sus funciones principales son la instanciación de los $items$ del módulo, cambio de la estructura del diseño a partir de los parámetros pasados por Verilog y verificación funcional de los módulos. En nuestro caso lo usaremos para generar todas las etapas de ejecución del método \gls{cordic}.
 
 Los bloques de $generate$ son generados antes de la ejecución del circuito, ya que no es posible añadir o eliminar hardware en tiempo de ejecución.
 
 Para generar los bloques necesitamos una variable $genvar$. Además, todos los $wire$ que asignan el tipo de signo del ángulo y los movimientos de bits son también generados dentro de $generate$.
 
-\begin{lstlisting}[caption={Ejecución principal de CORDIC con \textit{pipelining}}]
+\begin{lstlisting}[caption={Ejecución principal de \gls{cordic} con \textit{pipelining}}]
  genvar i;
  generate
  for (i = 0;i < (ETAPAS-1);i=i+1) 
@@ -275,7 +275,7 @@ Para generar los bloques necesitamos una variable $genvar$. Además, todos los $
  endgenerate
 \end{lstlisting}
 
-Como se puede observar, el espacio que ocupa un CORDIC con $pipelining$ es mayor que el básico, pero tenemos la ventaja de una mejora del $throughput$. A partir del ciclo 16 estamos recibiendo cada ciclo un nuevo resultado.
+Como se puede observar, el espacio que ocupa un \gls{cordic} con $pipelining$ es mayor que el básico, pero tenemos la ventaja de una mejora del $throughput$. A partir del ciclo 16 estamos recibiendo cada ciclo un nuevo resultado.
 
 Ya que esta implementaciones no han sido probadas en hardware real y solamente simuladas, hay algunos aspectos que no se tienen en cuenta que si pueden ocurrir en un sistema real, como por ejemplo en una FPGA.
 
@@ -300,19 +300,184 @@ En el código de "main.cpp", tenemos que modificar la línea de entrada de valor
  ...
 \end{lstlisting}
 
-Dentro del código de Verilog, el bucle principal de micro-rotaciones y el movimiento de bits se queda igual que en las otras implementaciones. La división en formato fijo se puede realizar si el divisor es $2^i$, por lo que podemos hacer el movimiento de bits necesario por CORDIC sin problemas.
+Dentro del código de Verilog, el bucle principal de micro-rotaciones y el movimiento de bits se queda igual que en las otras implementaciones. La división en formato fijo se puede realizar si el divisor es $2^i$, por lo que podemos hacer el movimiento de bits necesario por \gls{cordic} sin problemas.
 
-A la hora de obtener el resultado necesitamos transformar el valor en el estándar del IEEE 754.
+A la hora de obtener el resultado necesitamos transformar el valor en el estándar del IEEE 754. Para ello se ha diseñado una máquina de estado finita (FSM).
 
-\begin{lstlisting}[caption={Parámetros de estado para controlar la máquina de estado finita.}]
- localparam      w_normal_op = 3'b000,
-                 w_to_fp = 3'b001,
-                 w_bit_shift_count = 3'b010,
-                 w_check_sign = 3'b011,
-                 w_wait = 3'b100;
+Una forma muy general de diseñar una \gls{fsm} es mediante dos registros: \textit{current\_state} y \textit{next\_state}. Después, un parámetro es declarado por cada estado que se encuentre en el diagrama de estados. Los parámetros necesitan un valor en concreto para poder usar su nombre declarado en las asignaciones siguientes.
+
+\begin{lstlisting}[caption={Registros para controlar los estádos y parámetros locales de estado para controlar la máquina de estado finita.}]
+reg [2:0]  current_state = w_normal_op, next_state;
+
+localparam      w_normal_op = 3'b000,
+                w_check_sign = 3'b001,
+                w_bit_shift_count = 3'b010,
+                w_to_fp = 3'b011,
+                w_reset = 3'b100;
 
 \end{lstlisting}
 
+Aquí podemos ver una declaración de 2 registros mencionados anteriormente con 3 bits cada uno, para poder codificar un máximo de $2^3$ estados diferentes. Al crear los parámetros tenemos que asignarles un valor de 3 bits.
+
+Primero se va a comentar una idea general de cada estado y luego se entrará en los detalles del funcionamiento. El modo de operación de la \gls{fsm} es la siguiente:
+
+\begin{itemize}
+	\item \textit{w\_normal\_op} es el modo de operación normal de \gls{cordic} con \textit{pipelining}. La \gls{fsm} se encuentra en este modo hasta encontrar con un nuevo valor en el último registro de nuestra \textit{pipeline}, la cual se refiere al valor final calculado por gls{cordic}.
+	
+	\item \textit{w\_check\_sign} es un estado intermedio que transforma los valores negativos de complemento a 2 a un valor binario normal. Antes de convertirlo se guarda el signo, que viene representado por el último bit (31).
+	
+	\item \textit{w\_bit\_shift\_count} calcula el movimiento de bits que se debe de realizar para alinear los bits con la mantisa.
+	
+	\item \textit{w\_to\_fp} realiza la transformación final a punto flotante y reinicia todos los valores intermedios que se han usado para operar correctamente.
+	
+	\item \textit{w\_reset} reinicia el módulo poniendo todos los registros, entradas y salidas a 0.
+	
+\end{itemize}
+
+Una \gls{fsm} tiene los llamados \textit{state memory}, \textit{next state logic} y \textit{output logic}.
+
+El primer estado de memoria (\textit{state memory}) es el que se dedica simplemente a actualizar el estado cada vez que hay una subida de reloj.
+
+\begin{lstlisting}[caption={\textit{state memory} de \gls{cordic}}]
+always@(posedge iClock or negedge iReset)
+ begin: STATE_MEMORY
+     if(iReset == 1'b1)
+         current_state <= w_reset;
+     else
+         current_state <= next_state;
+ end
+\end{lstlisting}
+
+El siguiente bloque es el \textit{next state logic}. Este bloque solo es activado por el registro \textit{current\_state}, lo que convierte esta \gls{fsm} una máquina de Moore 
+
+\begin{lstlisting}
+always@(current_state)
+ begin: NEXT_STATE_LOGIC
+     case(current_state)
+         default:
+         begin
+         end
+
+         w_normal_op:
+             begin
+                 if(last_x_value != X[ETAPAS-1] || last_y_value != Y[ETAPAS-1] begin
+                     next_state = w_check_sign;
+                 end
+             end
+
+         w_check_sign:
+             if(sign_checked) begin
+                 next_state = w_bit_shift_count;
+             end
+         w_bit_shift_count:
+             if(tempXOut[bitmov_x] == 1 && tempYOut[bitmov_y] == 1 ) begin
+                 next_state = w_to_fp;
+             end
+         w_to_fp:
+             if(fp_out) begin
+                 next_state = w_normal_op;
+             end
+     endcase
+ end
+
+\end{lstlisting}
+
+
+\begin{lstlisting}
+always @(current_state)
+begin: OUTPUT_LOGIC 
+  case(current_state)
+      w_normal_op,
+
+      w_check_sign:
+      begin
+          fp_out = 0;
+          fpX_out = 0;
+          fpY_out = 0;
+
+          tempXOut = X[ETAPAS-1];
+          sign_x = tempXOut[31];
+
+          tempYOut = Y[ETAPAS-1];
+          sign_y = tempYOut[31];
+
+
+          if(tempXOut[31] == 1)
+          begin
+              tempXOut = ~(tempXOut-1);
+          end
+
+
+          if(tempYOut[31] == 1)
+          begin
+              tempYOut = ~(tempYOut-1);
+          end
+
+          sign_checked = 1;
+      end
+
+      w_bit_shift_count:
+      begin
+          sign_checked = 0;
+          if(tempXOut[bitmov_x] != 1 )
+          begin
+              bitcount_x = bitcount_x + 1;
+              bitmov_x = bitmov_x - 1;
+          end
+          if(tempYOut[bitmov_y] != 1)
+          begin
+              bitcount_y = bitcount_y + 1;
+              bitmov_y = bitmov_y - 1;
+          end
+      end
+
+      w_to_fp:
+      begin
+          if(!fp_out)
+          begin
+
+              $display("before %b and %d",tempXOut,tempXOut);
+              if(tempXOut[30:23] != 0) begin
+                  $display("oki value %d",(8-bitcount_x));
+                  tempXOut = tempXOut >> (8-bitcount_x);
+              end
+              else begin
+                  $display("outting %d and %b",(8-bitcount_x),~((8-bitcount_x)-1));
+                  tempXOut = tempXOut << ~((8-bitcount_x)-1);
+              end
+
+              $display("after %b and %d",tempXOut,tempXOut);
+
+              tempXOut[30:23] = (127 + (8 - (bitcount_x+1)));
+              tempXOut[31] = sign_x;
+              fpX_out = tempXOut;
+              bitmov_x = 31;
+              bitcount_x = 0;
+
+              if(tempYOut[30:23] != 0) begin
+                  tempYOut = tempYOut >> (8 - bitcount_y);
+              end
+              else begin
+                  tempYOut = tempYOut << ~((8 - bitcount_y)-1);
+              end
+
+              tempYOut[30:23] = (127+(8 - (bitcount_y+1)));
+              tempYOut[31] = sign_y;
+              fpY_out = tempYOut;
+              bitmov_y = 31;
+              bitcount_y = 0;
+              fp_out = 1;
+          end
+      end
+      default:
+          begin
+          end
+
+  endcase
+
+     end
+
+\end{lstlisting}
 
 
 

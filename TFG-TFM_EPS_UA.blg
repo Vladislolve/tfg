@@ -14,45 +14,45 @@ Reallocated singl_function (elt_size=8) to 100 items from 50.
 Database file #1: bibliografia/bibliografia.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
 Warning--No journal in dhume_parameterizable_2012
-You've used 17 entries,
+You've used 22 entries,
             6951 wiz_defined-function locations,
-            1405 strings with 15357 characters,
-and the built_in function-call counts, 35830 in all, are:
-= -- 4487
-> -- 351
-< -- 1565
-+ -- 1596
-- -- 34
-* -- 2260
-:= -- 6054
-add.period$ -- 84
-call.type$ -- 17
-change.case$ -- 319
+            1433 strings with 16085 characters,
+and the built_in function-call counts, 44184 in all, are:
+= -- 5666
+> -- 403
+< -- 1805
++ -- 1840
+- -- 42
+* -- 2727
+:= -- 7116
+add.period$ -- 108
+call.type$ -- 22
+change.case$ -- 403
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 986
-empty$ -- 1434
-format.name$ -- 537
-if$ -- 6947
+cite$ -- 45
+duplicate$ -- 1220
+empty$ -- 1881
+format.name$ -- 588
+if$ -- 8815
 int.to.chr$ -- 0
-int.to.str$ -- 51
+int.to.str$ -- 72
 missing$ -- 0
-newline$ -- 499
-num.names$ -- 136
-pop$ -- 763
+newline$ -- 613
+num.names$ -- 166
+pop$ -- 969
 preamble$ -- 1
-purify$ -- 90
+purify$ -- 106
 quote$ -- 0
-skip$ -- 2355
+skip$ -- 3073
 stack$ -- 0
-substring$ -- 1796
-swap$ -- 614
-text.length$ -- 102
+substring$ -- 2106
+swap$ -- 759
+text.length$ -- 127
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 1872
+type$ -- 2512
 warning$ -- 1
-while$ -- 211
+while$ -- 237
 width$ -- 0
-write$ -- 632
+write$ -- 760
 (There was 1 warning)
