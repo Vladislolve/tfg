@@ -1,23 +1,23 @@
 \chapter{Implementación de \gls{cordic}}
 
-\subsection{Herramientas}
-\subsubsection{Linux}
+\section{Herramientas}
+\subsection{Linux}
 Todo el trabajo de implementación ha sido realizado dentro de una máquina Linux. Generalmente las herramientas para diseño de nivel hardware son propietarias y desarrolladas para Windows.
 
 Ya que se tiene un buen conocimiento de Linux, se ha optado por buscar herramientas alternativas de código abierto que puedan ofrecer un desarrollo similar a las propietarias.
-\subsubsection{Verilog}
+\subsection{Verilog}
 El lenguaje de descripción de hardware (HDL) escogido ha sido Verilog/SystemVerilog. Verilog es un subconjunto del lenguaje mas nuevo SystemVerilog. Aunque no se hayan utilizado ninguna nueva parte del diseño, se eligió desde un principio para tener posibilidad de ampliación o necesidad de alguna nueva parte en un futuro.
 
 Ya que en la carrera se realizó prácticas con VHDL, se decidió por usar un lenguaje diferente para obtener un amplio conocimiento de los lenguajes principales. Además, Verilog tiene una similitud con el lenguaje C, por lo que puede ser mas atractivo si se tiene algún conocimiento de este lenguaje.
 
-\subsubsection{Verilator}
+\subsection{Verilator}
 La herramienta elegida para la compilación y comprobación del funcionamiento de \gls{cordic} ha sido Verilator. Esta herramienta es gratuita y de código abierto. Además esta desarrollada para Ubuntu, pero funciona en casi todas las distribuciones de Linux.
 
 Su principales características son la compilación del código de Verilog a C++ o SystemC. Este código es mucho mas optimizado y permite un mejor rendimiento a la hora de simular. Además, permite diseñar \textit{testbench} en C++, por lo que puede facilitar mucho la forma de desarrollar si se tiene un conocimiento de C++.
 
 Aunque no se vaya a usar en gran parte las ventajas que ofrece Verilator, podemos sacar de provecho para dar una entrada a futuros proyectos.
 
-\subsection{Configuración de Verilator}
+\section{Configuración de Verilator}
 Para compilar nuestro código Verilog/SystemVerilog necesitaremos usar el comando \textit{verilator}. Un ejemplo básico sería el siguiente:
 
 \begin{lstlisting}
@@ -112,7 +112,7 @@ La función reset() cambia la entrada de $iReset$ a 1, evalúa el módulo con un
 
 A partir de ahora, solo necesitamos tener un bucle en nuestra función main para probar el módulo.
 
-\subsection{Implementación básica}
+\section{Implementación básica}
 Ya que \gls{cordic} tiene la ventaja de ser muy fácil de implementar en hardware, ya sea en términos de latencia o espacio, una implementación básica de \gls{cordic} no es compleja de diseñar.
 
 Las entradas de nuestro módulo $iX, iY, iAngle, iClock$ y $iReset$. Las salidas son $oX$ y $oY$. Inicialmente todos las entradas y salidas son enteros de 32 bits.
@@ -191,7 +191,7 @@ Estos registros nos servirán para guardar los resultados de cada micro-rotació
 
 Este sería el código representando las fórmulas finales que se han obtenido a la hora de despejar la función $\textbf{R}$.
 
-\subsubsection{Testbench de \gls{cordic}}
+\subsection{Testbench de \gls{cordic}}
 Para probar el funcionamiento, utilizaremos la \textit{testbench} definida anteriormente. Dentro de nuestro fichero "main.cpp" necesitamos inicializar Verilator con la siguiente línea:
 
 \begin{lstlisting}
@@ -231,7 +231,86 @@ Finalmente, iniciamos la traza y el bucle para ir ciclo por ciclo en nuestra eje
 
 Este \textit{testbench} es prácticamente idéntico en todas las implementaciones que se van a realizar, por lo que solo se va a comentar en la sección de \gls{cordic} básico.
 
-\subsection{Implementación \textit{pipeline}}
+Ahora se mostrará un ejemplo de una \textit{testbench} con los siguientes parámetros.
+\begin{lstlisting}
+./cordic 1000 0 130
+\end{lstlisting}
+
+El primer valor se refiere a $X$, el segundo al valor $Y$ y el último al ángulo que queremos rotar. El valor final será multiplicado por 1000 para obtener un resultado deseado, donde se pueda ver que realmente se realizan las operaciones de seno y coseno. El valor $Y$, según la especificación del método, tiene que tener un valor 0 para obtener el seno y coseno (véa la tabla \ref{table:2009-CORDIC-Configurations}).
+
+\begin{lstlisting}
+tick = 0
+cos = 0
+sin = 607
+
+tick = 1
+cos = -607
+sin = 607
+
+tick = 2
+cos = -304
+sin = 911
+
+tick = 3
+cos = -531
+sin = 835Este es un
+
+tick = 4
+cos = -635
+sin = 768
+
+tick = 5
+cos = -683
+sin = 728
+
+tick = 6
+cos = -661
+sin = 750
+
+tick = 7
+cos = -650
+sin = 761
+
+tick = 8
+cos = -645
+sin = 767
+
+tick = 9
+cos = -643
+sin = 770
+
+tick = 10
+cos = -644
+sin = 768
+
+tick = 11
+cos = -644
+sin = 767
+
+tick = 12
+cos = -644
+sin = 766
+
+tick = 13
+cos = -644
+sin = 767
+
+tick = 14
+cos = -644
+sin = 766
+
+tick = 15
+cos = -644
+sin = 767
+
+tick = 16
+cos = -644
+sin = 768
+...
+\end{lstlisting}
+\todo{explicar}
+
+\section{Implementación \textit{pipeline}}
 El $pipelining$ es un método clásico de conectar elementos de procesamiento en series para  mejorar el rendimiento de los sistemas. Muchos artículos de \gls{cordic} proponen un sistema con algún tipo de $pipelining$. En este punto se mostrará un ejemplo de $pipelining$ básico que se puede implementar con el código implementado en el punto anterior.
 
 La operación de micro-rotación que realiza \gls{cordic} puede ser diseñada de forma que los valores se muevan en serie por todas las etapas del método. Para esto necesitamos el mismo número de registros que etapas para guardar los valores intermedios.
@@ -277,16 +356,103 @@ Para generar los bloques necesitamos una variable $genvar$. Además, todos los $
 
 Como se puede observar, el espacio que ocupa un \gls{cordic} con $pipelining$ es mayor que el básico, pero tenemos la ventaja de una mejora del $throughput$. A partir del ciclo 16 estamos recibiendo cada ciclo un nuevo resultado.
 
-Ya que esta implementaciones no han sido probadas en hardware real y solamente simuladas, hay algunos aspectos que no se tienen en cuenta que si pueden ocurrir en un sistema real, como por ejemplo en una FPGA.
+Ya que esta implementaciones no han sido probadas en hardware real y solamente simuladas, hay algunos aspectos que no se tienen en cuenta que si pueden ocurrir en un sistema real, como por ejemplo en una \gls{fpga}.
 
 \begin{itemize}
 	\item No hay una forma de comprobar que los resultados obtenidos son válidos. Esto viene del hecho de que el módulo va a estar ejecutándose continuamente cada ciclo sin tener en cuenta si su entrada es válida o no. Una forma de arreglar esto es mediante una entrada \textit{Clock Enable} (CE), la cual esta conectada a todos las etapas y es la única que permite mover los datos de un etapa a otra.
 	
 	\item Es posible que el dispositivo al que estamos transmitiendo no esta preparado para recibir los datos. La solución a este problema es tener conectada una entrada de \textit{BUSY}, que dependiendo del tipo de transmisor que sea tendrá una especificación u otra. Para que se pueda transmitir datos de forma correcta, \textit{BUSY} tendría un valor 0 y \textit{Clock Enable} un valor 1.
 \end{itemize}
- 
 
-\subsection{Implementación con punto flotante}
+\subsection{Testbench de CORDIC \textit{pipeline}}
+A continuación se va a mostrar la salida del \textit{Testbench}. En esta \textit{testbench} se ha optado por pasar cada ciclo un nuevo ángulo, comenzando por el 10, para mostrar el funcionamiento del \textit{pipelining}. Cada ciclo después del \textit{tick()} 15 se está devolviendo un nuevo valor.
+\begin{lstlisting}
+tick = 0
+
+cos = 0
+sin = 0
+tick = 1
+
+cos = 0
+sin = 0
+tick = 2
+
+cos = 0
+sin = 0
+tick = 3
+
+cos = 0
+sin = 0
+tick = 4
+
+cos = 0
+sin = 0
+tick = 5
+
+cos = 0
+sin = 0
+tick = 6
+
+cos = 0
+sin = 0
+tick = 7
+
+cos = 0
+sin = 0
+tick = 8
+
+cos = 0
+sin = 0
+tick = 9
+
+cos = 0
+sin = 0
+tick = 10
+
+cos = 0
+sin = 0
+tick = 11
+
+cos = 0
+sin = 0
+tick = 12
+
+cos = 0
+sin = 0
+tick = 13
+
+cos = 0
+sin = 0
+tick = 14
+
+cos = 0
+sin = 0
+tick = 15
+
+cos = 984
+sin = 175
+tick = 16
+
+cos = 935
+sin = 346
+tick = 17
+
+cos = 864
+sin = 499
+tick = 18
+
+cos = 766
+sin = 644
+tick = 19
+
+cos = 644
+sin = 766
+tick = 20
+\end{lstlisting}
+\todo{explicar}
+
+
+\section{Implementación con punto flotante}
 Para la implementación de punto flotante necesitamos realizar algunas modificaciones al tipo de datos que estamos tratando. Las entradas \textit{iX} y \textit{iY} eran enteros con signo de 32 bits. En esta implementación necesitamos usar un nuevo formato de punto fijo, en concreto el formato Q.
 
 El formato Q(m,n) nos permite operar con el mismo hardware que un entero, por lo que reduce la complejidad de operar directamente con el estándar IEEE 754. En concreto, el formato es Q(8,24), con 8 bits de entero y 24 bits fraccionarios.
@@ -348,16 +514,18 @@ always@(posedge iClock or negedge iReset)
  end
 \end{lstlisting}
 
-El siguiente bloque es el \textit{next state logic}. Este bloque solo es activado por el registro \textit{current\_state}, lo que convierte esta \gls{fsm} una máquina de Moore 
+El siguiente bloque es el \textit{next state logic}. Aquí se suele utilizar el \textit{case} para controlar a que estado pasar. Generalmente se recomienda hacer uso del \textit{default} por si hay un error inesperado.
 
-\begin{lstlisting}
+Este bloque solo es activado por el registro \textit{current\_state}, lo que convierte esta \gls{fsm} una máquina de Moore, ya que el sistema cambia por un cambio en el estado, independiente de cualquier otra entrada. De no ser así la \gls{fsm} sería una máquina de Mealy y se incluiría dentro de la lista de sensibilidad otras entradas dependientes.
+
+\begin{lstlisting}[caption={Código de la \textit{next state logic} de la \gls{fsm}}]
 always@(current_state)
  begin: NEXT_STATE_LOGIC
      case(current_state)
          default:
          begin
          end
-
+         
          w_normal_op:
              begin
                  if(last_x_value != X[ETAPAS-1] || last_y_value != Y[ETAPAS-1] begin
@@ -379,11 +547,23 @@ always@(current_state)
              end
      endcase
  end
-
 \end{lstlisting}
 
+Este bloque realiza las siguientes funciones:
 
-\begin{lstlisting}
+\begin{itemize}
+	\item \textit{w\_normal\_op} Observa si el valor $x$ o $y$ anterior coincide con los que hay actualmente en el último registro del método \gls{cordic}. De no ser así significa que el usuario ha dado un nuevo valor de entrada al módulo y, por tanto, necesitamos pasar por la conversión a punto flotante.
+	
+	\item \textit{w\_check\_sign} En el momento que se recibe un \textit{sign\_checked} pasamos al contador del número de bits a mover.
+	
+	\item \textit{w\_bit\_shift\_count} Se observa si el bit en una posición determinada es 1 de las dos variables temporales que se manipulan dentro de la \gls{fsm}. Si es así se pasa a la transformación de punto fijo a flotante.
+	
+	\item \textit{w\_to\_fp} Espera hasta que el registro \textit{fp\_out} sea asignado a 1. En ese momento la transformación a punto flotante se ha finalizado.
+\end{itemize} 
+
+Ahora vamos a pasar al bloque de \textit{output logic}. Este bloque realiza todas las operaciones necesarias para convertir a punto flotante.
+
+\begin{lstlisting}[caption={Código de \textit{output logic} de la \gls{fsm}}]
 always @(current_state)
 begin: OUTPUT_LOGIC 
   case(current_state)
@@ -404,7 +584,7 @@ begin: OUTPUT_LOGIC
 
           if(tempXOut[31] == 1)
           begin
-              tempXOut = ~(tempXOut-1);
+              \textit{w\_normal\_op}tempXOut = ~(tempXOut-1);
           end
 
 
@@ -436,17 +616,12 @@ begin: OUTPUT_LOGIC
           if(!fp_out)
           begin
 
-              $display("before %b and %d",tempXOut,tempXOut);
               if(tempXOut[30:23] != 0) begin
-                  $display("oki value %d",(8-bitcount_x));
                   tempXOut = tempXOut >> (8-bitcount_x);
               end
               else begin
-                  $display("outting %d and %b",(8-bitcount_x),~((8-bitcount_x)-1));
                   tempXOut = tempXOut << ~((8-bitcount_x)-1);
               end
-
-              $display("after %b and %d",tempXOut,tempXOut);
 
               tempXOut[30:23] = (127 + (8 - (bitcount_x+1)));
               tempXOut[31] = sign_x;
@@ -479,6 +654,117 @@ begin: OUTPUT_LOGIC
 
 \end{lstlisting}
 
+Las funciones realizadas por este bloque son las siguientes:
 
+\begin{itemize}	
+	\item \textit{w\_check\_sign} Reinicia los valores de las ejecuciones pasadas. Posteriormente guarda en dos registros los signos de la $X$ e $Y$. Por último se hace una transformación de complemento a 2 a binario normal si el valor fuese negativo y se pone el registro \textit{sign\_checked} a 1.
+	
+	\item \textit{w\_bit\_shift\_count} Hace recuento del movimiento de bits que se debe de realizar para ajustarlo con la mantisa. Los valores \textit{bitmov} y \textit{bitcount} inicialmente tienen un valor de 31 y 0 respectivamente. El contador de $X$ e $Y$ se detiene en el momento que encuentra un 1 en la posición que este actualmente.
+	
+	\item \textit{w\_to\_fp} La variable \textit{tempXOut} y \textit{tempYOut} tiene que ser ajustada a la mantisa de un IEEE 754 de 32 bits, la cual son los 23 bits menos significativos. Ya que el movimiento de bits puede ser a la derecha o izquierda, dependiendo de la magnitud del valor, necesitamos tener en cuenta los dos casos.
+	
+	Despues de ajustar la mantisa necesitamos guardar en el exponente. Para ello tenemos que tener en cuenta el número de movimiento de bits que se ha realizado anteriormente y sumar el sesgo del exponente, que para un valor de 32 bits es 127. Esta operación se hace para $X$ e $Y$
+	
+	Finalmente, reiniciamos los valores y volvemos al estado \textit{w\_normal\_op}.
+\end{itemize}
 
+La salida de los valores $X$ e $Y$ no van directamente asignados desde los registros finales de la última etapa de CORDIC como en las anteriores implementaciones. Las salidas son asignadas en el último estado de la \gls{fsm} y reiniciadas a 0 en el momento que hay una nueva operación de transformación a punto flotante.
 
+\begin{lstlisting}[caption={Cambio en las asignaciones de las salidas de CORDIC en punto flotante}]
+assign oY = fpY_out;
+assign oX = fpX_out;
+\end{lstlisting}
+
+El \textit{pipelining} además tiene que detenerse en el momento que hay un nuevo valor a procesar, por lo que necesitamos detener el bucle principal de CORDIC hasta que termine la \gls{fsm}.
+
+\begin{lstlisting}[caption={Cambio en el bucle principal de CORDIC.}]
+ if(next_state == w_normal_op) begin
+     X[i+1] <= Z_sign ? X[i] + Y_shr         : X[i] - Y_shr;
+     Y[i+1] <= Z_sign ? Y[i] - X_shr         : Y[i] + X_shr;
+     Z[i+1] <= Z_sign ? Z[i] + atan_angle[i] : Z[i] - atan_angle[i];
+ end
+ 
+ else begin
+     last_x_value <= X[ETAPAS-1];
+     last_y_value <= Y[ETAPAS-1];
+ end
+\end{lstlisting}
+
+Simplemente comprobamos si el siguiente estado es \textit{w\_normal\_op} y de no ser así, detenemos toda la \textit{pipeline} de CORDIC.
+\subsection{Testbench de CORDIC punto flotante con \textit{pipelining}}
+Este \textit{testbench} es muy parecido a 
+
+\begin{lstlisting}
+ 
+tick = 1
+tick = 2
+...
+tick = 18
+tick = 19
+cos = 0.707117
+sin = 0.707096
+tick = 20
+...
+tick = 23
+cos = 0.984809
+sin = 0.17364
+tick = 24
+...
+tick = 27
+cos = 0.939708
+sin = 0.341977
+tick = 28
+...
+tick = 31
+cos = 0.866003
+sin = 0.500039
+tick = 32
+...
+tick = 35
+cos = 0.766029
+sin = 0.642806
+tick = 36
+...
+tick = 39
+cos = 0.642806
+sin = 0.766029
+tick = 40
+...
+tick = 43
+cos = 0.500039
+sin = 0.866003
+tick = 44
+...
+tick = 47
+cos = 0.341977
+sin = 0.939708
+tick = 48
+...
+tick = 51
+cos = 0.17364
+sin = 0.984809
+tick = 52
+...
+tick = 55
+cos = -1.3113e-05
+sin = 1
+tick = 56
+...
+tick = 59
+cos = -0.17364
+sin = 0.984809
+tick = 60
+...
+tick = 63
+cos = -0.341977
+sin = 0.939709
+tick = 64
+...
+tick = 67
+cos = -0.500039
+sin = 0.866003
+...
+
+\end{lstlisting}
+
+\todo{explicar}

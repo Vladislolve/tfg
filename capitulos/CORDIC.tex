@@ -1,8 +1,10 @@
 \chapter{CORDIC}
-\section{Descripción de \gls{cordic}}
-\todo{Revisar de nuevo si las formulas estan correctas. Comentar Linear/Circular/Hyperbolic}
 
-En esta sección se describirá el funcionamiento principal del algoritmo \gls{cordic} según descrito por Jack E. Volder.
+En este capítulo veremos el funcionamiento de CORDIC básico, algunas posibles mejoras y el caso específico de tratamiento de datos en punto flotante.
+
+\section{Descripción de \gls{cordic}}
+
+En esta sección se describirá el funcionamiento principal del algoritmo \gls{cordic} según descrito por \cite{volder_cordic_1959}.
 
 La rotación de un vector de dos dimensiones $\boldsymbol{p_{0}} = [x_{0},y_{0}]$ con un ángulo $\theta$ para obtener un vector $\boldsymbol{p_{n}} = [x_{n},y_{n}]$ se puede realizar con un producto matriz $\boldsymbol{p_{n}}$ = $\boldsymbol{R_{p_{0}}}$, donde $\textbf{R}$ es la matriz de rotación.
 
@@ -25,13 +27,13 @@ Nombraremos como $K = [(1 + \tan^2{\theta})^{\sfrac{-1}{2}}]$ el factor escala. 
 \tan{\theta}  & 1 			\\[0.3em]
 \end{bmatrix} \]
 
-La operación pseudo-rotación realizada sobre el vector $p_{0}$ por un ángulo $\theta$ y cambia su magnitud por un factor $K = \cos{\theta}$.
+La operación pseudo-rotación rota el vector $p_{0}$ por un ángulo $\theta$ y cambia su magnitud por un factor $K = \cos{\theta}$ para producir una pseudo-rotación $p'_n = R_c p_0$.
 
 Para obtener la simplicidad dentro del hardware necesitamos:
 
 \begin{itemize}
 	\item Descomponer las rotaciones en una secuencia de rotaciones elementales con ángulos predefinidos que se pueda implementar con un coste hardware mínimo.
-	\item Eliminar el factor escala $K$, ya sea finalizando la operación con una simple multiplicación o ignorarlo directamente.
+	\item Eliminar el factor escala $K$, ya sea finalizando la operación con una simple multiplicación o ignorándolo directamente.
 \end{itemize}
 
 En primer lugar, \gls{cordic} realiza una rotación iterativa con una lista de ángulos predefinidos $\alpha_{i} = \arctan({2^{-i}})$ de manera que $\tan({\alpha_{i}}) = 2^{-i}$ se puede implementar en hardware como un desplazamiento de $i$ posiciones.
@@ -72,9 +74,11 @@ Los valores finales que nos interesan son los siguientes:
 	\label{graf:VM}
 \end{figure}
 
-\gls{cordic} puede operar de dos formas: \textit{Rotation Mode} (RM) (\ref{graf:RM}) y \textit{Vectoring Mode} (VM) (\ref{graf:VM}). La principal diferencia es en como se eligen las micro-rotaciones. En RM, la dirección de cada micro-rotación depende del signo de $\omega_{i}$. Si $\omega_{i}$ es positivo $\delta_{i} = 1$, si no $\delta_{i} = -1$. En VM, el vector se rota hacia el eje de $x$, por lo que la componente $y$ tiende a 0.
+\gls{cordic} puede operar de dos formas: \textit{Rotation Mode} (RM) (Figura \ref{graf:RM}) y \textit{Vectoring Mode} (VM) (Figura \ref{graf:VM}). La principal diferencia es en como se eligen las micro-rotaciones. En RM, la dirección de cada micro-rotación depende del signo de $\omega_{i}$. Si $\omega_{i}$ es positivo $\delta_{i} = 1$, si no $\delta_{i} = -1$. En VM, el vector se rota hacia el eje de $x$, por lo que la componente $y$ tiende a 0.
 
-Posteriormente, J.S. Walther propuso un \gls{cordic} generalizado unificado para realizar multitud de operaciones matemáticas, pero esto se encuentra fuera del alcance de esta memoria (Vea \ref{table:2009-CORDIC-Configurations}).
+\todo{Comentar la tabla 2.1 aquí}
+
+Posteriormente, J.S. Walther propuso un \gls{cordic} generalizado unificado para realizar multitud de operaciones matemáticas. La tabla \ref{table:2009-CORDIC-Configurations} muestra las diferentes configuraciones que puede tener \gls{cordic} para obtener un tipo de operación u otro. Esto se encuentra fuera del alcance de esta memoria, pero se ha querido mostrar la amplitud del método para casos de uso diferentes.
 
 \begin{table}[]
 	\centering
@@ -103,9 +107,9 @@ Posteriormente, J.S. Walther propuso un \gls{cordic} generalizado unificado para
 \end{table}
 
 \section{Mejoras a CORDIC}
-En el apartado de introducción se explicaron algunas aplicaciones de \gls{cordic}, sin detallar el tipo o las modificaciones realizadas. En este apartado se muestran algunas de estas mejoras importantes que han permitido a \gls{cordic} mantenerse competitivo. Muchas de estas soluciones están descritas en \cite{meher_50_2009}.
+En el apartado de introducción se explicaron algunas aplicaciones de \gls{cordic}, sin detallar el tipo o las modificaciones realizadas. En este apartado se muestran algunas de estas mejoras importantes que han permitido a \gls{cordic} mantenerse competitivo. Muchas de estas soluciones están descritas en \cite{meher_50_2009}, y expuestas en la tabla \ref{table:2009-CORDIC-Configurations}.
 
-Como ya se comentó anteriormente, el cómputo de \gls{cordic} es originalmente un proceso totalmente secuencial por dos razones principales: Las micro-rotaciones depende de los valores la rotación computados anteriormente, lo que sería el valor intermedio y las iteración $(i+1)$ solo puede comenzar después de que se complete la iteración $i$.
+Como ya se comentó anteriormente, el cómputo de \gls{cordic} es originalmente un proceso totalmente secuencial por dos razones principales: las micro-rotaciones depende de los valores la rotación computados anteriormente, lo que sería el valor intermedio y las iteración $(i+1)$ solo puede comenzar después de que se complete la iteración $i$.
 
 Otro de los problemas es que la precisión del valor final es lineal, requiere $n+1$ iteraciones para tener una precisión de $n$ bits. Esto significa que la latencia depende del número de bits que se pasan a \gls{cordic}.
 
@@ -131,13 +135,13 @@ De esta manera, para tener una salida de $n$ bits de precisión solo necesitamos
 Finalmente se quiere comentar que también existen soluciones de base mas alto, como 8-Radix.
 
 \subsection{Angle Recording}
-Los métodos de \textit{Angle Recording} (AR) quieren reducir el número de iteraciones mediante una combinación lineal de ángulos de las micro-rotaciones. Este método es ideal para procesamiento de señal, imagen, donde el ángulo de rotación se conoce \textit{a priori}.
+Los métodos de \textit{Angle Recording} (AR) quieren reducir el número de iteraciones mediante una combinación lineal de ángulos de las micro-rotaciones. Este método es ideal para procesamiento de señal, imagen, donde el ángulo de rotación se conoce \textit{a priori}. Algunos métodos consiguen reducir hasta un $50\%$ el número de iteraciones y manteniendo la misma precisión. \cite{hu_angle_1993}
 
 \subsection{Hybrid \glsentryshort{cordic}}
-\glsentryshort{cordic} híbrido se basa en la idea de que los valores menos significativos del cálculo de ángulo pueden ser reemplazados por $2^-j$ ya que $\tan(2^-j) \approx 2^-j $ si el valor $j$ es lo suficientemente grande. De esta manera podemos calcular los valores mas pequeños con un simple movimiento de bits y no necesitamos conocer el signo de rotación ya que en todo momento es positivo.
+\glsentryshort{cordic} híbrido se basa en la idea de que los valores menos significativos del cálculo de ángulo pueden ser reemplazados por $2^-j$ ya que $\tan(2^-j) \approx 2^-j $ si el valor $j$ es lo suficientemente grande. De esta manera podemos calcular los valores mas pequeños con un simple movimiento de bits y no necesitamos conocer el signo de rotación ya que en todo momento es positivo. \cite{wang_hybrid_1997}
 
 \subsection{Redundant-Number-Based \glsentryshort{cordic}}
-Este tipo de \gls{cordic} pretende mejorar el rendimiento de las sumas y restas mediante un uso de numeración redundante para no tener que realizar el cálculo de los posibles restos que puede obtener una operación aritmética. La desventaja de este método es que necesitas mas espacio en hardware para implementar.
+Este tipo de \gls{cordic} pretende mejorar el rendimiento de las sumas y restas mediante un uso de numeración redundante para no tener que realizar el cálculo de los posibles restos que puede obtener una operación aritmética. La desventaja de este método es que necesitas mas espacio en hardware para implementar. \cite{noauthor_redundant_nodate}
 
 \subsection{Pipelined \glsentryshort{cordic}}
 El uso de \textit{pipelined} \gls{cordic} es bastante extenso ya que cada iteración del método es idéntica y los valores anteriores después de su cálculo ya no nos interesan, es posible obtener por cada ciclo de ejecución un nuevo resultado. Para esto necesitamos tener un registro por cada etapa de \gls{cordic} (vea \ref{graf:2009-CORDIC_pipelined}).
@@ -151,13 +155,13 @@ El uso de \textit{pipelined} \gls{cordic} es bastante extenso ya que cada iterac
 
 \section{\glsentryshort{cordic} y punto flotante}
 
-\cite{parker_abstract_2011} Muestra claramente algunos de los problemas que conlleva implementar el estándar del IEEE 754 en hardware. En concreto estos problemas son relaciones con algunos aspectos de las FPGAs, pero puede ser aplicable a cualquier problema donde el hardware es limitado. Algunos de estos problemas son:
+\cite{parker_abstract_2011} Muestra claramente algunos de los problemas que conlleva implementar el estándar del IEEE 754 en hardware. En concreto estos problemas son relaciones con algunos aspectos de las \gls{fpga}s, pero puede ser aplicable a cualquier problema donde el hardware es limitado. Algunos de estos problemas son:
 
 \begin{itemize}
 	\item La representación de la mantisa incluye un 1 implícito. El valor real va desde [1:1.999..] en vez de [0:0.000..]. 
 	\item En vez de usar complemento a dos, el estándar incluye un bit de signo.
 	\item Cada operación aritmética conlleva una normalización de la mantisa para alinear el punto decimal hacia la izquierda, además de tener que ajustar el exponente de forma acorde.
-	\item VHDL y Verilog no tienen una implementación de operaciones con punto flotante. Un lenguaje de descripción de hardware mas nuevo, como SystemVerilog si tiene estas operaciones, pero la complejidad de ellas conlleva a perder mucho espacio, el cual puede estar bastante limitado en las FPGAs.
+	\item VHDL y Verilog no tienen una implementación de operaciones con punto flotante. Un lenguaje de descripción de hardware mas nuevo, como SystemVerilog si tiene estas operaciones, pero la complejidad de ellas conlleva a perder mucho espacio, el cual puede estar bastante limitado en las \gls{fpga}s.
 \end{itemize}
 
 Dentro de la evolución del uso de punto flotante en el método hay una variedad importante de arquitecturas y algoritmos de \gls{cordic}.
@@ -197,7 +201,7 @@ Como se puede observar, operar con punto fijo para realizar movimiento de bits e
 
 Para realizar las micro-rotaciones se da ciertos cambios, como el uso del método \textit{Block Floating Point} (BFP), el cual permite un uso de aritmética con punto fijo aunque el valor sea punto flotante. La ventaja de este método es la reducción de hardware y el coste de tiempo que puede traer las mismas funciones aritméticas comparadas a punto flotante pero sin perder el rango numérico que le da la ventaja a este.
 
-\cite{zhou_double_2008} diseñaron un co-procesador FPGA basado en \gls{cordic} con doble precisión (64 bits estándar IEEE 754) y \textit{pipelining}. Este diseño se centra explícitamente en las FPGAs, ya que como se puede ver anteriormente, y según lo descrito en este artículo, la mayoría se centraba dentro del área del ASIC, por lo que no había tantos ejemplos de implementaciones en hardware para FPGAs. Además, es de los pocos artículos con una implementación de 64 bits.
+\cite{zhou_double_2008} diseñaron un co-procesador \gls{fpga} basado en \gls{cordic} con doble precisión (64 bits estándar IEEE 754) y \textit{pipelining}. Este diseño se centra explícitamente en las \gls{fpga}s, ya que como se puede ver anteriormente, y según lo descrito en este artículo, la mayoría se centraba dentro del área del ASIC, por lo que no había tantos ejemplos de implementaciones en hardware para \gls{fpga}s. Además, es de los pocos artículos con una implementación de 64 bits.
 
 El diseño se basaba en tres fases: Transformación de los valores de punto flotante a punto fijo, método \gls{cordic} y una fase de normalización, donde se devuelve el valor en punto flotante del IEEE 754.
 
@@ -298,7 +302,7 @@ En el área de la robótica, \cite{evangelista_fully-pipelined_2018}
 
 Dentro del trabajo de los radares de apertura sintética (\textit{Synthetic Aperture Radar}) (SAR), \cite{fang_generation_2019} proponen una mejora de los tiempos de cálculo de operaciones trigonométricas, raíces, multiplicación.
 
-El artículo sigue las pautas de muchos otros en diseñar un módulo de pre-procesamiento y post-procesamiento para la conversión de punto flotante a punto fijo y viceversa, con ciertos ajustes para no perder mucha precisión. El diseño fue implementado en una FPGA para mostrar la eficiencia de uso de espacio de hardware y precisión de los resultados.
+El artículo sigue las pautas de muchos otros en diseñar un módulo de pre-procesamiento y post-procesamiento para la conversión de punto flotante a punto fijo y viceversa, con ciertos ajustes para no perder mucha precisión. El diseño fue implementado en una \gls{fpga} para mostrar la eficiencia de uso de espacio de hardware y precisión de los resultados.
 
 \cite{wang_gh_2020} presentan una implementación hardware basado en \gls{cordic} generalizado hiperbólico (GH \gls{cordic}) para el cálculo de raíces cuadradas de base $n$ en punto flotante de precisión simple. Se utilizan múltiples \gls{cordic} en diferentes configuraciones.
 

@@ -1,11 +1,11 @@
 \selectlanguage *{spanish}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Rotation Mode. Figura de \cite {schelin_calculator_1983}\relax }}{6}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Vectoring Mode. Figura de \cite {schelin_calculator_1983}\relax }}{7}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \gls {cordic} convencional con \textit {pipelining}\relax }}{9}{figure.caption.17}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Arquitectura de FP \gls {cordic}. Figura de \cite {de_lange_optimal_1988}\relax }}{11}{figure.caption.19}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Unidad de procesamiento de \gls {cordic} de doble precisión. Figura extraída de \cite {yeshwanth_high-speed_2018}\relax }}{13}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Rotation Mode. Figura de \cite {schelin_calculator_1983}\relax }}{6}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Vectoring Mode. Figura de \cite {schelin_calculator_1983}\relax }}{7}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \gls {cordic} convencional con \textit {pipelining}\relax }}{9}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Arquitectura de FP \gls {cordic}. Figura de \cite {de_lange_optimal_1988}\relax }}{11}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Unidad de procesamiento de \gls {cordic} de doble precisión. Figura extraída de \cite {yeshwanth_high-speed_2018}\relax }}{13}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

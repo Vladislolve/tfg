@@ -1,6 +1,36 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Das%
+\ \BBA {} Banerjee%
+}{%
+Das%
+\ \BBA {} Banerjee%
+}{%
+{\protect \APACyear {2002}}%
+}]{%
+das_unified_2002}
+\APACinsertmetastar {%
+das_unified_2002}%
+\begin{APACrefauthors}%
+Das, B.%
+\BCBT {}\ \BBA {} Banerjee, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2002}{{\APACmonth{08}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Unified {CORDIC}-based chip to realise
+  {DFT}/{DHT}/{DCT}/{DST}} {Unified {CORDIC}-based chip to realise
+  {DFT}/{DHT}/{DCT}/{DST}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computers and Digital Techniques, IEE Proceedings
+  -}{149}{}{121--127}.
+\newblock
+\begin{APACrefDOI} \doi{10.1049/ip-cdt:20020429} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 de Lange%
 , van~der Hoeven%
 , Deprettere%
@@ -59,6 +89,37 @@ Dhume, N.%
   {Library} {Operations}}.{\BBCQ}
 \newblock
 \APACjournalVolNumPages{}{}{}{18}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ercegovac%
+\ \BBA {} Lang%
+}{%
+Ercegovac%
+\ \BBA {} Lang%
+}{%
+{\protect \APACyear {1990}}%
+}]{%
+ercegovac_redundant_1990}
+\APACinsertmetastar {%
+ercegovac_redundant_1990}%
+\begin{APACrefauthors}%
+Ercegovac, M.%
+\BCBT {}\ \BBA {} Lang, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1990}{{\APACmonth{06}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Redundant and on-line {CORDIC}: application to matrix
+  triangularization and {SVD}} {Redundant and on-line {CORDIC}: application to
+  matrix triangularization and {SVD}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Computers}{39}{6}{725--740}.
+\newblock
+\APACrefnote{Conference Name: IEEE Transactions on Computers}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/12.53594} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -159,6 +220,28 @@ Hekstra, G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {High performance rotation architectures based on the radix-4
+  {CORDIC} algorithm - {IEEE} {Journals} \& {Magazine}}}{%
+\APACcitebtitle {High performance rotation architectures based on the radix-4
+  {CORDIC} algorithm - {IEEE} {Journals} \& {Magazine}}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+noauthor_high_nodate}
+\APACinsertmetastar {%
+noauthor_high_nodate}%
+\APACrefbtitle {High performance rotation architectures based on the radix-4
+  {CORDIC} algorithm - {IEEE} {Journals} \& {Magazine}.} {High performance
+  rotation architectures based on the radix-4 {CORDIC} algorithm - {IEEE}
+  {Journals} \& {Magazine}.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL}
+  [{2020-07-28}]\url{https://ieeexplore.ieee.org/document/609275}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hou%
 , Wang%
 , Zou%
@@ -196,6 +279,65 @@ Hou, N.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Hu%
+}{%
+Hu%
+}{%
+{\protect \APACyear {1992}}%
+}]{%
+hu_cordic-based_1992}
+\APACinsertmetastar {%
+hu_cordic-based_1992}%
+\begin{APACrefauthors}%
+Hu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1992}{{\APACmonth{07}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{CORDIC}-based {VLSI} architectures for digital signal
+  processing} {{CORDIC}-based {VLSI} architectures for digital signal
+  processing}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Signal Processing Magazine}{9}{3}{16--35}.
+\newblock
+\APACrefnote{Conference Name: IEEE Signal Processing Magazine}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/79.143467} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hu%
+\ \BBA {} Naganathan%
+}{%
+Hu%
+\ \BBA {} Naganathan%
+}{%
+{\protect \APACyear {1993}}%
+}]{%
+hu_angle_1993}
+\APACinsertmetastar {%
+hu_angle_1993}%
+\begin{APACrefauthors}%
+Hu, Y.%
+\BCBT {}\ \BBA {} Naganathan, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1993}{{\APACmonth{01}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {An angle recoding method for {CORDIC} algorithm
+  implementation} {An angle recoding method for {CORDIC} algorithm
+  implementation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Computers}{42}{1}{99--102}.
+\newblock
+\APACrefnote{Conference Name: IEEE Transactions on Computers}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/12.192217} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 \APACcitebtitle {Intro - {Verilator} - {Veripool}}}{%
 \APACcitebtitle {Intro - {Verilator} - {Veripool}}}{%
 {\protect \APACyear {{\protect \bibnodate {}}}}%
@@ -210,6 +352,37 @@ noauthor_intro_nodate}%
 \newblock
 \begin{APACrefURL} [{2020-07-16}]\url{https://www.veripool.org/wiki/verilator}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Juang%
+}{%
+Juang%
+}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+juang_areadelay_nodate}
+\APACinsertmetastar {%
+juang_areadelay_nodate}%
+\begin{APACrefauthors}%
+Juang, T\BHBI B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{{\protect \bibnodate {}}}.
+\newblock
+\APACrefbtitle {Area/{Delay} {Efficient} {Recoding} {Methods} for {Parallel}
+  {CORDIC} {Rotations}} {Area/{Delay} {Efficient} {Recoding} {Methods} for
+  {Parallel} {CORDIC} {Rotations}}.
+\newblock
+\begin{APACrefURL}
+  [{2020-07-28}]\url{https://www.infona.pl//resource/bwmeta1.element.ieee-art-000004145698}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{Publication Title: APCCAS 2006 - 2006 IEEE Asia Pacific Conference
+  on Circuits and Systems}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/APCCAS.2006.342536} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -338,6 +511,69 @@ LaMeres, B\BPBI J.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1007/978-3-030-10552-5_2} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lang%
+\ \BBA {} Antelo%
+}{%
+Lang%
+\ \BBA {} Antelo%
+}{%
+{\protect \APACyear {2005}}%
+}]{%
+lang_high-throughput_2005}
+\APACinsertmetastar {%
+lang_high-throughput_2005}%
+\begin{APACrefauthors}%
+Lang, T.%
+\BCBT {}\ \BBA {} Antelo, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2005}{{\APACmonth{04}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {High-throughput {CORDIC}-based geometry operations for
+  {3D} computer graphics} {High-throughput {CORDIC}-based geometry operations
+  for {3D} computer graphics}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Computers, IEEE Transactions on}{54}{}{347--361}.
+\newblock
+\begin{APACrefDOI} \doi{10.1109/TC.2005.53} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lee%
+\ \BBA {} Chang%
+}{%
+Lee%
+\ \BBA {} Chang%
+}{%
+{\protect \APACyear {1987}}%
+}]{%
+lee_maximum_1987}
+\APACinsertmetastar {%
+lee_maximum_1987}%
+\begin{APACrefauthors}%
+Lee, C\BPBI S.%
+\BCBT {}\ \BBA {} Chang, P.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1987}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A maximum pipelined {CORDIC} architecture for inverse
+  kinematic position computation} {A maximum pipelined {CORDIC} architecture
+  for inverse kinematic position computation}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Journal on Robotics and
+  Automation}{5}{3}{445--458}.
+\newblock
+\begin{APACrefURL}
+  [{2020-07-28}]\url{https://www.infona.pl//resource/bwmeta1.element.ieee-art-000001087126}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/JRA.1987.1087126} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -486,6 +722,28 @@ Parker, M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Redundant and on-line {CORDIC}: application to matrix
+  triangularization and {SVD} - {IEEE} {Journals} \& {Magazine}}}{%
+\APACcitebtitle {Redundant and on-line {CORDIC}: application to matrix
+  triangularization and {SVD} - {IEEE} {Journals} \& {Magazine}}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+noauthor_redundant_nodate}
+\APACinsertmetastar {%
+noauthor_redundant_nodate}%
+\APACrefbtitle {Redundant and on-line {CORDIC}: application to matrix
+  triangularization and {SVD} - {IEEE} {Journals} \& {Magazine}.} {Redundant
+  and on-line {CORDIC}: application to matrix triangularization and {SVD} -
+  {IEEE} {Journals} \& {Magazine}.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\begin{APACrefURL}
+  [{2020-07-28}]\url{https://ieeexplore.ieee.org/document/53594}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Schelin%
 }{%
 Schelin%
@@ -515,6 +773,42 @@ Schelin, C\BPBI W.%
   https://doi.org/10.1080/00029890.1983.11971220}
 \newblock
 \begin{APACrefDOI} \doi{10.1080/00029890.1983.11971220} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Valls%
+, Sansaloni%
+, Perez-Pascual%
+, Torres%
+\BCBL {}\ \BBA {} Almenar%
+}{%
+Valls%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2006}}%
+}]{%
+valls_use_2006}
+\APACinsertmetastar {%
+valls_use_2006}%
+\begin{APACrefauthors}%
+Valls, J.%
+, Sansaloni, T.%
+, Perez-Pascual, A.%
+, Torres, V.%
+\BCBL {}\ \BBA {} Almenar, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2006}{{\APACmonth{09}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The use of {CORDIC} in software defined radios: a
+  tutorial} {The use of {CORDIC} in software defined radios: a
+  tutorial}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Communications Magazine}{44}{9}{46--50}.
+\newblock
+\APACrefnote{Conference Name: IEEE Communications Magazine}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/MCOM.2006.1705978} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -585,13 +879,44 @@ Walther, J\BPBI S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-Wang%
+S.~Wang%
+, Piuri%
+\BCBL {}\ \BBA {} Wartzlander%
+}{%
+S.~Wang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1997}}%
+}]{%
+wang_hybrid_1997}
+\APACinsertmetastar {%
+wang_hybrid_1997}%
+\begin{APACrefauthors}%
+Wang, S.%
+, Piuri, V.%
+\BCBL {}\ \BBA {} Wartzlander, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{{\APACmonth{11}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Hybrid {CORDIC} algorithms} {Hybrid {CORDIC}
+  algorithms}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Computers}{46}{11}{1202--1207}.
+\newblock
+\APACrefnote{Conference Name: IEEE Transactions on Computers}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/12.644295} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Y.~Wang%
 , Luo%
 , Wang%
 , Shen%
 \BCBL {}\ \BBA {} Pan%
 }{%
-Wang%
+Y.~Wang%
 \ \protect \BOthers {.}}{%
 {\protect \APACyear {2020}}%
 }]{%
