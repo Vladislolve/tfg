@@ -8,7 +8,11 @@
 \chapter{Conclusiones}
 \label{conclusiones}
 
+En este Trabajo de Fin de Grado se ha realizado un estudio de los casos de uso del algoritmo \gls{cordic}. Como inicio del trabajo se ha realizado un estudio de la base del \gls{cordic} y las mejoras que se han ido introduciendo con los años para mantener el método competitivo. Este estudio se ha centrado sobretodo en la manipulación de datos con punto flotante junto con el método. Se ha observado que la manipulación del \gls{ieee} 754 en el hardware es bastante complejo, bits implícitos, valores especiales, normalización de los números, etc. y se llega a entender que, a no ser que sea necesario en la especificación del problema a solucionar no atrae el uso de este.
 
+Tras el estudio, se ha implementado tres distintos \gls{cordic} en Verilog para demostrar algunas mejoras que han sido mencionadas en los estudios. En concreto, un método básico, para mostrar los problemas de latencia, otro con \text{pipelining} y uno final con punto flotante. La complejidad de punto flotante, aun sin tener implementado el estándar entero, muestra un claro aumento de espacio ocupado y tiempo de diseño.
+
+Para finalizar, este trabajo tenia intención de dar nuevos conocimientos en el área de circuitos digitales, centrándose en la sintetización lógica, mediante el lenguaje Verilog. Un punto que, debido a la situación extraordinaria de este curso, no se ha llegado a la parte de implementar el diseño en una FPGA, el cual era uno de los objetivos a realizar ya que forma parte del ciclo de desarrollo y nos mostraría un rendimiento real de las implementaciones.
 
 
 

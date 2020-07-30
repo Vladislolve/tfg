@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.7.1)  28 JUL 2020 22:43
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Arch Linux) (preloaded format=xelatex 2020.7.1)  30 JUL 2020 17:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2452,18 +2452,26 @@ LaTeX Info: Redefining \ttfamily on input line 1.
 ]
 (./capitulos/Introduccion.tex
 chapter 1.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+[1
 
 
-]
-[2]) (./capitulos/CORDIC.tex [3] [4
+] [2]) (./capitulos/CORDIC.tex [3] [4
 
 
 ]
 chapter 2.
+
+Package glossaries Warning: Use of \glossary with glossaries.sty is deprecated.
+ 
+(glossaries)                Indexing should be performed with the user level 
+(glossaries)                commands, such as \gls or \glsadd. If you need the 
+
+(glossaries)                original definition of \glossary use the package 
+(glossaries)                options kernelglossredefs=false (to restore the 
+(glossaries)                former definition of \glossary) and nomain (if the 
+
+(glossaries)                file extensions cause a conflict) on input line 3.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\gls' on input line 5.
@@ -2481,44 +2489,30 @@ File: archivos/CORDIC/RotationMode.png Graphic file (type bmp)
 <archivos/CORDIC/RotationMode.png>
 File: archivos/CORDIC/VectoringMode.png Graphic file (type bmp)
 <archivos/CORDIC/VectoringMode.png>
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 79.
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 79--79
-[][][] 
- []
-
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 79--79
-[][][] 
- []
-
 [6]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 83.
+               Default added (so using `tbp') on input line 81.
 
 [7] [8]
 File: archivos/CORDIC/2009-CORDIC_pipelined.png Graphic file (type bmp)
 <archivos/CORDIC/2009-CORDIC_pipelined.png>
-
-Underfull \vbox (badness 3769) has occurred while \output is active []
-
  [9]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 173.
-
 File: archivos/CORDIC/1988_FP_CORDIC_Architecture.png Graphic file (type bmp)
 <archivos/CORDIC/1988_FP_CORDIC_Architecture.png>
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 184.
+
 [10] [11]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 210.
+               Default added (so using `tbp') on input line 204.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 233.
+               Default added (so using `tbp') on input line 225.
 
 [12]
 File: archivos/CORDIC/2019_4-step-64bit.png Graphic file (type bmp)
@@ -2526,11 +2520,11 @@ File: archivos/CORDIC/2019_4-step-64bit.png Graphic file (type bmp)
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 269.
+               Default added (so using `tbp') on input line 261.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 286.
+               Default added (so using `tbp') on input line 278.
 
 [13]) (./capitulos/CORDIC_implementacion.tex [14]
 chapter 3.
@@ -2543,97 +2537,106 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 31.
+nput line 32.
  [16] [17] [18]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 194.
+(hyperref)                removing `\gls' on input line 195.
 
 [19] [20]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 312--312
-[][][] 
- []
-
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 312--312
-[][][] 
- []
-
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 314.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 320.
+
 
 [22]
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 368.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 374.
 
 
 
 LaTeX Font Warning: Font shape `TU/lmr/m/scit' undefined
-(Font)              using `TU/lmr/m/scsl' instead on input line 389.
+(Font)              using `TU/lmr/m/scsl' instead on input line 380.
 
 [23]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [24]
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 453--453
-[][][] 
- []
-
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 453--453
-[][][] 
- []
-
-[25] [26] [27]
+[25] [26] [27] [28]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28]
-[29] [30]
+ [29]
+[30] [31]
+File: archivos/CORDIC/real_error2.pdf Graphic file (type pdf)
+<use archivos/CORDIC/real_error2.pdf>
+ [32]
+File: archivos/CORDIC/ciclos.pdf Graphic file (type pdf)
+<use archivos/CORDIC/ciclos.pdf>
+) (./capitulos/conclusiones.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31]
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 772--772
-[][][] 
- []
-
-
-Overfull \hbox (2.34543pt too wide) in paragraph at lines 772--772
-[][][] 
- []
-
-) (./capitulos/conclusiones.tex [32]
+ [33]
+[34]
 chapter 4.
-) (./TFG-TFM_EPS_UA.bbl [33
+) (./TFG-TFM_EPS_UA.bbl [35
 
 
-] [34
+] [36
 
 
 ]
 chapter without number
-[35] [36]
-Underfull \hbox (badness 7558) in paragraph at lines 708--723
+[37] [38]
+Underfull \hbox (badness 7558) in paragraph at lines 736--751
 []\TU/lmr/m/n/10.95 Parker, M.  (2011).  Abstract – Floating Point.  \TU/lmr/m/
 it/10.95 DesignCon 2011\TU/lmr/m/n/10.95 , 15.
  []
 
 
-Underfull \hbox (badness 1117) in paragraph at lines 757--777
+Underfull \hbox (badness 1117) in paragraph at lines 763--783
 []\TU/lmr/m/n/10.95 Schelin, C. W.  (1983, mayo).  Calculator Function Approxim
 ation.  \TU/lmr/m/it/10.95 The Ameri-
  []
 
 
-Underfull \hbox (badness 1062) in paragraph at lines 757--777
+Underfull \hbox (badness 1062) in paragraph at lines 763--783
 \TU/lmr/m/it/10.95 can Mathematical Monthly\TU/lmr/m/n/10.95 , \TU/lmr/m/it/10.
 95 90\TU/lmr/m/n/10.95 (5), 317–325.  Descargado 2020-07-02, de []$[][][][][] [
 ][][]
  []
 
-[37]) (./TFG-TFM_EPS_UA.acr [38])
+[39]) (./TFG-TFM_EPS_UA.acr [40]) (./anexos/anexos_1.tex [41
+
+
+
+
+] [42
+
+
+]
+chapter A.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\gls' on input line 11.
+
+[43]
+File: archivos/CORDIC/salida_gtkwave_basico.png Graphic file (type bmp)
+<archivos/CORDIC/salida_gtkwave_basico.png>
+ [44
+
+]
+File: archivos/CORDIC/salida_gtkwave_pipeline.png Graphic file (type bmp)
+<archivos/CORDIC/salida_gtkwave_pipeline.png>
+ [45
+
+]
+File: archivos/CORDIC/salida_gtkwave_fp2.png Graphic file (type bmp)
+<archivos/CORDIC/salida_gtkwave_fp2.png>
+ [46
+
+])
 The property list \polyglossia@langsetup contains the pairs (without outer
 braces):
 >  {latex/script}  =>  {latin}
@@ -2669,31 +2672,25 @@ braces):
 >  {spanish/localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/Localnumeral}  =>  {polyglossia@C@localnumeral}
 >  {spanish/totalhyphenmin}  =>  {5}.
- [39
-
-
-
-
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 146.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 146.
  (./TFG-TFM_EPS_UA.aux
 LaTeX Info: Redefining \rmfamily on input line 29.
 LaTeX Info: Redefining \sffamily on input line 29.
 LaTeX Info: Redefining \ttfamily on input line 29.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 146.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 146.
 Package rerunfilecheck Info: File `TFG-TFM_EPS_UA.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 58667 strings out of 479284
- 1375442 string characters out of 5886221
- 2116092 words of memory out of 5000000
- 75089 multiletter control sequences out of 15000+600000
- 573547 words of font info for 233 fonts, out of 8000000 for 9000
+ 58752 strings out of 479284
+ 1376877 string characters out of 5886221
+ 2116679 words of memory out of 5000000
+ 75169 multiletter control sequences out of 15000+600000
+ 573531 words of font info for 231 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  82i,21n,138p,10206b,2103s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on TFG-TFM_EPS_UA.pdf (55 pages).
+Output written on TFG-TFM_EPS_UA.pdf (62 pages).

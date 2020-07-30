@@ -9,25 +9,25 @@
 \section{Motivación y contexto}
 \label{motivacion}
 
-Dentro de la ingeniería informática me ha llamado mucho atención las asignaturas relacionadas de arquitecturas. Ya que la ingeniería da muchas áreas de informática, no es posible abarcar todo los niveles de forma muy detallada, por lo que he decidido abarcar con el Trabajo de Fin de Grado un nivel propiamente de arquitectura de computadores. Una de las recomendaciones del profesorado fue abarcar el método \gls{cordic}, el cual ha resultado ser un buen punto de comienzo para adentrarse en el nivel de descripción de hardware.
+Dentro de la ingeniería informática me ha llamado mucho atención las asignaturas relacionadas de arquitecturas. Ya que en la ingeniería se da muchas áreas de informática, no es posible abarcar todo los niveles de forma muy detallada, por lo que he decidido centrarme con el Trabajo de Fin de Grado un nivel propiamente de arquitectura de computadores. Una de las recomendaciones del profesorado fue investigar el método \gls{cordic}, el cual ha resultado ser un buen punto de comienzo para adentrarse en el nivel de circuitos digitales.
 
-\gls{cordic} es un método desarrollado en los años 60 que ha sido utilizado en múltiples ocasiones en proyectos de diferente tipo, pero debido a la necesidad cada vez mayor de utilizar datos decimales, y las mejoras en rendimiento de los procesadores de propósito general que incluyen una \gls{fpu}, hizo bajar la popularidad de CORDIC ya que el procesamiento de \gls{cordic} posee una gran latencia. Además, en software es más lento y, por lo tanto, no tan atractivo a la hora de elegir el método.
+\gls{cordic} es un método desarrollado en los años 60 que ha sido utilizado en múltiples ocasiones en proyectos de diferente tipo, pero debido a la necesidad cada vez mayor de utilizar datos decimales, y las mejoras en rendimiento de los procesadores de propósito general que incluyen una \gls{fpu}, lo que permite un cómputo mucho mas rápido de datos decimales, hizo bajar la popularidad de CORDIC ya que el procesamiento de \gls{cordic} posee una gran latencia. Además, en software es más lento y, por lo tanto, no tan atractivo a la hora de elegir el método.
 
 Aun así, \gls{cordic} puede ocupar un espacio el cual una \gls{fpu} no es lo mas óptimo. Múltiples métodos y algoritmos se han quedado atrás en el mundo académico y no han sido usados para solucionar problemas reales, pero \gls{cordic} sigue siendo estudiado y después de más de 50 años se siguen publicando artículos relacionados con el método, por lo que hay una razón por la que sería interesante estudiar sus posibles aplicaciones.
 
-El método engloba una gran cantidad de diferentes algoritmos que se construyen de la misma manera y emplean las mismas operaciones estipuladas por Jack. E Volder, autor de CORDIC. Esta flexibilidad permite el uso del algoritmo en diferentes áreas de la informática, como el procesamiento de imágenes, comunicación o robótica, entre otros.
+El método engloba una gran cantidad de diferentes algoritmos que se construyen de la misma manera y emplean las mismas operaciones estipuladas por Jack. E Volder, autor de \gls{cordic}. Esta flexibilidad permite el uso del algoritmo en diferentes áreas de la informática, como el procesamiento de imágenes, comunicación o robótica, entre otros.
 
-El ecosistema de \gls{fpga}s está ahora mismo en alza gracias a la reducción de coste de los componentes y la mejora de las especificaciones. Además, se ha visto un gran número de herramientas de código abierto que anteriormente no existía, y se basaba mayoritariamente en herramientas de desarrollo software multiplataforma y dispositivos hardware propietarios. Un claro ejemplo son las \textit{crowdfunded} \gls{fpga}s que hay en el mercado, que ofrecen unas características muy interesantes a un precio relativamente bajo. Esto permite poner vista a nuevos proyectos con \gls{fpga}s que anteriormente eran muy costosos, ya que se ve una clara bajada de coste de cómputo en un futuro muy cercano.
+El ecosistema de \gls{fpga} está ahora mismo en alza gracias a la reducción de coste de los componentes y la mejora de las especificaciones. Además, se ha visto un gran número de herramientas de código abierto que anteriormente no existía, y se basaba mayoritariamente en herramientas de desarrollo software multiplataforma y dispositivos hardware propietarios. Un claro ejemplo son las \textit{crowdfunded} \gls{fpga}s que hay en el mercado (como por ejemplo \cite{noauthor_ulx3s_nodate}), que ofrecen unas características muy interesantes a un precio relativamente bajo. Esto permite poner vista a nuevos proyectos con \gls{fpga}s que anteriormente eran muy costosos, ya que se ve una clara bajada de coste de cómputo en un futuro muy cercano.
 
 Para finalizar, \gls{cordic} permite un aprendizaje de los lenguajes de descripción de hardware y la implementación del código en hardware especializado, como por ejemplo una \gls{fpga}, ya que es un método fácil de entender e implementar en hardware en su definición mas básica (cálculo de funciones seno y coseno).
 
 \section{Método CORDIC}
 
-En 1959, \citeauthor{volder_cordic_1959} publica el primer artículo del algoritmo que denominó COordinate Rotation DIgital Computer (\gls{cordic}). Este algoritmo fue originalmente pensado como un método de propósito específico para dispositivos digitales que necesitan un funcionamiento en tiempo real. En concreto, este algoritmo fue diseñado para el cómputo del sistema de navegación del avión Convair B-56 Hustler para reemplazar el sistema analógico a uno digital para ser mas preciso y de tiempo real. 
+En 1959, \citeauthor{volder_cordic_1959} publica el primer artículo del algoritmo que denominó COordinate Rotation DIgital Computer (\gls{cordic}). Este algoritmo fue originalmente pensado como un método de propósito específico para dispositivos digitales que necesitan un funcionamiento en tiempo real. En concreto, este algoritmo fue diseñado para el cómputo del sistema de navegación del avión Convair B-56 Hustler para reemplazar el sistema analógico a uno digital, mas preciso y de tiempo real. 
 
 El algoritmo publicado por Volder tenía como objetivo resolver funciones trigonométricas y la conversión de coordenadas rectangulares a polares, aunque desde el primer momento se estipula que este método puede ser usado para para el cómputo de otras operaciones matemáticas.
 
-El aspecto más importante de \gls{cordic} es la forma de resolver el problema. Solo requiere las operaciones de sumar, restar, movimiento de bits (\textit{bitshift}) y una \textit{lookup table} (LUT). Esto es importante, ya que trae muchas características que en un futuro dependen de esta simplicidad.
+El aspecto más importante de \gls{cordic} es la forma de resolver el problema. Solo requiere las operaciones de sumar, restar, movimiento de bits (\textit{bitshift}) y una \gls{lut}. Esto es importante, ya que trae muchas características que en un futuro dependen de esta simplicidad.
 
 
 \subsection{Revisiones y mejoras de CORDIC}
@@ -36,28 +36,28 @@ El aspecto más importante de \gls{cordic} es la forma de resolver el problema. 
 
 Además, en este artículo ya se hace mención de una unidad de hardware para el proceso de valores en punto flotante. El dispositivo diseñado en HP aceptaba valores de 48 bits y 32 bits en punto flotante.
 
-El algoritmo de \gls{cordic} fue usado por HP, Texas Instruments y otros para crear calculadoras digitales de un tamaño reducido. Un ejemplo de esto es HP-35, la cual realizaba las funciones trigonométricas mediante este método. Además, CORDIC fue usado en algunos procesadores, ya sea como un \textit{coprocesador} o integrado dentro del mismo, como el Intel 8087 y algunos de sus posteriores generaciones, generalmente para reducir el número de puertas lógicas y complejidad de la \gls{fpu}.
+El algoritmo de \gls{cordic} fue usado por HP, Texas Instruments y otros para crear calculadoras digitales de un tamaño reducido. Un ejemplo de esto es HP-35, la cual realizaba las funciones trigonométricas mediante este método. Además, \gls{cordic} fue usado en algunos procesadores, ya sea como un \textit{co-procesador} o integrado dentro del mismo, como el Intel 8087 y algunos de sus posteriores generaciones, generalmente para reducir el número de puertas lógicas y complejidad de la \gls{fpu}.
 
 
 \section{Presente y futuro de CORDIC}
 Aunque el algoritmo no sea el mejor método para realizar las operaciones estipuladas anteriormente, sigue siendo muy atractivo por su simplicidad a la hora de implementarlo en hardware, ya que se puede usar el mismo algoritmo iterativo para todas las operaciones usando el diseño \textit{shift-add} básico. Muchos sistemas embebidos y \gls{fpga}s no tienen una unidad dedicada al procesamiento de punto flotante, por lo que lo hace un candidato ideal.
 
-Los nuevos desarrollos de CORDIC se han centrado en mejorar el \textit{throughput}, la reducción de la complejidad del hardware necesitado para la implementación y la latencia propia del método.
+Los nuevos desarrollos de \gls{cordic} se han centrado en mejorar el \textit{throughput}, la reducción de la complejidad del hardware necesitado para la implementación y la latencia propia del método.
 
 Algunas de las aplicaciones de \gls{cordic} son:
 
 \begin{itemize}
-  \item \textit{Direct Kinematics Solution} (DKS) o solución de cinemática directa para manipuladores de robots seriales. Las rotaciones y translaciones de los eslabones(links?) que generan nuevas coordenadas son calculadas por \gls{cordic}. Un método similar es usado para la cinemática inversa. \cite{lee_maximum_1987}.
+  \item \gls{dks} o solución de cinemática directa para manipuladores de robots seriales. Las rotaciones y traslaciones de los eslabones que generan nuevas coordenadas son calculadas por \gls{cordic}. Un método similar es usado para la cinemática inversa. [\citenum{lee_maximum_1987}]
   
-  \item \gls{cordic} tambien se ha usado como una unidad funcional de un procesador de robot para temas de redundancia y cálculo de detección de colisión.
+  \item \gls{cordic} también se ha usado como una unidad funcional de un procesador de robot para temas de redundancia y cálculo de detección de colisión. [\citenum{walker_parallel_1993}]
   
-  \item Dentro de los gráficos 3D nos encontramos con procesamiento intensivo geométrico de rotación de vectores 3D, luminosidad y interpolación, candidatos perfectos para uso del método. \cite{lang_high-throughput_2005}.
+  \item Dentro de los gráficos 3D nos encontramos con procesamiento intensivo geométrico de rotación de vectores 3D, luminosidad y interpolación, candidatos perfectos para uso del método. [\citenum{lang_high-throughput_2005}]
   
-  \item Descomposición QR. Hay variantes de \gls{cordic} que ofrecen esta funcionalidad. \cite{hu_cordic-based_1992}
+  \item Factorización QR. Hay variantes de \gls{cordic} que ofrecen esta funcionalidad. [\citenum{hu_cordic-based_1992}]
   
-  \item  Dentro del procesamiento de señal podemos encontrar un gran número de implementaciones para el cálculo de \gls{dft}.  \cite{das_unified_2002}.
+  \item  Dentro del procesamiento de señal podemos encontrar un gran número de implementaciones para el cálculo de \gls{dft}. [\citenum{das_unified_2002}]
   
-  \item En el ámbito de la comunicación, \gls{cordic} puede ser usado para la modulación digital y análoga. Dependiendo de los parámetros del método, es posible hacer cálculo digital de una multitud de modulaciones. \cite{valls_use_2006}.
+  \item En el ámbito de la comunicación, \gls{cordic} puede ser usado para la modulación digital y análoga. Dependiendo de los parámetros del método, es posible hacer cálculo digital de una multitud de modulaciones. [\citenum{valls_use_2006}]
 \end{itemize}
 
 Como se puede ver, CORDIC es una propuesta antigua pero que ha sufrido mejoras y aún en la actualidad se utiliza. Esto genera un gran interés por su estudio e implementación.
@@ -65,7 +65,7 @@ Como se puede ver, CORDIC es una propuesta antigua pero que ha sufrido mejoras y
 \section{Objetivos}
 \label{objetivos}
 
-El objetivo principal de este Trabajo Fin de Grado es el estudio y desarrollo de alternativas al procesamiento de funciones hiperbólicas y trigonométricas de punto flotante según el estándar del IEEE 754. En concreto se centra el algoritmo \gls{cordic} (COordinate Rotation DIgital Computer).
+El objetivo principal de este Trabajo Fin de Grado es el estudio y desarrollo de alternativas al procesamiento de funciones hiperbólicas y trigonométricas de punto flotante según el estándar del \gls{ieee} 754. En concreto se centra el algoritmo \gls{cordic} (COordinate Rotation DIgital Computer).
 
 Se pretende encontrar ventajas e inconvenientes del algoritmo, soluciones propuestas y realizar una simulación e implementación de un algoritmo \gls{cordic} básico en hardware utilizando numeración en punto flotante.
 
@@ -74,9 +74,11 @@ Como se verá en los siguientes apartados, la complejidad de algunas soluciones 
 
 \section{Estructura del documento}
 
-Primero se explicará en el capítulo de CORDIC el algoritmo básico estipulado por \cite{volder_cordic_1959}. Posteriormente, en el mismo capítulo se describirá algunas de las mejoras mas populares, las cuales han sido usadas con los años, con ciertas mejoras. Finalmente, el último punto se expondrá un estado del arte centrándose en CORDIC y punto flotante.
+Primero se explicará en el capítulo de \gls{cordic} el algoritmo básico estipulado por \cite{volder_cordic_1959}. Posteriormente, en el mismo capítulo se describirá algunas de las mejoras mas populares, las cuales han sido usadas con los años, con ciertas mejoras. Finalmente, el último punto se expondrá un estado del arte centrándose en \gls{cordic} y punto flotante.
 
-Dentro del capítulo de Implementación de CORDIC se expondrá las herramientas usadas y se mostrará tres implementaciones de CORDIC: básica, \textit{pipelining} y una con \text{pipelining} y punto flotante.
+Dentro del capítulo de Implementación de \gls{cordic} se expondrá las herramientas usadas y se mostrará tres implementaciones de \gls{cordic}: básica, \textit{pipelining} y una con \text{pipelining} y punto flotante.
+
+Finalmente, se hará una comparación y se desarrollará una conclusión a partir en base del estudio y trabajo realizado.
 
 
 

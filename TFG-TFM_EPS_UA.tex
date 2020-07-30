@@ -19,7 +19,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Título y subtítulo
 \newcommand{\titulo}{Desarrollo de una arquitectura hardware para procesamiento especializado}
-\newcommand{\subtitulo}{Basado en CORDIC}
+\newcommand{\subtitulo}{}
 % Datos del autor
 \newcommand{\miNombre}{Vladyslav Korkoshko Tereshchenko}
 \newcommand{\miEmail}{vk21@alu.ua.es}
@@ -85,6 +85,7 @@ pdftitle = {\titulo},
 % A partir de aquí debes empezar a realizar tu TFG/TFM
 %%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\renewcommand{\BOthers}[1]{et al.\hbox{}}
 
 % Números romanos hasta el mainmatter.
 \frontmatter
@@ -137,8 +138,8 @@ pdftitle = {\titulo},
 %%%%
 % CONTENIDO. Anexos - Añade o elimina según tus necesidades
 %%%%
-%\appendix % Inicio de los apéndices
-%\input{anexos/anexo_I}
+\appendix % Inicio de los apéndices
+\input{anexos/anexos_1}
 %\input{anexos/anexo_2}
 %\input{anexos/anexo_3}
 

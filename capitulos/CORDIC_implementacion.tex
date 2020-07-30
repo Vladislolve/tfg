@@ -1,17 +1,18 @@
 \chapter{Implementación de \gls{cordic}}
+En este capítulo se va a especificar y razonar las herramientas usadas para la implementación de CORDIC y se mostrará tres diferentes implementaciones, además de sus simulaciones y comparativas entre ellas.
 
 \section{Herramientas}
 \subsection{Linux}
-Todo el trabajo de implementación ha sido realizado dentro de una máquina Linux. Generalmente las herramientas para diseño de nivel hardware son propietarias y desarrolladas para Windows.
+Todo el trabajo de implementación ha sido realizado dentro de una máquina Linux. Generalmente las herramientas para diseño de nivel hardware comerciales, como Xilinx, son propietarias y desarrolladas exclusivamente para Windows.
 
 Ya que se tiene un buen conocimiento de Linux, se ha optado por buscar herramientas alternativas de código abierto que puedan ofrecer un desarrollo similar a las propietarias.
 \subsection{Verilog}
-El lenguaje de descripción de hardware (HDL) escogido ha sido Verilog/SystemVerilog. Verilog es un subconjunto del lenguaje mas nuevo SystemVerilog. Aunque no se hayan utilizado ninguna nueva parte del diseño, se eligió desde un principio para tener posibilidad de ampliación o necesidad de alguna nueva parte en un futuro.
+El lenguaje de descripción de hardware (\gls{hdl}) escogido ha sido Verilog/SystemVerilog. Verilog es un subconjunto del lenguaje mas nuevo SystemVerilog. Aunque no se hayan utilizado ninguna nueva parte del diseño, se eligió desde un principio para tener posibilidad de ampliación o necesidad de alguna nueva parte en un futuro.
 
-Ya que en la carrera se realizó prácticas con VHDL, se decidió por usar un lenguaje diferente para obtener un amplio conocimiento de los lenguajes principales. Además, Verilog tiene una similitud con el lenguaje C, por lo que puede ser mas atractivo si se tiene algún conocimiento de este lenguaje.
+Ya que en la carrera se realizó prácticas con \gls{vhdl}, se decidió por usar un lenguaje diferente para obtener un amplio conocimiento de los lenguajes principales. Además, Verilog tiene una similitud con el lenguaje C, por lo que puede ser mas atractivo si se tiene algún conocimiento de este lenguaje.
 
 \subsection{Verilator}
-La herramienta elegida para la compilación y comprobación del funcionamiento de \gls{cordic} ha sido Verilator. Esta herramienta es gratuita y de código abierto. Además esta desarrollada para Ubuntu, pero funciona en casi todas las distribuciones de Linux.
+La herramienta elegida para la compilación y comprobación del funcionamiento de \gls{cordic} ha sido Verilator. Esta herramienta es gratuita y de código abierto. Además esta desarrollada para Ubuntu, pero funciona en casi todas las distribuciones de Linux. En concreto, todo el desarrollo ha sido realizado en dos máquinas con Arch Linux.
 
 Su principales características son la compilación del código de Verilog a C++ o SystemC. Este código es mucho mas optimizado y permite un mejor rendimiento a la hora de simular. Además, permite diseñar \textit{testbench} en C++, por lo que puede facilitar mucho la forma de desarrollar si se tiene un conocimiento de C++.
 
@@ -26,7 +27,7 @@ verilator -Wall --cc cordic.sv
 
 Después de ejecutar el comando, Verilator crea una carpeta llamada \textit{obj\_dir}, donde podemos encontrar un fichero Makefile, que en este caso su nombre sería \textit{Vcordic.mk}. Este makefile crea el ejecutable final.
 
-Para poder implementar los testbench en C++, se debe de inicializar Verilator con las variables de \textit{argc} y \textit{argv}. Para poder acceder a las entradas y salidas de Verilog necesitamos crear una instancia de nuestro módulo a probar. En este caso seríá un tipo \textit{Vcordic}, el cual esta incluido en "obj\_dir/Vcordic.h"
+Para poder implementar los testbench en C++, se debe de inicializar Verilator con las variables de \textit{argc} y \textit{argv}. Para poder acceder a las entradas y salidas de Verilog necesitamos crear una instancia de nuestro módulo a probar. En este caso sería un tipo \textit{Vcordic}, el cual esta incluido en "obj\_dir/Vcordic.h"
 
 \begin{lstlisting}[caption={Definición de una TestBench de Verilator}] 
 class TestBench{
@@ -44,7 +45,7 @@ class TestBench{
 };
 \end{lstlisting}
 
-Dentro de la definición del \textit{TestBench} tenemos un tipo \textit{Vcordic*}, el cual permitirá acceder a las variables del módulo. El tipo \textit{m\_tickcount} permite tener un tiempo de referencia interno en nuestra $testbench$.
+Dentro de la definición del \textit{TestBench} tenemos un tipo \textit{Vcordic*}, el cual permitirá acceder a las variables del módulo. La variable de tipo \textit{unsigned long}, \textit{m\_tickcount}, permite tener un tiempo de referencia interno en nuestra $testbench$.
 
 La última línea del constructor es una llamada a Verilator para poder llamar a cualquier función para trazar las señales del módulo para luego ser usadas en un programa como \textit{GTKWave}.
 
@@ -113,7 +114,7 @@ La función reset() cambia la entrada de $iReset$ a 1, evalúa el módulo con un
 A partir de ahora, solo necesitamos tener un bucle en nuestra función main para probar el módulo.
 
 \section{Implementación básica}
-Ya que \gls{cordic} tiene la ventaja de ser muy fácil de implementar en hardware, ya sea en términos de latencia o espacio, una implementación básica de \gls{cordic} no es compleja de diseñar.
+Ya que \gls{cordic} tiene la ventaja de ser muy fácil de implementar en hardware, una implementación básica de \gls{cordic}  nos permite realizar
 
 Las entradas de nuestro módulo $iX, iY, iAngle, iClock$ y $iReset$. Las salidas son $oX$ y $oY$. Inicialmente todos las entradas y salidas son enteros de 32 bits.
 
@@ -121,7 +122,7 @@ Las entradas de nuestro módulo $iX, iY, iAngle, iClock$ y $iReset$. Las salidas
 module cordic(iClock, iReset, iAngle, iX, iY, oX, oY);
 \end{lstlisting}
 
-Antes de iniciar \gls{cordic}, necesitamos conocer en que cuadrante se encuentra el ángulo de entrada. Cada artículo citado ha tomado una decisión propia a la hora de optimizar el algoritmo. Una manera fácil de saber el cuadrante en el que se encuentra es hacer el módulo de $2*pi$ radianes y empaquetando el valor del ángulo en un registro de 32 bits. En este caso, 0 grados se traduce a un valor de todos los bits a 0 y un valor de 359.999... sería todo los bits a 1, aunque en nuestro caso solo hay valores enteros. Esta transformación tiene que ser realizada por el usuario antes de pasarla por la entrada $iAngle$. Aunque esto es posible implementarlo dentro del módulo o uno externo, por simplificar se ha decidido no hacerlo para centrarse en \gls{cordic}.
+Antes de iniciar \gls{cordic}, necesitamos conocer en que cuadrante se encuentra el ángulo de entrada. Cada artículo citado ha tomado una decisión propia a la hora de abarcar este problema. Una manera fácil de saber el cuadrante en el que se encuentra es hacer el módulo de $2\pi$ radianes y empaquetando el valor del ángulo en un registro de 32 bits. En este caso, 0 grados se traduce a un valor de todos los bits a 0 y un valor de 359.999... sería todo los bits a 1, aunque en nuestro caso solo hay valores enteros. Esta transformación tiene que ser realizada por el usuario antes de pasarla por la entrada $iAngle$. Aunque esto es posible implementarlo dentro del módulo o uno externo, por simplificar se ha decidido cambiar el ángulo en el \textit{testbench} para centrarse en \gls{cordic}.
 
 Ahora solo tenemos que leer los 2 bits mas significativos para saber en que cuadrante se encuentra el ángulo. Este paso solo se ejecuta al principio del algoritmo.
 \begin{lstlisting}[caption={Pre-rotación de iAngle pasado por el usuario.}]
@@ -167,7 +168,7 @@ wire signed [31:0] atan_angle [0:30]
 
 Se ha definido un total de 31 valores, aunque como se verá mas tarde no van a ser necesarios todos los valores de la tabla para conseguir un valor cercano al real.
 
-Ahora definimos 3 registros y 3 $wire$.
+Ahora definimos 3 tipos registros y 3 tipo $wire$.
 
 \begin{lstlisting}[caption={Registros y $wire$ para operar con \gls{cordic}}]
  reg signed [IOWidth-1:0] X;
@@ -198,7 +199,7 @@ Para probar el funcionamiento, utilizaremos la \textit{testbench} definida anter
 Verilated::commandArgs(argc,argv);
 \end{lstlisting}
 
-Despues de incluir el fichero "TestBench.h" en el "main.cpp", debemos de crear un tipo \textit{TestBench} y cargar nuestras con los valores desdeados.
+Despues de incluir el fichero "TestBench.h" en el "main.cpp", debemos de crear un tipo \textit{TestBench} y cargar las variables de la clase con los valores deseados.
 
 \begin{lstlisting}[caption={Creación del tipo TestBench y entrada de valores desde C++ al módulo de \gls{cordic} en Verilog}]
  TestBench *tb = new TestBench();
@@ -213,7 +214,7 @@ Despues de incluir el fichero "TestBench.h" en el "main.cpp", debemos de crear u
  tb->m_core->iAngle = (pow(2,32)*angle)/360;
 \end{lstlisting} 
 
-Después de crear el objeto \textit{TestBench}, introducimos los valores de X e Y  dividiéndolo antes por el factor $K$. El ángulo es transformado a un valor módulo de 360 y elevado a $2^{32}$ para que tenga el mismo formato que la tabla de $\arctan$ que tenemos predefinida en nuestro código Verilog.
+Después de crear el objeto \textit{TestBench}, introducimos los valores de X e Y, dividiéndolo antes por el factor $K$. El ángulo es transformado a un valor módulo de 360 y elevado a $2^{32}$ para que tenga el mismo formato que la tabla de $\arctan$ que tenemos predefinida en nuestro código Verilog.
 
 El factor $K$ es extraído de los valores a pasar antes de la ejecución. Dependiendo de las especificaciones esto se podría dejar con el factor $K$ si no fuera necesario.
 
@@ -253,7 +254,8 @@ sin = 911
 
 tick = 3
 cos = -531
-sin = 835Este es un
+sin = 835
+Este es un
 
 tick = 4
 cos = -635
@@ -308,7 +310,12 @@ cos = -644
 sin = 768
 ...
 \end{lstlisting}
-\todo{explicar}
+
+La salida de seno y coseno muestran los registros $X$ e $Y$. A diferencia de las siguientes implementaciones, esta te devuelve un valor distinto de 0 desde el primer ciclo, ya que se esta operando siempre sobre ese valor.
+
+Sobre el \textit{tick} 16, el valor se aproxima mucho al valor real de seno y coseno, por lo que no tiene mucho sentido realizar mas micro-rotaciones, ya que los valores menos significativos se encuentran ahí.
+
+Para ver las salidas por GTKWave, vea la figura \ref{graf:salida_gtkwave_basico}.
 
 \section{Implementación \textit{pipeline}}
 El $pipelining$ es un método clásico de conectar elementos de procesamiento en series para  mejorar el rendimiento de los sistemas. Muchos artículos de \gls{cordic} proponen un sistema con algún tipo de $pipelining$. En este punto se mostrará un ejemplo de $pipelining$ básico que se puede implementar con el código implementado en el punto anterior.
@@ -354,7 +361,7 @@ Para generar los bloques necesitamos una variable $genvar$. Además, todos los $
  endgenerate
 \end{lstlisting}
 
-Como se puede observar, el espacio que ocupa un \gls{cordic} con $pipelining$ es mayor que el básico, pero tenemos la ventaja de una mejora del $throughput$. A partir del ciclo 16 estamos recibiendo cada ciclo un nuevo resultado.
+Como se puede observar, el espacio que ocupa un \gls{cordic} con $pipelining$ es mayor que el básico, ya que necesitamos generar el mismo número de registros que de etapas en nuestro \textit{pipeline}, pero tenemos la ventaja de una mejora del $throughput$. A partir del ciclo 16 estamos recibiendo cada ciclo un nuevo resultado.
 
 Ya que esta implementaciones no han sido probadas en hardware real y solamente simuladas, hay algunos aspectos que no se tienen en cuenta que si pueden ocurrir en un sistema real, como por ejemplo en una \gls{fpga}.
 
@@ -365,7 +372,8 @@ Ya que esta implementaciones no han sido probadas en hardware real y solamente s
 \end{itemize}
 
 \subsection{Testbench de CORDIC \textit{pipeline}}
-A continuación se va a mostrar la salida del \textit{Testbench}. En esta \textit{testbench} se ha optado por pasar cada ciclo un nuevo ángulo, comenzando por el 10, para mostrar el funcionamiento del \textit{pipelining}. Cada ciclo después del \textit{tick()} 15 se está devolviendo un nuevo valor.
+A continuación se va a mostrar la salida del \textit{Testbench}. En esta \textit{testbench} se ha optado por pasar cada ciclo un nuevo ángulo, comenzando por el 10, para mostrar el funcionamiento del \textit{pipelining}. Cada ciclo después del \textit{tick} 15 se está devolviendo un nuevo valor. Para ver las salidas por GTKWave, vea la figura \ref{graf:salida_gtkwave_pipeline}.
+
 \begin{lstlisting}
 tick = 0
 
@@ -449,13 +457,16 @@ cos = 644
 sin = 766
 tick = 20
 \end{lstlisting}
-\todo{explicar}
+
+Como se comento en la sección anterior, la implementación \textit{pipeline} tiene el mismo número de registros que de etapas por las que pasa el método, por lo que en las primeras ejecuciones no vamos a recibir ningun valor, ya que el método aún no ha llegado a esa etapa.
+
+Se puede observar una clara mejora al \gls{cordic} básico, ya que no necesitamos esperar al resultado de una entrada antes de enviar otra, si no que cada ciclo podemos dar un nuevo valor a tratar.
 
 
 \section{Implementación con punto flotante}
 Para la implementación de punto flotante necesitamos realizar algunas modificaciones al tipo de datos que estamos tratando. Las entradas \textit{iX} y \textit{iY} eran enteros con signo de 32 bits. En esta implementación necesitamos usar un nuevo formato de punto fijo, en concreto el formato Q.
 
-El formato Q(m,n) nos permite operar con el mismo hardware que un entero, por lo que reduce la complejidad de operar directamente con el estándar IEEE 754. En concreto, el formato es Q(8,24), con 8 bits de entero y 24 bits fraccionarios.
+El formato Q(m,n) nos permite operar con el mismo hardware que un entero, por lo que reduce la complejidad de operar directamente con el estándar \gls{ieee} 754. En concreto, el formato es Q(8,24), con 8 bits de entero y 24 bits fraccionarios.
 
 En el código de "main.cpp", tenemos que modificar la línea de entrada de valores \textit{iX} y \textit{iY} para que estén acorde al formato Q(8.24). Para ello necesitamos elevar el valor que pasamos por argumento a $2^{24}$.
 
@@ -466,9 +477,9 @@ En el código de "main.cpp", tenemos que modificar la línea de entrada de valor
  ...
 \end{lstlisting}
 
-Dentro del código de Verilog, el bucle principal de micro-rotaciones y el movimiento de bits se queda igual que en las otras implementaciones. La división en formato fijo se puede realizar si el divisor es $2^i$, por lo que podemos hacer el movimiento de bits necesario por \gls{cordic} sin problemas.
+Dentro del código de Verilog, el bucle principal de micro-rotaciones y el movimiento de bits se queda igual que en las otras implementaciones. La división en formato fijo se puede realizar si el divisor es $2^i$, por lo que podemos hacer el movimiento de bits necesario por \gls{cordic} sin problemas. Hay otra manera de dividir, que sería la multiplicación por un número decimal, con el cual conseguiríamos una división, pero añadir una multiplicación al bucle de \gls{cordic} llevaría a mayor complejidad hardware y peores tiempos.
 
-A la hora de obtener el resultado necesitamos transformar el valor en el estándar del IEEE 754. Para ello se ha diseñado una máquina de estado finita (FSM).
+A la hora de obtener el resultado necesitamos transformar el valor en el estándar del \gls{ieee} 754. Para ello se ha diseñado una máquina de estado finita (\gls{fsm}).
 
 Una forma muy general de diseñar una \gls{fsm} es mediante dos registros: \textit{current\_state} y \textit{next\_state}. Después, un parámetro es declarado por cada estado que se encuentre en el diagrama de estados. Los parámetros necesitan un valor en concreto para poder usar su nombre declarado en las asignaciones siguientes.
 
@@ -661,7 +672,7 @@ Las funciones realizadas por este bloque son las siguientes:
 	
 	\item \textit{w\_bit\_shift\_count} Hace recuento del movimiento de bits que se debe de realizar para ajustarlo con la mantisa. Los valores \textit{bitmov} y \textit{bitcount} inicialmente tienen un valor de 31 y 0 respectivamente. El contador de $X$ e $Y$ se detiene en el momento que encuentra un 1 en la posición que este actualmente.
 	
-	\item \textit{w\_to\_fp} La variable \textit{tempXOut} y \textit{tempYOut} tiene que ser ajustada a la mantisa de un IEEE 754 de 32 bits, la cual son los 23 bits menos significativos. Ya que el movimiento de bits puede ser a la derecha o izquierda, dependiendo de la magnitud del valor, necesitamos tener en cuenta los dos casos.
+	\item \textit{w\_to\_fp} La variable \textit{tempXOut} y \textit{tempYOut} tiene que ser ajustada a la mantisa de un \gls{ieee} 754 de 32 bits, la cual son los 23 bits menos significativos. Ya que el movimiento de bits puede ser a la derecha o izquierda, dependiendo de la magnitud del valor, necesitamos tener en cuenta los dos casos.
 	
 	Despues de ajustar la mantisa necesitamos guardar en el exponente. Para ello tenemos que tener en cuenta el número de movimiento de bits que se ha realizado anteriormente y sumar el sesgo del exponente, que para un valor de 32 bits es 127. Esta operación se hace para $X$ e $Y$
 	
@@ -678,7 +689,8 @@ assign oX = fpX_out;
 El \textit{pipelining} además tiene que detenerse en el momento que hay un nuevo valor a procesar, por lo que necesitamos detener el bucle principal de CORDIC hasta que termine la \gls{fsm}.
 
 \begin{lstlisting}[caption={Cambio en el bucle principal de CORDIC.}]
- if(next_state == w_normal_op) begin
+ if(next_state == w_normal_op) begin
+
      X[i+1] <= Z_sign ? X[i] + Y_shr         : X[i] - Y_shr;
      Y[i+1] <= Z_sign ? Y[i] - X_shr         : Y[i] + X_shr;
      Z[i+1] <= Z_sign ? Z[i] + atan_angle[i] : Z[i] - atan_angle[i];
@@ -692,10 +704,16 @@ El \textit{pipelining} además tiene que detenerse en el momento que hay un nuev
 
 Simplemente comprobamos si el siguiente estado es \textit{w\_normal\_op} y de no ser así, detenemos toda la \textit{pipeline} de CORDIC.
 \subsection{Testbench de CORDIC punto flotante con \textit{pipelining}}
-Este \textit{testbench} es muy parecido a 
+Este \textit{testbench} es muy parecido a la implementación con \textit{pipelining}. Cada ciclo introducimos una nueva entrada. El primer valor es introducido como argumento de la ejecución del programa, que es:
 
 \begin{lstlisting}
- 
+./cordic 1 0 45
+\end{lstlisting}
+
+Los demas valores empiezan por un ángulo de 10.
+
+\begin{lstlisting}
+// ticks omitidos que devuelven un valor 0.
 tick = 1
 tick = 2
 ...
@@ -767,4 +785,26 @@ sin = 0.866003
 
 \end{lstlisting}
 
-\todo{explicar}
+A diferencia de un \textit{pipelining} estándar, necesitamos transformar el valor en punto flotante, por lo que tardamos 4 ciclos mas en devolver un resultado. Aun así, tenemos un \textit{throughput} mas alto que un \gls{cordic} tradicional y una mejor precisión en los valores devueltos.
+
+Como tambien se puede observar, algunos valores se tienen que aproximar a su resultado real. En el \text{tick} 55 los valores representados son seno y coseno de 90. El coseno es lo suficientemente pequeño para ser considerado 0. Para ver las salidas por GTKWave, vea la figura \ref{graf:salida_gtkwave_fp}.
+
+En este \textit{testbench} se ha optado por no multiplicar los valores por 1000, pero se puede hacer de la misma forma que en los otros \textit{testbench} y nos dará un resultado mas preciso.
+
+En la figura \ref{graf:real_error} podemos ver el error producido en cada etapa del cálculo de un valor. A partir de la micro-rotación 26 el error es idéntico en cada etapa. Todos las implementaciones fueron probadas con sólo 16 etapas para facilitar el desarrollo, pero pueden ampliarse perfectamente a más si es necesario una menor tasa de error.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{archivos/CORDIC/real_error2.pdf}
+	\caption{Tasa de error en CORDIC con punto flotante.}
+	\label{graf:real_error}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{archivos/CORDIC/ciclos.pdf}
+	\caption{Número de ciclos para calcular 20 valores de forma consecutiva (cada ciclo se introduce un nuevo valor).}
+	\label{graf:ciclos}
+\end{figure}
+
+En la figura \ref{graf:ciclos} se muestra las tres implementaciones desarrolladas anteriormente. Se hace una comparativa con un ejemplo de cálculo de 20 valores consecutivos. Cada ciclo se introduce un nuevo valor en las implementaciones con \textit{pipelining} y en la básica se espera hasta recibir el valor final. Como se puede ver, el número de ciclos para cálcular múltiples valores de forma consecutiva baja drásticamente. Aún con el \textit{overhead} que conlleva calcular el valor en punto flotante, tenemos una reducción muy significativa del tiempo respecto al método básico.

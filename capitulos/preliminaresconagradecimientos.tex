@@ -8,11 +8,15 @@
 
 \chapter*{Resumen}
 \thispagestyle{empty}
-El método \gls{cordic} es un simple algoritmo que puede calcular de forma eficiente múltiples operaciones matemáticas, como funciones trigonométricas, raíces, multiplicaciones, divisiones, etc. solamente usando sumas, restas, movimiento de bits y una \gls{lut}.
+El método \gls{cordic} es un simple algoritmo que puede calcular de forma eficiente múltiples operaciones matemáticas, como funciones trigonométricas, raíces, multiplicaciones, divisiones, etc. solamente usando sumas, restas, movimiento de bits y una pequeña \gls{lut}.
 
-El auge de procesamiento con punto flotante ha hecho que se tenga que revaluar los casos de uso de \gls{cordic}, por lo que se ha realizado un estudio sobre las mejoras que se han ido realizando a lo largo de los 60 años y, además, se ha hecho hincapié en el posible uso de \gls{cordic} con punto flotante. 
+El auge de procesamiento con punto flotante ha hecho que se tenga que revaluar los casos de uso del método e investigar y aportar variantes que usen este tipo de datos de forma eficiente. por lo que se ha realizado un estudio sobre las mejoras que se han ido realizando a lo largo de los 60 años y, además, se ha hecho hincapié en el posible uso de \gls{cordic} con punto flotante. 
 
-Finalmente se ha realizado una implementación y comparativa de los distintos \gls{cordic} y se ha mostrado la dificultad de procesar con un estándar como es el IEEE 754, que estipula el punto flotante.
+Después de realizar un estudio extenso sobre los casos de uso e investigación actual sobre \gls{cordic}, se ha implementado tres variantes usando el lenguaje Verilog para evaluar las mejoras expuestas en los estudios expuestos anteriormente. El primero se basa en el propio método estándar, el segundo se añade \textit{pipelining} y un último con una conversión a punto flotante.
+
+Tras la implementación, se ha visto una clara mejora de \textit{throughput} frente al \gls{cordic} básico, y se ha visto una mejora de precisión en \gls{cordic} en punto flotante, con el inconveniente de aumento del número de ciclos para procesar. También se ha visto un aumento de complejidad en la implementación de punto flotante, un punto negativo a la hora de tener en cuenta que el método tiene una filosofía de simplicidad.
+
+La idea de investigar los casos de uso actuales del \gls{cordic} viene de Antonio Jimeno-Morenilla, que fue recomendado por uno de mis tutores, Marcelo Saval Calvo. Por recomendación de Antonio, Jose Luís Sánchez Romero se unió como segundo tutor para ayudar en el trabajo al tener un buen conocimiento de arquitecturas y haber trabajado con CORDIC anteriormente. Agradezco a todos los profesores que me han guiado en este trabajo y ofrecido cualquier apoyo que haya necesitado.
 
 
 

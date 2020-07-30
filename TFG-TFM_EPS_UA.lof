@@ -3,9 +3,15 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Rotation Mode. Figura de \cite {schelin_calculator_1983}\relax }}{6}{figure.caption.7}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Vectoring Mode. Figura de \cite {schelin_calculator_1983}\relax }}{7}{figure.caption.8}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces \gls {cordic} convencional con \textit {pipelining}\relax }}{9}{figure.caption.11}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Arquitectura de FP \gls {cordic}. Figura de \cite {de_lange_optimal_1988}\relax }}{11}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Unidad de procesamiento de \gls {cordic} de doble precisión. Figura extraída de \cite {yeshwanth_high-speed_2018}\relax }}{13}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces \gls {cordic} convencional con \textit {pipelining}. Extraído de \cite {meher_50_2009}\relax }}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Arquitectura de FP \gls {cordic}. Figura de \cite {de_lange_optimal_1988}\relax }}{11}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Unidad de procesamiento de \gls {cordic} de doble precisión. Figura extraída de \cite {yeshwanth_high-speed_2018}\relax }}{13}{figure.caption.15}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Tasa de error en CORDIC con punto flotante.\relax }}{33}{figure.caption.18}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Número de ciclos para calcular 20 valores de forma consecutiva (cada ciclo se introduce un nuevo valor).\relax }}{33}{figure.caption.19}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Salida de GTKWave de \gls {cordic} básico\relax }}{44}{figure.caption.23}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Salida de GTKWave de \gls {cordic} con \textit {pipelining}. Aquí se muestran todos los registros de $X$ y solo los últimos registros de $Y$ y $Z$, además de las entradas y salidas.\relax }}{45}{figure.caption.24}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Salida de GTKWave de \gls {cordic} con punto flotante y \textit {pipelining}. Igual que en la figura anterior, se muestra todos los registros de $X$ y solo los últimos registros de $Y$ e $Z$. Además se muestran registros como \textit {next\_state} y \textit {current\_state} y otras, como contadores.\relax }}{46}{figure.caption.25}%

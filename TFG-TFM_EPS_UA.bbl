@@ -1,6 +1,40 @@
 \begin{thebibliography}{}
 
 \bibitem [\protect \citeauthoryear {%
+Antelo%
+, Villalba%
+, Bruguera%
+\BCBL {}\ \BBA {} Zapata%
+}{%
+Antelo%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {1997}}%
+}]{%
+antelo_high_1997}
+\APACinsertmetastar {%
+antelo_high_1997}%
+\begin{APACrefauthors}%
+Antelo, E.%
+, Villalba, J.%
+, Bruguera, J.%
+\BCBL {}\ \BBA {} Zapata, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{{\APACmonth{08}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {High performance rotation architectures based on the
+  radix-4 {CORDIC} algorithm} {High performance rotation architectures based on
+  the radix-4 {CORDIC} algorithm}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Transactions on Computers}{46}{8}{855--870}.
+\newblock
+\APACrefnote{Conference Name: IEEE Transactions on Computers}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/12.609275} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Das%
 \ \BBA {} Banerjee%
 }{%
@@ -190,6 +224,22 @@ Fang, L.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+\APACciteatitle {{FFT}/{IFFT} {Block} {Floating} {Point} {Scaling}}}{%
+\APACciteatitle {{FFT}/{IFFT} {Block} {Floating} {Point} {Scaling}}}{%
+{\protect \APACyear {2005}}%
+}]{%
+noauthor_fftifft_2005}
+\APACinsertmetastar {%
+noauthor_fftifft_2005}%
+{\BBOQ}\APACrefatitle {{FFT}/{IFFT} {Block} {Floating} {Point} {Scaling}}
+  {{FFT}/{IFFT} {Block} {Floating} {Point} {Scaling}}.{\BBCQ}
+\newblock
+\APACrefYearMonthDay{2005}{}{}.
+\newblock
+\APACjournalVolNumPages{}{}{}{7}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 Hekstra%
 \ \BBA {} Deprettere%
 }{%
@@ -217,28 +267,6 @@ Hekstra, G.%
   {Arithmetic}}\ (\BPGS\ 130--137).
 \newblock
 \begin{APACrefDOI} \doi{10.1109/ARITH.1993.378100} \end{APACrefDOI}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
-\APACcitebtitle {High performance rotation architectures based on the radix-4
-  {CORDIC} algorithm - {IEEE} {Journals} \& {Magazine}}}{%
-\APACcitebtitle {High performance rotation architectures based on the radix-4
-  {CORDIC} algorithm - {IEEE} {Journals} \& {Magazine}}}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-}]{%
-noauthor_high_nodate}
-\APACinsertmetastar {%
-noauthor_high_nodate}%
-\APACrefbtitle {High performance rotation architectures based on the radix-4
-  {CORDIC} algorithm - {IEEE} {Journals} \& {Magazine}.} {High performance
-  rotation architectures based on the radix-4 {CORDIC} algorithm - {IEEE}
-  {Journals} \& {Magazine}.}
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
-\newblock
-\begin{APACrefURL}
-  [{2020-07-28}]\url{https://ieeexplore.ieee.org/document/609275}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -722,28 +750,6 @@ Parker, M.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-\APACcitebtitle {Redundant and on-line {CORDIC}: application to matrix
-  triangularization and {SVD} - {IEEE} {Journals} \& {Magazine}}}{%
-\APACcitebtitle {Redundant and on-line {CORDIC}: application to matrix
-  triangularization and {SVD} - {IEEE} {Journals} \& {Magazine}}}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-}]{%
-noauthor_redundant_nodate}
-\APACinsertmetastar {%
-noauthor_redundant_nodate}%
-\APACrefbtitle {Redundant and on-line {CORDIC}: application to matrix
-  triangularization and {SVD} - {IEEE} {Journals} \& {Magazine}.} {Redundant
-  and on-line {CORDIC}: application to matrix triangularization and {SVD} -
-  {IEEE} {Journals} \& {Magazine}.}
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
-\newblock
-\begin{APACrefURL}
-  [{2020-07-28}]\url{https://ieeexplore.ieee.org/document/53594}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Schelin%
 }{%
 Schelin%
@@ -773,6 +779,25 @@ Schelin, C\BPBI W.%
   https://doi.org/10.1080/00029890.1983.11971220}
 \newblock
 \begin{APACrefDOI} \doi{10.1080/00029890.1983.11971220} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {{ULX3S}}}{%
+\APACcitebtitle {{ULX3S}}}{%
+{\protect \APACyear {2020}}%
+}]{%
+noauthor_ulx3s_nodate}
+\APACinsertmetastar {%
+noauthor_ulx3s_nodate}%
+\APACrefbtitle {{ULX3S}.} {{ULX3S}.}
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+\begin{APACrefURL}
+  [{2020-07-30}]\url{https://www.crowdsupply.com/radiona/ulx3s}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{Library Catalog: www.crowdsupply.com}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
@@ -842,6 +867,35 @@ Volder, J.%
   \end{APACrefURL}
 \newblock
 \begin{APACrefDOI} \doi{10.1145/1457838.1457886} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Walker%
+\ \BBA {} Cavallaro%
+}{%
+Walker%
+\ \BBA {} Cavallaro%
+}{%
+{\protect \APACyear {1993}}%
+}]{%
+walker_parallel_1993}
+\APACinsertmetastar {%
+walker_parallel_1993}%
+\begin{APACrefauthors}%
+Walker, I.%
+\BCBT {}\ \BBA {} Cavallaro, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1993}{{\APACmonth{06}}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Parallel {VLSI} architectures for real-time kinematics
+  of redundant robots} {Parallel {VLSI} architectures for real-time kinematics
+  of redundant robots}.{\BBCQ}
+\newblock
+\BIn{} (\BPGS\ 870--877 vol.1).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ROBOT.1993.292086} \end{APACrefDOI}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
